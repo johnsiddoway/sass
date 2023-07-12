@@ -1,0 +1,127 @@
+@use "sass:color";
+@import "./mixins";
+
+$white: #fff !default;
+$gray-400: #ced4da !default;
+$gray-700: #495057 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+// Used https://color.adobe.com/create/color-wheel to come up with these colors, based on $orange as the primary input
+$blue:    #0260F2 !default; // Triad
+$indigo:  #7301F5 !default; // Square, then rotated the tool a little bit. Should be Complementary to Yellow
+$purple:  #A702F2 !default; // Square
+$red:     #F92102 !default; // Analogous
+$orange:  #F16B0E !default;
+$yellow:  #F2F027 !default; // Square, then rotated the tool a little bit
+$green:   #31F227 !default; // Triad
+$cyan:    #27E1F2 !default; // Square
+
+$primary: $orange !default;
+$secondary: $green !default;
+$danger: $red !default;
+$info: $cyan !default;
+$success: $green !default;
+$light: $gray-400 !default;
+$dark: $gray-900 !default;
+
+$background-color: $light !default;
+$foreground-color: $dark !default;
+
+// start color shades and helper variables
+$color-dark-scale: 40%;
+$color-light-scale: -80%;
+
+$blue-dark: shift-color($blue, $color-dark-scale);
+$blue-light: shift-color($blue, $color-light-scale);
+$indigo-dark: shift-color($indigo, $color-dark-scale);
+$indigo-light: shift-color($indigo, $color-light-scale);
+$purple-dark: shift-color($purple, $color-dark-scale);
+$purple-light: shift-color($purple, $color-light-scale);
+$red-dark: shift-color($red, $color-dark-scale);
+$red-light: shift-color($red, $color-light-scale);
+$orange-dark: shift-color($orange, $color-dark-scale);
+$orange-light: shift-color($orange, $color-light-scale);
+$yellow-dark: shift-color($yellow, $color-dark-scale);
+$yellow-light: shift-color($yellow, $color-light-scale);
+$green-dark: shift-color($green, $color-dark-scale);
+$green-light: shift-color($green, $color-light-scale);
+$cyan-dark: shift-color($cyan, $color-dark-scale);
+$cyan-light: shift-color($cyan, $color-light-scale);
+// end color shades
+
+// start color maps
+$base-colors: (
+    'blue':   $blue,
+    'indigo': $indigo,
+    'purple': $purple,
+    'red':    $red,
+    'orange': $orange,
+    'yellow': $yellow,
+    'green':  $green,
+    'cyan':   $cyan
+) !default;
+
+$theme-colors: (
+	"primary": $primary,
+	"info":    $info,
+	"success": $success,
+	"danger":  $danger
+) !default;
+//end color maps
+
+// start fonts & typography
+$font-family-sans-serif: 'Open Sans', 'Source Sans Pro', "PingFang SC", "Microsoft YaHei", sans-serif !default;
+$font-family-monospace: 'Fira Code', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace !default;
+$headings-font-family: 'Exo 2', 'Open Sans', 'Source Sans Pro', "PingFang SC", "Microsoft YaHei", sans-serif !default;
+
+$font-size-base: 1rem !default;
+$font-size-sm: $font-size-base * .875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+
+$font-weight-base: 400 !default;
+$line-height-base: 1.5 !default;
+// end fonts & typography
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px) !default;
+// scss-docs-end grid-breakpoints
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+	xxl: 1320px) !default;
+// scss-docs-end container-max-widths
+
+$input-range-thumb-width: 1rem !default;
+$input-range-thumb-height: $input-range-thumb-width !default;
+$input-range-thumb-bg: $primary !default;
+$input-range-thumb-border-color: shade-color($primary, 25%) !default;
+$input-range-thumb-border-radius: 50% !default;
+$input-range-thumb-cursor: pointer !default;
+$input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
+$input-range-thumb-focus-box-shadow: 0 0 0.05rem 0.05rem $white, 0 0 0.25rem 0.25rem $primary !default;
+
+$input-range-track-height: 0.25rem !default;
+$input-range-track-width: 100% !default;
+$input-range-track-bg: $background-color !default;
+$input-range-track-border-radius: 0 !default;
+$input-range-track-cursor: none !default;
+
+$input-text-border-color: $primary !default;
+$input-text-focus-box-shadow: 0 0 0.5rem 0 tint-color($primary, 25%) !default;
+
+$btn-border-shade-amount: 30% !default;
+$btn-hover-bg-shade-amount: 15% !default;
+$btn-hover-border-shade-amount: 20% !default;
+$btn-active-bg-shade-amount: 20% !default;
+$btn-active-border-shade-amount: 25% !default;
