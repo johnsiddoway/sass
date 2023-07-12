@@ -61,7 +61,7 @@
 
 	// Prevent the last row from rendering a bottom border that doubles up with the panel border
 	&:not(:last-child) {
-		@include solid-border($dark, border-bottom);
+		@include solid-border($border-color: $dark, $property: border-bottom);
 	}
 
 	>* {
