@@ -1,13 +1,6 @@
-// These mixins are all my own creation
-
 @mixin solid-border($property: border, $border-color: currentColor, $border-radius: 0) {
 	#{$property}: 1px solid $border-color;
 	#{$property}-radius: $border-radius;
-}
-
-@mixin invert-colors() {
-	background-color: $foreground-color;
-	color: $background-color;
 }
 
 @mixin make-flex($flex-direction: row, $flex-wrap: nowrap, $justify-content: flex-start, $align-items: stretch, $align-content: normal, $row-gap: 0, $column-gap: 0) {
