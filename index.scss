@@ -1,13 +1,3 @@
-// 1: Import helper files
 @import "functions";
 @import "variables";
 @import "mixins";
-
-// 2: Import our version of normalize.css / reboot.css
-@import "reset";
-
-// 3: Import our common layout styles applied directly to elements
-@import "layout";
-
-// 4: Import our custom classes. I'd like to get these all moved over to mixins
-@import "containers";
