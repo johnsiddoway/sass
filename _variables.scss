@@ -1,38 +1,44 @@
 // scss-docs-start gray-color-variables
-$white:    #fff !default;
-$gray-100: HSL(43, 10%, 90%) !default; // Same H value as our primary theme color
-$gray-200: HSL(43, 10%, 80%) !default;
-$gray-300: HSL(43, 10%, 70%) !default;
-$gray-400: HSL(43, 10%, 60%) !default;
-$gray-500: HSL(43, 10%, 50%) !default;
-$gray-600: HSL(43, 10%, 40%) !default;
-$gray-700: HSL(43, 10%, 30%) !default;
-$gray-800: HSL(43, 10%, 20%) !default;
-$gray-900: HSL(43, 10%, 10%) !default;
-$black:    #000 !default;
+$white:    #ffffff !default; // hsl(30, 10%, 100%) | Same H value as our primary theme color
+$gray-100: #e8e6e3 !default; // hsl(30, 10%,  90%)
+$gray-200: #d1ccc7 !default; // hsl(30, 10%,  80%)
+$gray-300: #bab3ab !default; // hsl(30, 10%,  70%)
+$gray-400: #a3998f !default; // hsl(30, 10%,  60%)
+$gray-500: #8c8073 !default; // hsl(30, 10%,  50%)
+$gray-600: #70665c !default; // hsl(30, 10%,  40%)
+$gray-700: #544d45 !default; // hsl(30, 10%,  30%)
+$gray-800: #38332e !default; // hsl(30, 10%,  20%)
+$gray-900: #1c1a17 !default; // hsl(30, 10%,  10%)
+$black:    #000000 !default; // hsl(30, 10%,   0%)
 // scss-docs-end gray-color-variables
 
 // scss-docs-start color-variables
-$orange:  hsl(25, 100%, 60%) !default; // 8.82:1
-$green:   hsl(120, 100%, 70%) !default; // 16.06:1 Rotated orange by 95 and lightened by 10%
-$blue:    hsl(190, 100%, 70%) !default; // 11.96:1 Rotated orange by 165 and lightened by 10%
-$red:     hsl(0, 100%, 70%) !default; // 7.34:1 Rotated orange by -25 and lightened by 10%
+$orange:   #ff9933 !default; // hsl( 30, 100%, 60%) |  9.86:1
+$yellow:   #ffff33 !default; // hsl( 60, 100%, 60%) | 19.60:1
+$green:    #33ff33 !default; // hsl(120, 100%, 60%) | 15.49:1
+$teal:     #33ff99 !default; // hsl(150, 100%, 60%) | 15.90:1
+$cyan:     #33ffff !default; // hsl(180, 100%, 60%) | 16.89:1
+$blue:     #3399ff !default; // hsl(210, 100%, 60%) |  7.14:1
+$indigo:   #6633ff !default; // hsl(255, 100%, 60%) |  3.14:1
+$purple:   #9933ff !default; // hsl(270, 100%, 60%) |  4.27:1
+$pink:     #ff33ff !default; // hsl(300, 100%, 60%) |  7.17:1
+$red:      #ff3333 !default; // hsl(  0, 100%, 60%) |  5.77:1
 // scss-docs-end color-variables
 
 // scss-docs-start theme-color-variables
-$primary:   $orange !default;
-$info:      $blue !default;
-$success:   $green !default;
-$danger:    $red !default;
-$light:     $white !default;
-$dark:      $black !default;
+$primary:  $orange !default;
+$info:     $cyan !default;
+$success:  $green !default;
+$danger:   $red !default;
+$light:    $white !default;
+$dark:     $black !default;
 // scss-docs-end theme-color-variables
 
 $theme-colors: (
-	'primary': $primary,
-	'info':    $info,
-	'success': $success,
-	'danger':  $danger
+    'primary': $primary,
+    'info':    $info,
+    'success': $success,
+    'danger':  $danger
 ) !default;
 
 // Typography
