@@ -12,3 +12,26 @@
 		}
 	}
 }
+
+@mixin make-container($padding: 0 0.75rem, $breakpoints: $container-breakpoints) {
+	padding: $padding;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+
+	@each $breakpoint in $breakpoints {
+
+		@if not map-has-key($map: $container-grid-breakpoints, $key: #{$breakpoint}) {
+			@debug "container-grid-breakpoints does not have an entry for #{$breakpoint}, skipping";
+		} @else if not map-has-key($map: $container-max-widths, $key: #{$breakpoint}) {
+			@warn "container-max-widths does not have an entry for #{$breakpoint}, cannot create a media rule for this breakpoint";
+		} else {
+			$grid-breakpoint: map-get($grid-breakpoints, #{$breakpoint});
+			$container-max-width: map-get($container-max-widths, #{$breakpoint});
+
+			@media (min-width: $grid-breakpoint) {
+				max-width: $container-max-width;
+			}
+		}
+	}
+}
