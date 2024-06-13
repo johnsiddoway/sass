@@ -1,6 +1,8 @@
-@use "sass:meta";
+@use "sass:meta" as meta;
+@use "../functions" as func;
+@use "../variables" as *;
 
-@mixin use-default-buttons() {
+@mixin make-button-base() {
 	button {
 		padding: 0.375em 0.75em;
 		background-color: transparent;
@@ -24,42 +26,50 @@
 	}
 }
 
+@mixin make-button-variants-inverted($color-map, $font-color: $white) {
+	@each $name, $color in $color-map {
+		.btn-#{$name}-inverted {
+			@include button-variant-inverted($theme-color: $color);
+		}
+	}
+}
+
 @mixin button-variant($theme-color, $color: inherit, $background-scale: $button-background-scale, $background-scale-hover: $button-background-scale-hover, $background-scale-active: $button-background-scale-active, $background-scale-disabled: $button-background-scale-disabled) {
 	@if ($color != inherit) {
 		color: #{$color};
 	}
-	background-color: #{shift-color($theme-color, $background-scale)};
+	background-color: #{func.shift-color($theme-color, $background-scale)};
 	border-color: #{$dark};
 
-    &:disabled {
-        background-color: #{shift-color($theme-color, $background-scale-disabled)};
-    }
+	&:disabled {
+		background-color: #{func.shift-color($theme-color, $background-scale-disabled)};
+	}
 
 	&:focus-visible {
 		box-shadow: 0 0 0.5rem 0 $dark;
 	}
 
 	&:focus-visible,
-    &:hover:not([disabled]) {
-        outline: none;
-        background-color: #{shift-color($theme-color, $background-scale-hover)};
-    }
+	&:hover:not([disabled]) {
+		outline: none;
+		background-color: #{func.shift-color($theme-color, $background-scale-hover)};
+	}
 
-    &:active:not([disabled]) {
-        background-color: #{shift-color($theme-color, $background-scale-active)};
-    }
+	&:active:not([disabled]) {
+		background-color: #{func.shift-color($theme-color, $background-scale-active)};
+	}
 }
 
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // Except this version only includes a border for the :focus-visible state
-@mixin button-variant-inverted($color) {
-	color: $color;
-	border-color: $color;
+@mixin button-variant-inverted($theme-color) {
+	color: $theme-color;
+	border-color: $theme-color;
 
 	&:active,
 	&:hover,
 	&:focus-visible {
-		background-color: $color;
+		background-color: $theme-color;
 		color: initial;
 		border-color: initial;
 	}

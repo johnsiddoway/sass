@@ -1,0 +1,10 @@
+@mixin make-details($selector: 'details') {
+	#{$selector} {
+		border-bottom: 1px solid currentColor;
+	
+		summary {
+			padding: 0.375rem 0.75rem;
+			cursor: pointer;
+		}
+	}
+}

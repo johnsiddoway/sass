@@ -1,4 +1,6 @@
-@mixin make-container($padding: 0 0.75rem, $breakpoints: $container-breakpoints) {
+@use "../variables" as *;
+
+@mixin make-container($padding: 0 0.75rem, $breakpoints: $container-breakpoints, $grid-breakpoints: $container-grid-breakpoints, $max-widths: $container-max-widths) {
 	padding: $padding;
 	margin-right: auto;
 	margin-left: auto;
@@ -6,16 +8,16 @@
 
 	@each $breakpoint in $breakpoints {
 
-		@if not map-has-key($map: $container-grid-breakpoints, $key: #{$breakpoint}) {
+		@if not map-has-key($map: $grid-breakpoints, $key: #{$breakpoint}) {
 			@debug "container-grid-breakpoints does not have an entry for #{$breakpoint}, skipping";
-		} @else if not map-has-key($map: $container-max-widths, $key: #{$breakpoint}) {
+		} @else if not map-has-key($map: $max-widths, $key: #{$breakpoint}) {
 			@warn "container-max-widths does not have an entry for #{$breakpoint}, cannot create a media rule for this breakpoint";
 		} @else {
-			$container-grid-breakpoint: map-get($container-grid-breakpoints, #{$breakpoint});
-			$container-max-width: map-get($container-max-widths, #{$breakpoint});
+			$grid-breakpoint: map-get($grid-breakpoints, #{$breakpoint});
+			$max-width: map-get($max-widths, #{$breakpoint});
 
-			@media (min-width: $container-grid-breakpoint) {
-				max-width: $container-max-width;
+			@media (min-width: $grid-breakpoint) {
+				max-width: $max-width;
 			}
 		}
 	}

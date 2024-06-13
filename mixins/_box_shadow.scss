@@ -1,0 +1,5 @@
+@use '../variables' as *;
+
+@mixin box-shadow($box-shadow-value: 0.25rem 0.25rem 0.25rem 0rem $gray-700) {
+	box-shadow: $box-shadow-value;
+}
