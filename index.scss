@@ -7,6 +7,7 @@ $-buttons-use-base: null;
 $-cards-selector: null;
 $-details-selector: null;
 $-dialog-selector: null;
+$-forms-selector: null;
 $-table-selector: null;
 $-table-wrapper-selector: null;
 $-theme-colors: null;
@@ -21,6 +22,7 @@ $-tooltip-selector: null;
 @forward "mixins/details";
 @forward "mixins/dialog";
 @forward "mixins/flex";
+@forward "mixins/forms";
 @forward "mixins/layout";
 @forward "mixins/reset";
 @forward "mixins/tables";
@@ -31,13 +33,16 @@ $-tooltip-selector: null;
 @use "mixins/cards";
 @use "mixins/details";
 @use "mixins/dialog";
+@use "mixins/forms";
 @use "mixins/layout";
 @use "mixins/reset";
 @use "mixins/tables";
 @use "mixins/toggles";
 @use "mixins/typography";
 
-@mixin configure($reset-styles: null, $root: null, $abbr-selector: null, $buttons-make-theme-variants: null, $buttons-make-theme-variants-inverted: null, $buttons-use-base: null, $cards-selector: null, $details-selector: null, $dialog-selector: null, $table-selector: null, $table-wrapper-selector: null, $theme-colors: v.$theme-colors, $toggle-selector: null, $tooltip-selector: null) {
+@mixin configure($reset-styles: null, $root: null, $abbr-selector: null, $buttons-make-theme-variants: null, $buttons-make-theme-variants-inverted: null, $buttons-use-base: null,
+		$cards-selector: null, $details-selector: null, $dialog-selector: null, $forms-selector: null, $table-selector: null, $table-wrapper-selector: null,
+		$theme-colors: v.$theme-colors, $toggle-selector: null, $tooltip-selector: null) {
 	@if $reset-styles {
 		$-reset-styles: $reset-styles !global;
 	}
@@ -64,6 +69,9 @@ $-tooltip-selector: null;
 	}
 	@if $dialog-selector {
 		$-dialog-selector: $dialog-selector !global;
+	}
+	@if $forms-selector {
+		$-forms-selector: $forms-selector !global;
 	}
 	@if $table-selector {
 		$-table-selector: $table-selector !global;
@@ -92,6 +100,9 @@ $-tooltip-selector: null;
 	}
 	@if $-buttons-use-base {
 		@include buttons.make-button-base();
+	}
+	@if $-forms-selector {
+		@include forms.make-forms($selector: $-forms-selector);
 	}
 	@if $-tooltip-selector {
 		@include typography.make-tooltips($selector: $-tooltip-selector);
