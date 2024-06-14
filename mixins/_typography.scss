@@ -1,6 +1,7 @@
 @use "../configuration" as *;
 @use "../variables" as *;
-@use './box_shadow';
+@use "./box_shadow";
+@use "./dark_mode";
 
 @mixin make-abbr($selector: 'abbr') {
 	#{$selector} {
@@ -33,11 +34,5 @@
 	[#{$selector}]:hover:before {
 		display:block;
 	}
-	@if $config-support-dark-mode {
-		@media (prefers-color-scheme: dark) {
-			[#{$selector}]:before {
-				background-color: $gray-500;
-			}
-		}
-	}
+	@include dark_mode.top-layer('[#{$selector}]:before');
 }

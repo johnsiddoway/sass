@@ -1,0 +1,24 @@
+@use "../configuration" as *;
+@use "../variables" as *;
+
+@mixin base-layer($selector) {
+    @if $config-support-dark-mode {
+        @media (prefers-color-scheme: dark) {
+            #{$selector} {
+                background-color: $black;
+                color: $white;
+            }
+        }
+    }
+}
+
+@mixin top-layer($selector) {
+    @if $config-support-dark-mode {
+        @media (prefers-color-scheme: dark) {
+            #{$selector} {
+                background-color: $gray-200;
+                color: $black;
+            }
+        }
+    }
+}

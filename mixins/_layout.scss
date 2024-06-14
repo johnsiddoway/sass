@@ -1,9 +1,12 @@
+@use "./dark_mode";
+
 @mixin make-root($selector: body) {
 	#{$selector} {
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
 	}
+	@include dark_mode.base-layer($selector);
 }
 
 @mixin use-default-layout($header-brand-selector: '.brand') {
