@@ -1,5 +1,6 @@
-@use './box_shadow' as *;
-@use '../variables' as *;
+@use "../configuration" as *;
+@use "../variables" as *;
+@use './box_shadow';
 
 @mixin make-abbr($selector: 'abbr') {
 	#{$selector} {
@@ -26,10 +27,17 @@
 		max-width: calc(100dvw - 3rem);
 		border: 1px solid currentColor;
 		padding: 0.375em 0.75em;
-		background: $white;
-		@include box-shadow();
+		background-color: $white;
+		@include box_shadow.box-shadow();
 	}
 	[#{$selector}]:hover:before {
 		display:block;
+	}
+	@if $config-support-dark-mode {
+		@media (prefers-color-scheme: dark) {
+			[#{$selector}]:before {
+				background-color: $gray-500;
+			}
+		}
 	}
 }

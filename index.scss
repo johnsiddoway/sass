@@ -1,20 +1,3 @@
-$-reset-styles: false;
-$-root: null;
-$-abbr-selector: null;
-$-buttons-make-theme-variants: null;
-$-buttons-make-theme-variants-inverted: null;
-$-buttons-use-base: null;
-$-cards-selector: null;
-$-details-selector: null;
-$-dialog-selector: null;
-$-forms-selector: null;
-$-table-selector: null;
-$-table-wrapper-selector: null;
-$-theme-colors: null;
-$-toggle-selector: null;
-$-tooltip-selector: null;
-
-// @import "functions";
 @forward "variables";
 @forward "mixins/buttons";
 @forward "mixins/cards";
@@ -28,11 +11,14 @@ $-tooltip-selector: null;
 @forward "mixins/tables";
 @forward "mixins/toggles";
 @forward "mixins/typography";
+@use "configuration" as *;
 @use "variables" as v;
 @use "mixins/buttons";
 @use "mixins/cards";
+@use "mixins/containers";
 @use "mixins/details";
 @use "mixins/dialog";
+@use "mixins/flex";
 @use "mixins/forms";
 @use "mixins/layout";
 @use "mixins/reset";
@@ -40,96 +26,99 @@ $-tooltip-selector: null;
 @use "mixins/toggles";
 @use "mixins/typography";
 
-@mixin configure($reset-styles: null, $root: null, $abbr-selector: null, $buttons-make-theme-variants: null, $buttons-make-theme-variants-inverted: null, $buttons-use-base: null,
-		$cards-selector: null, $details-selector: null, $dialog-selector: null, $forms-selector: null, $table-selector: null, $table-wrapper-selector: null,
-		$theme-colors: v.$theme-colors, $toggle-selector: null, $tooltip-selector: null) {
+@mixin configure($reset-styles: null, $root: null, $abbr-selector: null, $buttons-make-theme-variants: null, $buttons-make-theme-variants-inverted: null,
+		$buttons-use-base: null, $cards-selector: null, $details-selector: null, $dialog-selector: null, $forms-selector: null, $support-dark-mode: null,
+		$table-selector: null, $table-wrapper-selector: null, $theme-colors: v.$theme-colors, $toggle-selector: null, $tooltip-selector: null) {
 	@if $reset-styles {
-		$-reset-styles: $reset-styles !global;
+		$config-reset-styles: $reset-styles !global;
 	}
 	@if $root {
-		$-root: $root !global;
+		$config-root: $root !global;
 	}
 	@if $abbr-selector {
-		$-abbr-selector: $abbr-selector !global;
+		$config-abbr-selector: $abbr-selector !global;
 	}
 	@if $buttons-make-theme-variants {
-		$-buttons-make-theme-variants: $buttons-make-theme-variants !global;
+		$config-buttons-make-theme-variants: $buttons-make-theme-variants !global;
 	}
 	@if $buttons-make-theme-variants-inverted {
-		$-buttons-make-theme-variants-inverted: $buttons-make-theme-variants-inverted !global;
+		$config-buttons-make-theme-variants-inverted: $buttons-make-theme-variants-inverted !global;
 	}
 	@if $buttons-use-base {
-		$-buttons-use-base: $buttons-use-base !global;
+		$config-buttons-use-base: $buttons-use-base !global;
 	}
 	@if $cards-selector {
-		$-cards-selector: $cards-selector !global;
+		$config-cards-selector: $cards-selector !global;
 	}
 	@if $details-selector {
-		$-details-selector: $details-selector !global;
+		$config-details-selector: $details-selector !global;
 	}
 	@if $dialog-selector {
-		$-dialog-selector: $dialog-selector !global;
+		$config-dialog-selector: $dialog-selector !global;
 	}
 	@if $forms-selector {
-		$-forms-selector: $forms-selector !global;
+		$config-forms-selector: $forms-selector !global;
+	}
+	@if $support-dark-mode {
+		$config-support-dark-mode: $support-dark-mode !global;
 	}
 	@if $table-selector {
-		$-table-selector: $table-selector !global;
+		$config-table-selector: $table-selector !global;
 	}
 	@if $table-wrapper-selector {
-		$-table-wrapper-selector: $table-wrapper-selector !global;
+		$config-table-wrapper-selector: $table-wrapper-selector !global;
 	}
 	@if $theme-colors {
-		$-theme-colors: $theme-colors !global;
+		$config-theme-colors: $theme-colors !global;
 	}
 	@if $toggle-selector {
-		$-toggle-selector: $toggle-selector !global;
+		$config-toggle-selector: $toggle-selector !global;
 	}
 	@if $tooltip-selector {
-		$-tooltip-selector: $tooltip-selector !global;
+		$config-tooltip-selector: $tooltip-selector !global;
 	}
 }
 
 @mixin styles {
-	@if $-reset-styles {
+	@if $config-reset-styles {
 		@include reset.reset-styles();
 	}
 	// Typography / Base HTML Elements
-	@if $-abbr-selector {
-		@include typography.make-abbr($selector: $-abbr-selector);
+	@if $config-abbr-selector {
+		@include typography.make-abbr($selector: $config-abbr-selector);
 	}
-	@if $-buttons-use-base {
+	@if $config-buttons-use-base {
 		@include buttons.make-button-base();
 	}
-	@if $-forms-selector {
-		@include forms.make-forms($selector: $-forms-selector);
+	@if $config-forms-selector {
+		@include forms.make-forms($selector: $config-forms-selector);
 	}
-	@if $-tooltip-selector {
-		@include typography.make-tooltips($selector: $-tooltip-selector);
+	@if $config-tooltip-selector {
+		@include typography.make-tooltips($selector: $config-tooltip-selector);
 	}
-	@if $-details-selector {
-		@include details.make-details($selector: $-details-selector);
+	@if $config-details-selector {
+		@include details.make-details($selector: $config-details-selector);
 	}
-	@if $-dialog-selector {
-		@include dialog.make-dialogs($selector: $-dialog-selector);
+	@if $config-dialog-selector {
+		@include dialog.make-dialogs($selector: $config-dialog-selector);
 	}
-	@if $-table-selector {
-		@include tables.make-tables($selector: $-table-selector, $wrapper-selector: $-table-wrapper-selector);
+	@if $config-table-selector {
+		@include tables.make-tables($selector: $config-table-selector, $wrapper-selector: $config-table-wrapper-selector);
 	}
 	// Advanced Layout
-	@if $-root {
-		@include layout.make-root($-root);
+	@if $config-root {
+		@include layout.make-root($config-root);
 	}
-	@if $-buttons-make-theme-variants {
-		@include buttons.make-button-variants($color-map: $-theme-colors);
+	@if $config-buttons-make-theme-variants {
+		@include buttons.make-button-variants($color-map: $config-theme-colors);
 	}
-	@if $-buttons-make-theme-variants-inverted {
-		@include buttons.make-button-variants-inverted($color-map: $-theme-colors);
+	@if $config-buttons-make-theme-variants-inverted {
+		@include buttons.make-button-variants-inverted($color-map: $config-theme-colors);
 	}
-	@if $-cards-selector {
-		@include cards.make-cards($selector: $-cards-selector);
+	@if $config-cards-selector {
+		@include cards.make-cards($selector: $config-cards-selector);
 	}
-	@if $-toggle-selector {
-		@include toggles.make-toggles($selector: $-toggle-selector);
+	@if $config-toggle-selector {
+		@include toggles.make-toggles($selector: $config-toggle-selector);
 	}
 }
