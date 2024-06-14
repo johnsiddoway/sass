@@ -5,7 +5,7 @@
     @if $config-support-dark-mode {
         @media (prefers-color-scheme: dark) {
             #{$selector} {
-                background-color: $black;
+                background-color: $gray-800;
                 color: $white;
             }
         }
