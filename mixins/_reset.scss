@@ -1,7 +1,7 @@
 // Mostly following the styles from this blog post,
 // as I also want to keep this as un-opinionated as possible.
 // https://keithjgrant.com/posts/2024/01/my-css-resets/
-@mixin reset-styles() {
+@mixin reset-styles {
 	*,
 	*::before,
 	*::after {

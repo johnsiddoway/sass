@@ -1,3 +1,5 @@
+@forward "configuration";
+@forward "opinionated";
 @forward "variables";
 @forward "mixins/buttons";
 @forward "mixins/cards";
@@ -6,11 +8,11 @@
 @forward "mixins/dialog";
 @forward "mixins/flex";
 @forward "mixins/forms";
-@forward "mixins/layout";
 @forward "mixins/reset";
 @forward "mixins/tables";
 @forward "mixins/toggles";
 @forward "mixins/typography";
+
 @use "configuration" as *;
 @use "variables" as v;
 @use "mixins/buttons";
@@ -20,68 +22,14 @@
 @use "mixins/dialog";
 @use "mixins/flex";
 @use "mixins/forms";
-@use "mixins/layout";
 @use "mixins/reset";
 @use "mixins/tables";
 @use "mixins/toggles";
 @use "mixins/typography";
 
-@mixin configure($reset-styles: null, $root: null, $abbr-selector: null, $buttons-make-theme-variants: null, $buttons-make-theme-variants-inverted: null,
-		$buttons-use-base: null, $cards-selector: null, $details-selector: null, $dialog-selector: null, $forms-selector: null, $support-dark-mode: null,
-		$table-selector: null, $table-wrapper-selector: null, $theme-colors: v.$theme-colors, $toggle-selector: null, $tooltip-selector: null) {
-	@if $reset-styles {
-		$config-reset-styles: $reset-styles !global;
-	}
-	@if $root {
-		$config-root: $root !global;
-	}
-	@if $abbr-selector {
-		$config-abbr-selector: $abbr-selector !global;
-	}
-	@if $buttons-make-theme-variants {
-		$config-buttons-make-theme-variants: $buttons-make-theme-variants !global;
-	}
-	@if $buttons-make-theme-variants-inverted {
-		$config-buttons-make-theme-variants-inverted: $buttons-make-theme-variants-inverted !global;
-	}
-	@if $buttons-use-base {
-		$config-buttons-use-base: $buttons-use-base !global;
-	}
-	@if $cards-selector {
-		$config-cards-selector: $cards-selector !global;
-	}
-	@if $details-selector {
-		$config-details-selector: $details-selector !global;
-	}
-	@if $dialog-selector {
-		$config-dialog-selector: $dialog-selector !global;
-	}
-	@if $forms-selector {
-		$config-forms-selector: $forms-selector !global;
-	}
-	@if $support-dark-mode {
-		$config-support-dark-mode: $support-dark-mode !global;
-	}
-	@if $table-selector {
-		$config-table-selector: $table-selector !global;
-	}
-	@if $table-wrapper-selector {
-		$config-table-wrapper-selector: $table-wrapper-selector !global;
-	}
-	@if $theme-colors {
-		$config-theme-colors: $theme-colors !global;
-	}
-	@if $toggle-selector {
-		$config-toggle-selector: $toggle-selector !global;
-	}
-	@if $tooltip-selector {
-		$config-tooltip-selector: $tooltip-selector !global;
-	}
-}
-
 @mixin styles {
 	@if $config-reset-styles {
-		@include reset.reset-styles();
+		@include reset.reset-styles;
 	}
 	// Typography / Base HTML Elements
 	@if $config-abbr-selector {
@@ -106,9 +54,6 @@
 		@include tables.make-tables($selector: $config-table-selector, $wrapper-selector: $config-table-wrapper-selector);
 	}
 	// Advanced Layout
-	@if $config-root {
-		@include layout.make-root($config-root);
-	}
 	@if $config-buttons-make-theme-variants {
 		@include buttons.make-button-variants($color-map: $config-theme-colors);
 	}

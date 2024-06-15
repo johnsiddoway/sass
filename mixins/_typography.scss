@@ -1,4 +1,3 @@
-@use "../configuration" as *;
 @use "../variables" as *;
 @use "./box_shadow";
 @use "./dark_mode";
@@ -11,13 +10,13 @@
 	}
 }
 
-@mixin make-tooltips($selector: 'data-title') {
-	[#{$selector}] {
+@mixin make-tooltips($selector: '[data-title]', $content-selector: 'data-title') {
+	#{$selector} {
 		position:relative; /* making the .tooltip span a container for the tooltip text */
 		border-bottom:1px dashed currentColor; /* little indicater to indicate it's hoverable */
 	}
-	[#{$selector}]:before {
-		content: attr(#{$selector}); /* here's the magic */
+	#{$selector}:before {
+		content: attr(#{$content-selector}); /* here's the magic */
 		position:absolute;
 		z-index: 10;
 		// Position the tooltip below the original element
@@ -31,8 +30,8 @@
 		background-color: $white;
 		@include box_shadow.box-shadow();
 	}
-	[#{$selector}]:hover:before {
+	#{$selector}:hover:before {
 		display:block;
 	}
-	@include dark_mode.top-layer('[#{$selector}]:before');
+	@include dark_mode.top-layer('#{$selector}:before');
 }
