@@ -1,10 +1,11 @@
-@use "variables" as *;
+@use "variables";
 @use "mixins/containers";
 @use "mixins/dark_mode";
 @use "mixins/flex";
 @use "mixins/reset";
 
-@mixin opinionated-layout($root-selector: body, $header-selector: header, $header-title-selector: 'a.brand', $main-selector: main, $main-breakpoints: null, $footer-selector: footer) {
+@mixin opinionated-layout($root-selector: body, $header-selector: header, $header-title-selector: 'a.brand', $main-selector: main, $main-breakpoints: variables.$container-breakpoints, $footer-selector: footer) {
+
 	@include reset.reset-styles;
 
 	#{$root-selector} {
@@ -13,7 +14,7 @@
 		flex-direction: column;
 		min-height: 100vh;
 		// Additional styling on the root selector.
-		font-family: $font-family-sans-serif;
+		font-family: variables.$font-family-sans-serif;
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
@@ -24,8 +25,8 @@
     #{$root-selector} > #{$header-selector} {
         margin-bottom: 1.5rem;
 		// TODO: Maybe split this out to opinionated-theme?
-        background-color: $black;
-        color: $light;
+        background-color: variables.$black;
+        color: variables.$light;
 
         nav {
             @include containers.make-container($padding: 0.5rem 0.75rem);
@@ -42,18 +43,18 @@
 
             &:active,
             &:hover {
-                color: $white;
+                color: variables.$white;
             }
         }
 
         #{$header-title-selector} {
-            font-weight: $font-weight-bold;
-            font-size: $font-size-lg;
+            font-weight: variables.$font-weight-bold;
+            font-size: variables.$font-size-lg;
         }
     }
 
     #{$root-selector} > #{$main-selector} {
-        @include containers.make-container($main-breakpoints);
+        @include containers.make-container($breakpoints: $main-breakpoints);
         @include flex.make-flex($flex-wrap: wrap, $column-gap: 5rem);
 
         > * {
@@ -66,7 +67,7 @@
         margin-top: auto;
         padding: 0.5rem 0;
         text-align: center;
-        background-color: $dark;
-        color: $light;
+        background-color: variables.$dark;
+        color: variables.$light;
     }
 }
