@@ -1,0 +1,5 @@
+@use '../variables';
+
+@mixin box-shadow($box-shadow-value: variables.$default-box-shadow) {
+	box-shadow: $box-shadow-value;
+}

@@ -1,6 +1,6 @@
 @use "../variables" as *;
 
-@mixin make-toggles($selector: '.toggle') {
+@mixin toggles($selector: '.toggle') {
 	#{$selector} {
 		display: flex;
 		flex-direction: row;

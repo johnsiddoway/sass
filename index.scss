@@ -1,69 +1,16 @@
 @forward "configuration";
 @forward "opinionated";
 @forward "variables";
-@forward "mixins/buttons";
-@forward "mixins/cards";
-@forward "mixins/containers";
-@forward "mixins/details";
-@forward "mixins/dialog";
-@forward "mixins/flex";
-@forward "mixins/forms";
-@forward "mixins/reset";
-@forward "mixins/tables";
-@forward "mixins/toggles";
-@forward "mixins/typography";
-
-@use "configuration" as *;
-@use "variables" as v;
-@use "mixins/buttons";
-@use "mixins/cards";
-@use "mixins/containers";
-@use "mixins/details";
-@use "mixins/dialog";
-@use "mixins/flex";
-@use "mixins/forms";
-@use "mixins/reset";
-@use "mixins/tables";
-@use "mixins/toggles";
-@use "mixins/typography";
-
-@mixin styles {
-	@if $config-reset-styles {
-		@include reset.reset-styles;
-	}
-	// Typography / Base HTML Elements
-	@if $config-abbr-selector {
-		@include typography.make-abbr($selector: $config-abbr-selector);
-	}
-	@if $config-buttons-use-base {
-		@include buttons.make-button-base();
-	}
-	@if $config-forms-selector {
-		@include forms.make-forms($selector: $config-forms-selector);
-	}
-	@if $config-tooltip-selector {
-		@include typography.make-tooltips($selector: $config-tooltip-selector);
-	}
-	@if $config-details-selector {
-		@include details.make-details($selector: $config-details-selector);
-	}
-	@if $config-dialog-selector {
-		@include dialog.make-dialogs($selector: $config-dialog-selector);
-	}
-	@if $config-table-selector {
-		@include tables.make-tables($selector: $config-table-selector, $wrapper-selector: $config-table-wrapper-selector);
-	}
-	// Advanced Layout
-	@if $config-buttons-make-theme-variants {
-		@include buttons.make-button-variants($color-map: $config-theme-colors);
-	}
-	@if $config-buttons-make-theme-variants-inverted {
-		@include buttons.make-button-variants-inverted($color-map: $config-theme-colors);
-	}
-	@if $config-cards-selector {
-		@include cards.make-cards($selector: $config-cards-selector);
-	}
-	@if $config-toggle-selector {
-		@include toggles.make-toggles($selector: $config-toggle-selector);
-	}
-}
+@forward "components/abbreviations";
+@forward "components/buttons";
+@forward "components/cards";
+@forward "components/details";
+@forward "components/dialogs";
+@forward "components/forms";
+@forward "components/flex";
+@forward "components/input_range";
+@forward "components/layout";
+@forward "components/reset";
+@forward "components/tables";
+@forward "components/toggles";
+@forward "components/tooltips";

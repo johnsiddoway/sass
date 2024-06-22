@@ -1,0 +1,12 @@
+@use "../variables";
+
+@mixin details($selector: 'details') {
+	#{$selector} {
+		border-bottom: 1px solid currentColor;
+	
+		summary {
+			padding: variables.$default-padding;
+			cursor: pointer;
+		}
+	}
+}

@@ -1,5 +1,5 @@
 // By declaring this as a mixin, this becomes "opt-in" for consuming packages
-@mixin input-range() {
+@mixin input-range {
     -webkit-appearance: none;
     appearance: none; /* Hides the slider so that custom slider can be made */
     width: 100%; /* Specific width is required for Firefox. */

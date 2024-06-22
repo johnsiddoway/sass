@@ -1,4 +1,4 @@
-@mixin make-forms($selector: 'form') {
+@mixin forms($selector: 'form') {
 	#{$selector} {
 		margin: 0 0 1rem 0;
 		border: 0;

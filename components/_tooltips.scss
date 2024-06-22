@@ -1,0 +1,28 @@
+@use "../variables";
+@use "./box_shadow";
+
+@mixin tooltips($selector: 'data-title') {
+	[#{$selector}] {
+		position:relative; /* making the .tooltip span a container for the tooltip text */
+		border-bottom:1px dashed currentColor; /* little indicater to indicate it's hoverable */
+	}
+	[#{$selector}]:before {
+		content: attr(#{$selector}); /* here's the magic */
+		position:absolute;
+		z-index: 10;
+		// Position the tooltip below the original element
+		top: 125%;
+		display:none; /* hide by default */
+		/* basic styles */
+		width: max-content;
+		max-width: calc(100dvw - 3rem);
+		border: 1px solid currentColor;
+		padding: variables.$default-padding;
+		background-color: variables.$white;
+		@include box_shadow.box-shadow;
+	}
+	[#{$selector}]:hover:before {
+		display:block;
+	}
+	// @include dark_mode.top-layer('[#{$selector}]:before');
+}

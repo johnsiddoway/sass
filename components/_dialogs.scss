@@ -1,4 +1,4 @@
-@mixin make-dialogs($selector: 'dialog') {
+@mixin dialogs($selector: 'dialog') {
 	#{$selector} {
 		form {
 			margin-bottom: 0;

@@ -1,4 +1,4 @@
-@mixin make-tables($selector: 'table', $wrapper-selector: '.table-wrapper') {
+@mixin tables($selector: 'table', $wrapper-selector: '.table-wrapper') {
 	@if $wrapper-selector {
 		#{$wrapper-selector} {
 			overflow-x: auto;
