@@ -1,5 +1,5 @@
-@use "../variables";
-@use "./box_shadow";
+@use "../utils/variables";
+@use "box-shadow";
 
 @mixin tooltips($selector: 'data-title') {
 	[#{$selector}] {
@@ -19,7 +19,7 @@
 		border: 1px solid currentColor;
 		padding: variables.$default-padding;
 		background-color: variables.$white;
-		@include box_shadow.box-shadow;
+		@include box-shadow.box-shadow;
 	}
 	[#{$selector}]:hover:before {
 		display:block;

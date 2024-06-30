@@ -1,0 +1,27 @@
+@use "../utils/variables" as *;
+@use "header";
+@use "footer";
+@use "main";
+@use "root";
+
+@mixin default-layout {
+	#{$layout-root-selector} {
+        @extend %root;
+        // font-size: 1rem;
+        // font-weight: 400;
+        // line-height: 1.5;
+        // text-align: start;
+
+        & > #{$layout-header-selector} {
+			@extend %header;
+        }
+
+        & > #{$layout-main-selector} {
+			@extend %main;
+        }
+
+        & > #{$layout-footer-selector} {
+			@extend %footer;
+        }
+    }
+}

@@ -87,6 +87,10 @@ $container-max-widths: (
 	'4xl': 1800px) !default;
 // containers end
 
+$footer-margin-top: auto !default;
+$footer-padding: 0.5rem 0 !default;
+$footer-text-align: center !default;
+
 // // Custom stuff not pulled from bootstrap
 
 $default-border: 1px solid currentColor;
@@ -117,12 +121,13 @@ $input-text-border-color: $primary !default;
 $input-text-focus-box-shadow: 0 0 0.5rem 0 tint-color($primary, 25%) !default;
 
 // layout start
-$layout-root-selector: body;
-$layout-header-selector: header;
-$layout-header-title-selector: 'a.brand';
-$layout-main-selector: main;
-$layout-main-breakpoints: $container-breakpoints;
-$layout-footer-selector: footer;
+$layout-root-selector: body !default;
+$layout-header-selector: header !default;
+$layout-header-title-selector: 'a.brand' !default;
+$layout-main-selector: main !default;
+$layout-main-breakpoints: $container-breakpoints !default;
+$layout-main-breakpoints: 'lg','xl','2xl' !default;
+$layout-footer-selector: footer !default;
 // layout end
 
 @mixin configure($include-theme: true, $reset-styles: false, $support-dark-mode: true, $theme-colors: null) {

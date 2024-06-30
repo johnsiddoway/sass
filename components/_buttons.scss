@@ -1,6 +1,6 @@
 @use "sass:meta";
-@use "../functions";
-@use "../variables";
+@use "../utils/functions";
+@use "../utils/variables";
 
 @mixin buttons {
 	@include button-base;

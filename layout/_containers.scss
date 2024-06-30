@@ -1,4 +1,4 @@
-@use "../variables" as *;
+@use "../utils/variables" as *;
 
 @mixin make-container($padding: $container-padding, $breakpoints: $container-breakpoints, $grid-breakpoints: $container-grid-breakpoints, $max-widths: $container-max-widths) {
 	padding: $padding;

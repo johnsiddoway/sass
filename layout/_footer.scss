@@ -1,0 +1,7 @@
+@use "../utils/variables" as *;
+
+%footer {
+	margin-top: $footer-margin-top;
+	padding: $footer-padding;
+	text-align: $footer-text-align;
+}

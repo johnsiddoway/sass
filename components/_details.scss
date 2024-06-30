@@ -1,4 +1,4 @@
-@use "../variables";
+@use "../utils/variables";
 
 @mixin details($selector: 'details') {
 	#{$selector} {

@@ -1,5 +1,5 @@
-@use '../variables';
-@use "./box_shadow";
+@use '../utils/variables';
+@use "./box-shadow";
 // @use "./dark_mode";
 
 // This is what Material UI calls a "Card" or a "Paper" surface.
@@ -12,7 +12,7 @@
 		padding: $padding;
 		background-color: $background-color;
 		color: $color;
-		@include box_shadow.box-shadow;
+		@include box-shadow.box-shadow;
 	}
 	// @include dark_mode.top-layer($selector);
 }
