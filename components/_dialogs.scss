@@ -1,7 +1,12 @@
+%dialog {
+	padding: 1rem;
+	form {
+		margin-bottom: 0;
+	}
+}
+
 @mixin dialogs($selector: 'dialog') {
 	#{$selector} {
-		form {
-			margin-bottom: 0;
-		}
+		@extend %dialog;
 	}
 }
