@@ -3,13 +3,16 @@
 @use "flex";
 
 %main {
-	@include containers.make-container($layout-main-breakpoints);
-	@include flex.make-flex($flex-wrap: wrap, $column-gap: 5rem);
-	margin-bottom: 1.5rem;
-	padding: 0 0.75rem;
+    @include containers.make-container($layout-main-breakpoints);
+    @include flex.make-flex($flex-wrap: wrap, $column-gap: 5rem);
 
-	> * {
-		flex: 1 1 0%;
-		max-width: 100%;
-	}
+    & {
+        margin-bottom: 1.5rem;
+        padding: 0 0.75rem;
+
+        > * {
+            flex: 1 1 0%;
+            max-width: 100%;
+        }
+    }
 }

@@ -5,8 +5,21 @@
 	}
 }
 
-@mixin dialogs($selector: 'dialog') {
-	#{$selector} {
+%modal-dialog {
+	@extend %dialog;
+	&::backdrop {
+		background: rgba(0, 0, 0, 0.1);
+	}
+}
+
+@mixin dialogs {
+	dialog,
+	[popover="manual"] {
+		@extend %modal-dialog;
+	}
+
+	[popover],
+	[popover="auto"] {
 		@extend %dialog;
 	}
 }
