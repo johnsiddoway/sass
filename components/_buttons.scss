@@ -10,14 +10,12 @@
 
 @mixin button-base($font-size: variables.$button-font-size) {
 	button {
-		padding: variables.$default-padding;
+		padding: variables.$button-padding;
 		background-color: transparent;
 		color: inherit;
 		border: 1px solid currentColor;
 		cursor: pointer;
-		@if $font-size != variables.$button-font-size {
-			font-size: $font-size;
-		}
+		font-size: $font-size;
 
 		&:disabled {
 			cursor: default;
