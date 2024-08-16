@@ -5,10 +5,10 @@
     margin-bottom: 1.5rem;
 
     nav {
-        @include containers.make-container();
-        @include flex.make-flex($align-items: baseline, /*$justify-content: space-between*/ $column-gap: 1rem);
-        & {
-            padding: 0.5rem 0.75rem;
-        }
+        @extend %container;
+		display: flex;
+		align-items: baseline;
+		column-gap: 1rem;
+		padding: 0.5rem 0.75rem;
     }
 }

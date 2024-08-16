@@ -1,3 +1,5 @@
+@use "../utils/variables";
+
 // By declaring this as a mixin, this becomes "opt-in" for consuming packages
 @mixin input-range {
     -webkit-appearance: none;
@@ -10,40 +12,40 @@
     &:hover,
     &:focus-visible {
         &::-webkit-slider-thumb {
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
 
         &::-moz-range-thumb {
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
 
         &::-ms-thumb {
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
     }
 
     // Webkit/Blink -based browsers
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
-        margin-top: ($input-range-track-height - $input-range-thumb-height) * .5; // Webkit specific
-        width: $input-range-thumb-width;
-        height: $input-range-thumb-height;
-        background-color: $input-range-thumb-bg;
-        border: 1px solid $input-range-thumb-border-color;
-        border-radius: $input-range-thumb-border-radius;
-        cursor: $input-range-thumb-cursor;
+        margin-top: (variables.$input-range-track-height - variables.$input-range-thumb-height) * .5; // Webkit specific
+        width: variables.$input-range-thumb-width;
+        height: variables.$input-range-thumb-height;
+        background-color: variables.$input-range-thumb-bg;
+        border: 1px solid variables.$input-range-thumb-border-color;
+        border-radius: variables.$input-range-thumb-border-radius;
+        cursor: variables.$input-range-thumb-cursor;
 
         &:focus-visible,
         &:hover {
             outline: none;
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
     }
 
     &::-webkit-slider-runnable-track {
-        width: $input-range-track-width;
-        height: $input-range-track-height;
-        background: $input-range-track-bg;
+        width: variables.$input-range-track-width;
+        height: variables.$input-range-track-height;
+        background: variables.$input-range-track-bg;
         cursor: pointer;
     }
 
@@ -51,24 +53,24 @@
     &::-moz-range-thumb {
         appearance: none;
         -webkit-appearance: none;
-        width: $input-range-thumb-width;
-        height: $input-range-thumb-height;
-        background-color: $input-range-thumb-bg;
-        border: 1px solid $input-range-thumb-border-color;
-        border-radius: $input-range-thumb-border-radius;
-        cursor: $input-range-thumb-cursor;
+        width: variables.$input-range-thumb-width;
+        height: variables.$input-range-thumb-height;
+        background-color: variables.$input-range-thumb-bg;
+        border: 1px solid variables.$input-range-thumb-border-color;
+        border-radius: variables.$input-range-thumb-border-radius;
+        cursor: variables.$input-range-thumb-cursor;
 
         &:focus-visible,
         &:hover {
             outline: none;
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
     }
 
     &::-moz-range-track {
-        width: $input-range-track-width;
-        height: $input-range-track-height;
-        background: $input-range-track-bg;
+        width: variables.$input-range-track-width;
+        height: variables.$input-range-track-height;
+        background: variables.$input-range-track-bg;
         cursor: pointer;
     }
 
@@ -76,24 +78,24 @@
     &::-ms-thumb {
         appearance: none;
         -webkit-appearance: none;
-        width: $input-range-thumb-width;
-        height: $input-range-thumb-height;
-        background-color: $input-range-thumb-bg;
-        border: 1px solid $input-range-thumb-border-color;
-        border-radius: $input-range-thumb-border-radius;
-        cursor: $input-range-thumb-cursor;
+        width: variables.$input-range-thumb-width;
+        height: variables.$input-range-thumb-height;
+        background-color: variables.$input-range-thumb-bg;
+        border: 1px solid variables.$input-range-thumb-border-color;
+        border-radius: variables.$input-range-thumb-border-radius;
+        cursor: variables.$input-range-thumb-cursor;
 
         &:focus-visible,
         &:hover {
             outline: none;
-            box-shadow: $input-range-thumb-focus-box-shadow;
+            box-shadow: variables.$input-range-thumb-focus-box-shadow;
         }
     }
 
     &::-ms-track {
-        width: $input-range-track-width;
-        height: $input-range-track-height;
-        background: $input-range-track-bg;
+        width: variables.$input-range-track-width;
+        height: variables.$input-range-track-height;
+        background: variables.$input-range-track-bg;
         cursor: pointer;
         /* Hides the slider so custom styles can be added */
         background: transparent;

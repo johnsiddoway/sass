@@ -2,19 +2,22 @@
 @use "../utils/functions";
 @use "../utils/variables";
 
-@mixin buttons {
-	@include button-base;
+@mixin buttons($font-size: variables.$button-font-size) {
+	@include button-base($font-size: $font-size);
 	@include themed-buttons;
 	@include themed-buttons-inverted;
 }
 
-@mixin button-base() {
+@mixin button-base($font-size: variables.$button-font-size) {
 	button {
 		padding: variables.$default-padding;
 		background-color: transparent;
 		color: inherit;
 		border: 1px solid currentColor;
 		cursor: pointer;
+		@if $font-size != variables.$button-font-size {
+			font-size: $font-size;
+		}
 
 		&:disabled {
 			cursor: default;
