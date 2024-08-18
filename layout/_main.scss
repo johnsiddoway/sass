@@ -1,17 +1,19 @@
-@use "../utils/variables" as *;
-@use "containers";
-@use "flex";
+@use '../utils/variables' as *;
+@use 'containers';
+@use 'flex';
 
 %main {
-    @include containers.make-container($layout-main-breakpoints);
-    @include flex.make-flex($flex-wrap: wrap, $column-gap: 5rem);
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.75rem;
+
+    > * {
+        flex: 1 1 0%;
+    }
 
     & {
-        margin-bottom: 1.5rem;
-        padding: 0 0.75rem;
-
-        > * {
-            flex: 1 1 0%;
-        }
+        @include containers.make-container($layout-main-breakpoints);
     }
 }

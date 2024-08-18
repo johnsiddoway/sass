@@ -1,26 +1,26 @@
 {
-	"name": "@johnsiddoway/sass",
-	"version": "4.1.1",
-	"description": "Custom Sass files for use in my personal projects.",
-	"main": "index.scss",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/johnsiddoway/sass.git"
-	},
-	"keywords": [
-		"sass"
-	],
-	"author": "John Siddoway",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/johnsiddoway/sass/issues"
-	},
-	"homepage": "https://github.com/johnsiddoway/sass#readme",
-	"dependencies": {},
-	"publishConfig": {
-		"access": "public"
-	}
+    "name": "@johnsiddoway/sass",
+    "version": "4.1.2",
+    "description": "Custom Sass files for use in my personal projects.",
+    "main": "index.scss",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/johnsiddoway/sass.git"
+    },
+    "keywords": [
+        "sass"
+    ],
+    "author": "John Siddoway",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/johnsiddoway/sass/issues"
+    },
+    "homepage": "https://github.com/johnsiddoway/sass#readme",
+    "dependencies": {},
+    "publishConfig": {
+        "access": "public"
+    }
 }
