@@ -31,14 +31,30 @@ export const Default: Story = {
     },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Hover: Story = {
+    parameters: { pseudo: { hover: true } },
+};
+
+export const Active: Story = {
+    parameters: { pseudo: { active: true } },
+};
+
+export const Focus: Story = {
+    parameters: { pseudo: { focusVisible: true } },
+};
+
+export const Disabled: Story = {
+    args: {
+        disabled: true,
+    }
+};
+
 export const Large: Story = {
     args: {
         className: 'btn-large'
     },
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Small: Story = {
     args: {
         className: 'btn-small',

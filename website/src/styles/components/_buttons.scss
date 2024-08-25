@@ -3,14 +3,35 @@
 @use '../variables';
 
 %button {
+    --btn-border-width: #{variables.$button-border-width};
+
     padding: variables.$button-padding;
     background-color: var(--btn-background-color);
     color: var(--btn-color);
-    border: 1px solid currentColor;
+    border: var(--btn-border-width) solid var(--btn-border-color);
     cursor: pointer;
+    outline: none;
+
+    &:active {
+        background-color: var(--btn-background-color-active);
+        border-color: var(--btn-border-color-active);
+        color: var(--btn-color-active);
+    }
 
     &:disabled {
         cursor: default;
+        pointer-events: none;
+        opacity: 0.65;
+    }
+
+    &:focus-visible {
+        box-shadow: 0 0 0.75rem 0 var(--btn-border-color);
+    }
+
+    &:hover {
+        background-color: var(--btn-background-color-hover);
+        border-color: var(--btn-border-color-hover);
+        color: var(--btn-color-hover);
     }
 }
 
@@ -65,28 +86,30 @@
     $background-scale-disabled: variables.$button-background-scale-disabled
 ) {
     @if ($color != inherit) {
-        color: #{$color};
+        --btn-color: #{$color};
     }
-    background-color: #{functions.shift-color($theme-color, $background-scale)};
-    border-color: variables.$dark;
+    --btn-background-color: #{functions.shift-color($theme-color, $background-scale)};
+    --btn-background-color-active: #{functions.shift-color($theme-color, $background-scale-active)};
+    --btn-background-color-hover: #{functions.shift-color($theme-color, $background-scale-hover)};
+    //--btn-border-color: ${variables.$dark};
 
-    &:disabled {
-        background-color: #{functions.shift-color($theme-color, $background-scale-disabled)};
-    }
+    // &:disabled {
+    //     background-color: #{functions.shift-color($theme-color, $background-scale-disabled)};
+    // }
 
-    &:focus-visible {
-        box-shadow: 0 0 0.5rem 0 variables.$dark;
-    }
+    // &:focus-visible {
+    //     box-shadow: 0 0 0.5rem 0 variables.$dark;
+    // }
 
-    &:focus-visible,
-    &:hover:not([disabled]) {
-        outline: none;
-        background-color: #{functions.shift-color($theme-color, $background-scale-hover)};
-    }
+    // &:focus-visible,
+    // &:hover:not([disabled]) {
+    //     outline: none;
+    //     background-color: #{functions.shift-color($theme-color, $background-scale-hover)};
+    // }
 
-    &:active:not([disabled]) {
-        background-color: #{functions.shift-color($theme-color, $background-scale-active)};
-    }
+    // &:active:not([disabled]) {
+    //     background-color: #{functions.shift-color($theme-color, $background-scale-active)};
+    // }
 }
 
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss

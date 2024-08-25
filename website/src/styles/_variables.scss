@@ -114,6 +114,21 @@ $button-background-scale: 0% !default;
 $button-background-scale-hover: -15% !default;
 $button-background-scale-active: -25% !default;
 $button-background-scale-disabled: -30% !default;
+
+$button-background-color: transparent;
+$button-background-color-active: $button-background-color;
+$button-background-color-hover: $button-background-color;
+
+$button-border-color: currentColor;
+$button-border-color-active: $button-border-color;
+$button-border-color-hover: $button-border-color;
+
+$button-border-width: 1px;
+
+$button-color: currentColor;
+$button-color-active: $button-color;
+$button-color-hover: $button-color;
+
 $button-font-size: $font-size-base !default;
 $button-padding: 0.375em 0.75em !default;
 

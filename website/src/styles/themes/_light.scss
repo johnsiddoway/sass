@@ -1,8 +1,14 @@
 @use '../variables';
 
 #{variables.$light-mode-selector} {
-    --btn-background-color: transparent;
-    --btn-color: #{variables.$dark};
-
-    background-color: variables.$light;
+    --btn-background-color: #{variables.$button-background-color};
+    --btn-background-color-active: #{variables.$gray-300};
+    --btn-background-color-hover: #{variables.$gray-200};
+    --btn-border-color: #{variables.$button-border-color};
+    --btn-border-color-active: #{variables.$button-border-color-active};
+    --btn-border-color-hover: #{variables.$button-border-color-hover};
+    --btn-border-width: #{variables.$button-border-width};
+    --btn-color: #{variables.$button-color};
+    --btn-color-active: #{variables.$button-color-active};
+    --btn-color-hover: #{variables.$button-color-hover};
 }
