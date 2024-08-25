@@ -90,12 +90,12 @@
 }
 
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_buttons.scss
-@mixin button-lg() {
+%btn-large {
     font-size: variables.$font-size-lg;
     padding: 0.5rem 1rem;
 }
 
-@mixin button-sm() {
+%btn-small {
     font-size: variables.$font-size-sm;
     padding: 0.25rem 0.5rem;
 }
