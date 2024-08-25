@@ -1,4 +1,7 @@
-@use './library.scss';
+$layout-root-selector: '.root';
+$dark-mode-selector: '.root.dark';
+
+@import './library.scss';
 
 @font-face {
     font-family: 'Open Sans';
@@ -8,8 +11,8 @@
     font-display: swap;
 }
 
-@include library.reset;
-@include library.buttons;
+@include reset;
+@include buttons;
 
 .btn-large {
     @extend %btn-large;
@@ -20,14 +23,9 @@
 }
 
 .root {
-    font-family: library.$font-family-sans-serif;
-    font-size: library.$font-size-base;
-    font-weight: library.$font-weight-normal;
-    line-height: library.$line-height-base;
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-base;
     text-align: start;
-
-    // TODO: Make a real dark-mode
-    &.dark {
-        background-color: #333;
-    }
 }

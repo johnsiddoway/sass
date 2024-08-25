@@ -138,7 +138,7 @@ $button-padding: 0.375em 0.75em !default;
 // $input-text-focus-box-shadow: 0 0 0.5rem 0 tint-color($primary, 25%) !default;
 
 // // layout start
-// $layout-root-selector: body !default;
+$layout-root-selector: body !default;
 // $layout-header-selector: header !default;
 // $layout-header-title-selector: 'a.brand' !default;
 // $layout-main-selector: main !default;
@@ -155,3 +155,6 @@ $button-padding: 0.375em 0.75em !default;
 //         $theme-colors: $theme-colors !global;
 //     }
 // }
+
+$dark-mode-selector: 'body.dark' !default;
+$light-mode-selector: $layout-root-selector !default;

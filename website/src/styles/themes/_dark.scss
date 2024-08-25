@@ -1,0 +1,8 @@
+@use '../variables';
+
+#{variables.$dark-mode-selector} {
+    --btn-background-color: transparent;
+    --btn-color: #{variables.$white};
+
+    background-color: #1b1b1b;
+}
