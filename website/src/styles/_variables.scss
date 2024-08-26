@@ -39,20 +39,76 @@ $dark: $black !default;
 // scss-docs-end theme-color-variables
 
 $theme-colors: (
-    'primary': $orange,
-    'info': $blue,
-    'success': $success,
-    'danger': $danger,
-    'orange': $orange,
-    'yellow': $yellow,
-    'green': $green,
-    'teal': $teal,
-    'cyan': $cyan,
-    'blue': $blue,
-    'indigo': $indigo,
-    'purple': $purple,
-    'pink': $pink,
-    'red': $red
+    'primary': (
+        'background-color': $orange,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'info': (
+        'background-color': $blue,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'success': (
+        'background-color': $success,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'danger': (
+        'background-color': $danger,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'orange': (
+        'background-color': $orange,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'yellow': (
+        'background-color': $yellow,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'green': (
+        'background-color': $green,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'teal': (
+        'background-color': $teal,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'cyan': (
+        'background-color': $cyan,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'blue': (
+        'background-color': $blue,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'indigo': (
+        'background-color': $indigo,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'purple': (
+        'background-color': $purple,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'pink': (
+        'background-color': $pink,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'red': (
+        'background-color': $red,
+        'color': $dark,
+        'border-color': $dark
+    )
 ) !default;
 
 // Typography
@@ -112,7 +168,7 @@ $line-height-base: 1.5 !default;
 
 $button-background-scale: 0% !default;
 $button-background-scale-hover: -15% !default;
-$button-background-scale-active: -25% !default;
+$button-background-scale-active: -50% !default;
 $button-background-scale-disabled: -30% !default;
 
 $button-background-color: transparent;

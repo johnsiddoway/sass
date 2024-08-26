@@ -22,7 +22,7 @@ $dark-mode-selector: '.root.dark';
     @extend %btn-small;
 }
 
-.root {
+#{$layout-root-selector} {
     font-family: $font-family-sans-serif;
     font-size: $font-size-base;
     font-weight: $font-weight-normal;

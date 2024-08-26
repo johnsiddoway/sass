@@ -67,6 +67,27 @@ export const Primary: Story = {
     },
 };
 
+export const PrimaryActive: Story = {
+    args: {
+        className: 'btn-primary',
+    },
+    parameters: { pseudo: { active: true } },
+};
+
+export const PrimaryHover: Story = {
+    args: {
+        className: 'btn-primary',
+    },
+    parameters: { pseudo: { hover: true } },
+};
+
+export const PrimaryFocus: Story = {
+    args: {
+        className: 'btn-primary',
+    },
+    parameters: { pseudo: { focusVisible: true } },
+};
+
 export const Info: Story = {
     args: {
         className: 'btn-info',

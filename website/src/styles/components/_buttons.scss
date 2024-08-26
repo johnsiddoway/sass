@@ -62,35 +62,38 @@
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // This has been turned into an opt-in mixin, instead of always including the classes in the compiled css
 @mixin themed-buttons($color-map: variables.$theme-colors, $font-color: variables.$white) {
-    @each $name, $color in $color-map {
+    @each $name, $colors in $color-map {
         .btn-#{$name} {
-            @include themed-button($theme-color: $color);
+            @include themed-button($theme-colors: $colors);
         }
     }
 }
 
 @mixin themed-buttons-inverted($color-map: variables.$theme-colors, $font-color: variables.$white) {
-    @each $name, $color in $color-map {
+    @each $name, $colors in $color-map {
         .btn-#{$name}-inverted {
-            @include themed-button-inverted($theme-color: $color);
+            @include themed-button-inverted($theme-colors: $colors);
         }
     }
 }
 
 @mixin themed-button(
-    $theme-color,
-    $color: inherit,
+    $theme-colors,
     $background-scale: variables.$button-background-scale,
     $background-scale-hover: variables.$button-background-scale-hover,
     $background-scale-active: variables.$button-background-scale-active,
     $background-scale-disabled: variables.$button-background-scale-disabled
 ) {
-    @if ($color != inherit) {
-        --btn-color: #{$color};
-    }
-    --btn-background-color: #{functions.shift-color($theme-color, $background-scale)};
-    --btn-background-color-active: #{functions.shift-color($theme-color, $background-scale-active)};
-    --btn-background-color-hover: #{functions.shift-color($theme-color, $background-scale-hover)};
+    --btn-color: #{map-get($theme-colors, 'color')};
+    --btn-background-color: #{functions.shift-color(map-get($theme-colors, 'background-color'), $background-scale)};
+    --btn-background-color-active: #{functions.shift-color(
+            map-get($theme-colors, 'background-color'),
+            $background-scale-active
+        )};
+    --btn-background-color-hover: #{functions.shift-color(
+            map-get($theme-colors, 'background-color'),
+            $background-scale-hover
+        )};
     //--btn-border-color: ${variables.$dark};
 
     // &:disabled {
@@ -114,14 +117,14 @@
 
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // Except this version only includes a border for the :focus-visible state
-@mixin themed-button-inverted($theme-color) {
-    color: $theme-color;
-    border-color: $theme-color;
+@mixin themed-button-inverted($theme-colors) {
+    color: map-get($theme-colors, 'color');
+    border-color: map-get($theme-colors, 'color');
 
     &:active,
     &:hover,
     &:focus-visible {
-        background-color: $theme-color;
+        background-color: map-get($theme-colors, 'color');
         color: initial;
         border-color: initial;
     }
