@@ -1,0 +1,77 @@
+@mixin form($selector: 'form') {
+    #{$selector} {
+        margin: 0 0 1rem 0;
+        border: 0;
+        padding: 0;
+
+        fieldset {
+            margin: 0 0 1rem 0;
+            border: 0;
+            padding: 0;
+        }
+
+        legend {
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25em;
+            cursor: pointer;
+        }
+
+        button[type='reset'],
+        button[type='submit'],
+        input[type='button'],
+        input[type='reset'],
+        input[type='submit'] {
+            padding: 0.375em 0.75em;
+            color: inherit;
+            border: 1px solid currentColor;
+            cursor: pointer;
+
+            &:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+        }
+
+        input:not([type='color'], [type='checkbox'], [type='radio'], [type='range'], [type='file']),
+        input::file-selector-button,
+        select {
+            height: 2.375em;
+            padding: 0.375em 0.75em;
+        }
+
+        input[type='file'] {
+            border: 1px solid currentColor;
+            padding-right: 1em;
+
+            &::file-selector-button {
+                cursor: pointer;
+                border: 0px;
+                border-right: 1px solid currentColor;
+                margin-right: 1em;
+            }
+        }
+
+        label:has(input[type='radio'], input[type='checkbox']) {
+            width: fit-content;
+            display: flex;
+            column-gap: 1em;
+            cursor: pointer;
+
+            input[type='radio'],
+            input[type='checkbox'] {
+                width: 1em;
+                height: 1em;
+                align-self: center;
+            }
+        }
+
+        textarea {
+            width: 100%;
+        }
+    }
+}

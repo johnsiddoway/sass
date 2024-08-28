@@ -1,0 +1,15 @@
+@use '../variables';
+
+// By declaring this as an placeholder, this becomes "opt-in" for consuming packages
+%input-checkbox {
+    accent-color: var(--color-primary);
+    outline: none;
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        box-shadow:
+            0 0 0.05rem 0.05rem variables.$white,
+            0 0 0.25rem 0.25rem var(--color-primary);
+    }
+}
