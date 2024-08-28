@@ -1,4 +1,5 @@
 export interface InputProps {
+    checked?: boolean;
     className?: string;
     id: string;
     label: string;
@@ -9,8 +10,8 @@ export interface InputProps {
 }
 
 export function InputCheckbox({ id, label, ...props }: InputProps) {
-    return <label>
+    return <div className="checkbox">
         <input type="checkbox" id={id} {...props} />
-        {label}
-    </label>;
+        <label htmlFor={id}>{label}</label>
+    </div>;
 };

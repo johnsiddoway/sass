@@ -4,18 +4,18 @@
         border: 0;
         padding: 0;
 
-        fieldset {
+        > fieldset {
             margin: 0 0 1rem 0;
             border: 0;
             padding: 0;
         }
 
-        legend {
+        > legend {
             margin-bottom: 0.5em;
             font-size: 1.5em;
         }
 
-        label {
+        > label {
             display: block;
             margin-bottom: 0.25em;
             cursor: pointer;
@@ -57,17 +57,10 @@
         }
 
         label:has(input[type='radio'], input[type='checkbox']) {
-            width: fit-content;
             display: flex;
             column-gap: 1em;
+            width: fit-content;
             cursor: pointer;
-
-            input[type='radio'],
-            input[type='checkbox'] {
-                width: 1em;
-                height: 1em;
-                align-self: center;
-            }
         }
 
         textarea {

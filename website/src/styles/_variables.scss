@@ -31,6 +31,11 @@ $red: #ff3333 !default; // hsl(  0, 100%, 60%) |  5.77:1
 
 // scss-docs-start theme-color-variables
 $primary: $orange !default;
+$primary-dark: #ff8000 !default;
+$primary-light: #ffb366 !default;
+$secondary: $gray-400 !default;
+$secondary-dark: $gray-500 !default;
+$secondary-light: $gray-300 !default;
 $info: $cyan !default;
 $success: $green !default;
 $danger: $red !default;
@@ -198,7 +203,6 @@ $input-range-thumb-focus-box-shadow:
     0 0 0.25rem 0.25rem var(--color-primary) !default;
 
 $input-range-track-height: 0.25rem !default;
-$input-range-track-bg: $gray-400 !default;
 $input-range-track-border-radius: 0 !default;
 $input-range-track-cursor: none !default;
 

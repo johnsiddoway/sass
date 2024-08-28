@@ -45,7 +45,7 @@
     &::-webkit-slider-runnable-track {
         //width: 100%;
         height: variables.$input-range-track-height;
-        background: variables.$input-range-track-bg;
+        background: var(--color-secondary);
         cursor: pointer;
     }
 
@@ -70,7 +70,7 @@
     &::-moz-range-track {
         //width: variables.$input-range-track-width;
         height: variables.$input-range-track-height;
-        background: variables.$input-range-track-bg;
+        background: var(--color-secondary);
         cursor: pointer;
     }
 
@@ -93,9 +93,8 @@
     }
 
     &::-ms-track {
-        //width: variables.$input-range-track-width;
         height: variables.$input-range-track-height;
-        background: variables.$input-range-track-bg;
+        background: var(--color-secondary);
         cursor: pointer;
         /* Hides the slider so custom styles can be added */
         background: transparent;

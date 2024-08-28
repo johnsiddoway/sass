@@ -38,3 +38,28 @@ export const Default: Story = {
     args: {
     },
 };
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Checked: Story = {
+    args: {
+        checked: true,
+    },
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Disabled: Story = {
+    args: {
+        disabled: true,
+    },
+};
+
+export const Multiple: Story = {
+    args: {
+    },
+    render: (args) => (
+        <form>
+            <InputCheckbox {...args} />
+            <InputCheckbox {...args} value='two' label='two' />
+        </form>
+    )
+}

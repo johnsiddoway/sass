@@ -8,6 +8,8 @@
     --btn-border-width: #{variables.$button-border-width};
     --btn-color: #{variables.$button-color};
     --color-primary: #{variables.$primary};
+    --color-secondary: #{variables.$gray-400};
+    --color-secondary-dark: #{variables.$gray-500};
 
     background-color: #{variables.$gray-900};
     color: #{variables.$light};
