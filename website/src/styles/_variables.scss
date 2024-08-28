@@ -176,16 +176,15 @@ $button-background-color-active: $button-background-color;
 $button-background-color-hover: $button-background-color;
 
 $button-border-color: currentColor;
-$button-border-color-active: $button-border-color;
-$button-border-color-hover: $button-border-color;
 
 $button-border-width: 1px;
 
+$button-box-shadow-color: currentColor;
+
 $button-color: currentColor;
-$button-color-active: $button-color;
-$button-color-hover: $button-color;
 
 $button-font-size: $font-size-base !default;
+
 $button-padding: 0.375em 0.75em !default;
 
 // $input-range-thumb-width: 1rem !default;

@@ -88,6 +88,12 @@ export const PrimaryFocus: Story = {
     parameters: { pseudo: { focusVisible: true } },
 };
 
+export const PrimaryInverted: Story = {
+    args: {
+        className: 'btn-primary-inverted',
+    },
+};
+
 export const Info: Story = {
     args: {
         className: 'btn-info',

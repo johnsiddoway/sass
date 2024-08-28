@@ -4,6 +4,7 @@
 
 %button {
     --btn-border-width: #{variables.$button-border-width};
+    --btn-box-shadow-color: #{variables.$button-box-shadow-color};
 
     padding: variables.$button-padding;
     background-color: var(--btn-background-color);
@@ -14,8 +15,6 @@
 
     &:active {
         background-color: var(--btn-background-color-active);
-        border-color: var(--btn-border-color-active);
-        color: var(--btn-color-active);
     }
 
     &:disabled {
@@ -25,13 +24,11 @@
     }
 
     &:focus-visible {
-        box-shadow: 0 0 0.75rem 0 var(--btn-border-color);
+        box-shadow: 0 0 0.75rem 0 var(--btn-box-shadow-color);
     }
 
     &:hover {
         background-color: var(--btn-background-color-hover);
-        border-color: var(--btn-border-color-hover);
-        color: var(--btn-color-hover);
     }
 }
 
@@ -61,7 +58,7 @@
 
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // This has been turned into an opt-in mixin, instead of always including the classes in the compiled css
-@mixin themed-buttons($color-map: variables.$theme-colors, $font-color: variables.$white) {
+@mixin themed-buttons($color-map: variables.$theme-colors) {
     @each $name, $colors in $color-map {
         .btn-#{$name} {
             @include themed-button($theme-colors: $colors);
@@ -69,7 +66,7 @@
     }
 }
 
-@mixin themed-buttons-inverted($color-map: variables.$theme-colors, $font-color: variables.$white) {
+@mixin themed-buttons-inverted($color-map: variables.$theme-colors) {
     @each $name, $colors in $color-map {
         .btn-#{$name}-inverted {
             @include themed-button-inverted($theme-colors: $colors);
@@ -84,48 +81,27 @@
     $background-scale-active: variables.$button-background-scale-active,
     $background-scale-disabled: variables.$button-background-scale-disabled
 ) {
-    --btn-color: #{map-get($theme-colors, 'color')};
-    --btn-background-color: #{functions.shift-color(map-get($theme-colors, 'background-color'), $background-scale)};
-    --btn-background-color-active: #{functions.shift-color(
-            map-get($theme-colors, 'background-color'),
-            $background-scale-active
-        )};
-    --btn-background-color-hover: #{functions.shift-color(
-            map-get($theme-colors, 'background-color'),
-            $background-scale-hover
-        )};
-    //--btn-border-color: ${variables.$dark};
-
-    // &:disabled {
-    //     background-color: #{functions.shift-color($theme-color, $background-scale-disabled)};
-    // }
-
-    // &:focus-visible {
-    //     box-shadow: 0 0 0.5rem 0 variables.$dark;
-    // }
-
-    // &:focus-visible,
-    // &:hover:not([disabled]) {
-    //     outline: none;
-    //     background-color: #{functions.shift-color($theme-color, $background-scale-hover)};
-    // }
-
-    // &:active:not([disabled]) {
-    //     background-color: #{functions.shift-color($theme-color, $background-scale-active)};
-    // }
+    $theme-color-background: map-get($theme-colors, 'background-color');
+    $theme-color-foreground: map-get($theme-colors, 'color');
+    $theme-color-border: map-get($theme-colors, 'border-color');
+    --btn-background-color: #{$theme-color-background};
+    --btn-background-color-active: #{functions.shift-color($theme-color-background, $background-scale-active)};
+    --btn-background-color-hover: #{functions.shift-color($theme-color-background, $background-scale-active)};
+    --btn-border-color: #{$theme-color-border};
+    --btn-box-shadow-color: #{$theme-color-background};
+    --btn-color: #{$theme-color-foreground};
 }
 
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // Except this version only includes a border for the :focus-visible state
 @mixin themed-button-inverted($theme-colors) {
-    color: map-get($theme-colors, 'color');
-    border-color: map-get($theme-colors, 'color');
-
-    &:active,
-    &:hover,
-    &:focus-visible {
-        background-color: map-get($theme-colors, 'color');
-        color: initial;
-        border-color: initial;
-    }
+    $theme-color-background: map-get($theme-colors, 'background-color');
+    $theme-color-foreground: map-get($theme-colors, 'color');
+    $theme-color-border: map-get($theme-colors, 'border-color');
+    --btn-background-color: transparent;
+    --btn-background-color-active: transparent;
+    --btn-background-color-hover: transparent;
+    --btn-border-color: #{$theme-color-background};
+    --btn-box-shadow-color: #{$theme-color-background};
+    --btn-color: #{$theme-color-background};
 }
