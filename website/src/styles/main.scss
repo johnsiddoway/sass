@@ -13,7 +13,7 @@ $dark-mode-selector: '.root.dark';
 
 @include reset;
 @include buttons;
-@include form;
+@include style-all-forms;
 
 .btn-large {
     @extend %btn-large;
@@ -21,18 +21,6 @@ $dark-mode-selector: '.root.dark';
 
 .btn-small {
     @extend %btn-small;
-}
-
-input[type='checkbox'] {
-    @extend %input-checkbox;
-}
-
-input[type='radio'] {
-    @extend %input-radio;
-}
-
-input[type='range'] {
-    @extend %input-range;
 }
 
 #{$layout-root-selector} {

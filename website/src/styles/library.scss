@@ -1,3 +1,26 @@
 @forward './variables';
 @forward 'components';
 @forward 'themes';
+
+@use 'components';
+
+@mixin style-all-forms {
+    @include components.form;
+    @include components.label;
+
+    input[type='checkbox'] {
+        @extend %input-checkbox;
+    }
+    
+    input[type='radio'] {
+        @extend %input-radio;
+    }
+    
+    input[type='range'] {
+        @extend %input-range;
+    }
+    
+    select {
+        @extend %input-select;
+    }
+}

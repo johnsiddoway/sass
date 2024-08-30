@@ -1,0 +1,18 @@
+@mixin label {
+    label:has(input),
+    label:has(select) {
+        display: flex;
+        cursor: pointer;
+    }
+
+    label:has(input[type='checkbox'], input[type='radio']) {
+        flex-direction: row;
+        column-gap: 1em;
+    }
+
+    label:has(input[type='range']),
+    label:has(select) {
+        flex-direction: column;
+        row-gap: 0.25em;
+    }
+}

@@ -5,7 +5,6 @@
 @mixin input-checkbox-or-radio {
     position: absolute; // take it out of document flow
     transform: scale(0);
-    
 
     & + label {
         display: flex;
