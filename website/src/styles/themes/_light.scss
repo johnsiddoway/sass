@@ -7,9 +7,12 @@
     --btn-border-color: #{variables.$button-border-color};
     --btn-border-width: #{variables.$button-border-width};
     --btn-color: #{variables.$button-color};
+    --color-dark: #{variables.$dark};
+    --color-light: #{variables.$light};
     --color-primary: #{variables.$primary};
     --color-primary-light: #{variables.$primary-light};
     --color-secondary: #{variables.$secondary};
     --color-secondary-dark: #{variables.$secondary-dark};
+    --color-secondary-light: #{variables.$secondary-light};
     --theme-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
 }

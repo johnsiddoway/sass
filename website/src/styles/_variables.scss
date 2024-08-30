@@ -199,7 +199,7 @@ $input-range-thumb-border-radius: 0 !default;
 $input-range-thumb-cursor: pointer !default;
 $input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
 $input-range-thumb-focus-box-shadow:
-    0 0 0.05rem 0.05rem $white,
+    0 0 0.05rem 0.05rem var(--color-light),
     0 0 0.25rem 0.25rem var(--color-primary) !default;
 
 $input-range-track-height: 0.25rem !default;

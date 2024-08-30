@@ -10,8 +10,8 @@ export interface InputProps {
 }
 
 export function InputCheckbox({ className, id, label, name, ...props }: InputProps) {
-    return <label className={className}>
+    return <>
         <input id={id} type="checkbox" name={name} {...props} />
-        {label}
-    </label>;
+        <label className={className} htmlFor={id}>{label}</label>
+    </>;
 };

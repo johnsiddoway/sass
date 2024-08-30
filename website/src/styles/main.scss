@@ -50,8 +50,8 @@ $dark-mode-selector: '.root.dark';
 //     text-align: center;
 // }
 
-.checkbox {
-    @extend %input-checkbox-wrapper;
+input[type='checkbox'] {
+    @extend %input-checkbox;
 }
 
 input[type='range'] {
