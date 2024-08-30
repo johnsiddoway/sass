@@ -2,44 +2,44 @@
 
 // By declaring this as an placeholder, this becomes "opt-in" for consuming packages
 %input-checkbox-wrapper {
-    input[type='checkbox'] {
-        display: none;
-    }
+    
+        font-family: system-ui, sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.1;
+        display: grid;
+        grid-template-columns: 1em auto;
+        gap: 0.5em;
 
-    input[type='checkbox'] + label {
-        display: flex;
-        column-gap: 1em;
-        margin-bottom: 0.25rem;
-        width: fit-content;
-        cursor: pointer;
+    input[type="checkbox"] {
+        /* Add if not using autoprefixer */
+        -webkit-appearance: none;
+        appearance: none;
+        display: grid;
+        place-content: center;
+        /* For iOS < 15 to remove gradient background */
+        background-color: #fff;
+        /* Not removed via appearance */
+        margin: 0;
 
-        &::before {
-            content: '';
-            display: block;
-            height: 1.2em;
-            width: 1.2em;
-            line-height: 1em;
-            border: 1px solid currentColor;
-            background-color: var(--color-secondary);
-            align-self: center;
-        }
-        
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 1px solid currentColor;
+        // transform: translateY(-0.075em);
+      }
 
-        &:hover::before {
-            background-color: var(--color-secondary-dark);
-        }
-    }
+      input[type="checkbox"]::before {
+        content: "";
+        width: 1em;
+        height: 1em;
+        transform: scale(0);
+        // transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--color-primary);
+      }
 
-    input[type='checkbox']:checked + label {
-
-        &::before {
-            content: '\2714';
-            text-align: center;
-            background-color: var(--color-primary);
-        }
-
-        &:hover::before {
-            background-color: var(--color-primary-light);
-        }
-    }
+      input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
 }

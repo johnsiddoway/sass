@@ -9,9 +9,9 @@ export interface InputProps {
     onClick?: () => void;
 }
 
-export function InputCheckbox({ id, label, ...props }: InputProps) {
-    return <div className="checkbox">
-        <input type="checkbox" id={id} {...props} />
-        <label htmlFor={id}>{label}</label>
-    </div>;
+export function InputCheckbox({ className, id, label, name, ...props }: InputProps) {
+    return <label className={className}>
+        <input id={id} type="checkbox" name={name} {...props} />
+        {label}
+    </label>;
 };

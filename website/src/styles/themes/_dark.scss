@@ -10,6 +10,7 @@
     --color-primary: #{variables.$primary};
     --color-secondary: #{variables.$gray-400};
     --color-secondary-dark: #{variables.$gray-500};
+    --theme-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
 
     background-color: #{variables.$gray-900};
     color: #{variables.$light};
