@@ -23,35 +23,12 @@ $dark-mode-selector: '.root.dark';
     @extend %btn-small;
 }
 
-// label:has(input[type='checkbox']) {
-//     &::before {
-//         content: '';
-//         display: block;
-//         height: 1.2em;
-//         width: 1.2em;
-//         line-height: 1em;
-//         border: 1px solid currentColor;
-//         background-color: var(--color-secondary);
-//         align-self: center;
-//     }
-
-//     &:hover::before {
-//         background-color: var(--color-secondary-dark);
-//     }
-
-//     input[type='checkbox'] {
-//         display: none;
-//     }
-// }
-
-// label:has(input[type='checkbox']:checked)::before {
-//     content: "\2714";
-//     background-color: var(--color-primary);
-//     text-align: center;
-// }
-
 input[type='checkbox'] {
     @extend %input-checkbox;
+}
+
+input[type='radio'] {
+    @extend %input-radio;
 }
 
 input[type='range'] {

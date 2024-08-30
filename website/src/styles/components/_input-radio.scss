@@ -2,19 +2,13 @@
 @use './input-checkbox-or-radio' as parent;
 
 // By declaring this as an placeholder, this becomes "opt-in" for consuming packages
-%input-checkbox {
+%input-radio {
     @include parent.input-checkbox-or-radio;
 
     // Box.
     & + label:before {
-        width: 1.2em;
-        height: 1.2em;
-    }
-
-    // Checkmark. Could be replaced with an image
-    &:checked + label:before {
-        content: '\2714';
-        line-height: 1.2em;
-        text-align: center;
+        border-radius: 50%;
+        width: 1em;
+        height: 1em;
     }
 }

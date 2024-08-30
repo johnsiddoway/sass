@@ -1,0 +1,56 @@
+@use '../variables';
+
+// This needs to be a mixin instead of a placeholder,
+// for some reason.
+@mixin input-checkbox-or-radio {
+    position: absolute; // take it out of document flow
+    transform: scale(0);
+    
+
+    & + label {
+        display: flex;
+        column-gap: 0.5em;
+        cursor: pointer;
+    }
+
+    // Box.
+    & + label:before {
+        align-self: center;
+        content: '';
+        border: 1px solid currentColor;
+        display: inline-block;
+        background: var(--color-secondary);
+    }
+
+    // Box hover
+    &:hover + label:before {
+        background: var(--color-secondary-dark);
+    }
+
+    // Box focus
+    &:focus + label:before {
+        box-shadow: var(--theme-box-shadow);
+    }
+
+    // Box checked
+    &:checked + label:before {
+        background: var(--color-primary);
+    }
+
+    &:checked + label:hover:before {
+        background: var(--color-primary-light);
+    }
+
+    // Disabled state label.
+    &:disabled + label {
+        pointer-events: none;
+        cursor: auto;
+        color: #b8b8b8;
+    }
+
+    // Disabled box.
+    &:disabled + label:before {
+        box-shadow: none;
+        background: #ddd;
+    }
+}
