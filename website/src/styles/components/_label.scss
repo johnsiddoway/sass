@@ -1,13 +1,32 @@
+@use './input-base';
+@use './input-radio';
+
 @mixin label {
+    label {
+        cursor: pointer;
+    }
+
     label:has(input),
     label:has(select) {
         display: flex;
         cursor: pointer;
     }
 
+    input[disabled] + label,
+    select[disabled] + label,
+    label:has(+ input[disabled]),
+    label:has(+ select[disabled]) {
+        @extend %input-disabled;
+    }
+
+
     label:has(input[type='checkbox'], input[type='radio']) {
         flex-direction: row;
-        column-gap: 1em;
+        column-gap: 0.5em;
+
+        input[type='radio'] {
+            @extend %input-radio-inside-label;
+        }
     }
 
     label:has(input[type='range']),

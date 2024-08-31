@@ -9,9 +9,9 @@ export interface InputProps {
     onClick?: () => void;
 }
 
-export function InputRadio({ className, id, label, name, ...props }: InputProps) {
+export function InputRadio({ id, label, ...props }: InputProps) {
     return <>
-        <input id={id} type="radio" name={name} {...props} />
-        <label className={className} htmlFor={id}>{label}</label>
+        <input id={id} type="radio" {...props} />
+        <label htmlFor={id}>{label}</label>
     </>;
 };

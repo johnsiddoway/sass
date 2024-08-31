@@ -8,8 +8,8 @@ export interface InputProps {
 }
 
 export function InputRange({ id, label, ...props }: InputProps) {
-    return <>
-        <label htmlFor={id}>{label}</label>
+    return <label>
+        {label}
         <input type="range" id={id} {...props} />
-    </>;
+    </label>;
 };

@@ -8,12 +8,20 @@
     @include components.form;
     @include components.label;
 
-    input[type='checkbox'] {
-        @extend %input-checkbox;
+    input[type='checkbox']:has(+ label) {
+        @extend %input-checkbox-before-label;
     }
-    
-    input[type='radio'] {
-        @extend %input-radio;
+
+    label + input[type='checkbox'] {
+        @extend %input-checkbox-after-label;
+    }
+
+    input[type='radio']:has(+ label) {
+        @extend %input-radio-before-label;
+    }
+
+    label + input[type='radio'] {
+        @extend %input-radio-after-label;
     }
     
     input[type='range'] {

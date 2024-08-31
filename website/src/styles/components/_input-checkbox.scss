@@ -1,6 +1,14 @@
 @use '../variables';
 @use './input-checkbox-or-radio' as parent;
 
+%input-checkbox-after-label {
+
+}
+
+%input-checkbox-before-label {
+
+}
+
 // By declaring this as an placeholder, this becomes "opt-in" for consuming packages
 %input-checkbox {
     @include parent.input-checkbox-or-radio;

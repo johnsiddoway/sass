@@ -53,6 +53,50 @@ export const Disabled: Story = {
     },
 };
 
+export const RadioAfterLabel: Story = {
+    render: () => (
+        <form>
+            <div>
+                <label htmlFor="radio-1">Option 1</label>
+                <input type="radio" id="radio-1" name="radio" value="radio-1" />
+            </div>
+            <div>
+                <label htmlFor="radio-2">Option 2</label>
+                <input type="radio" id="radio-2" name="radio" value="radio-2" />
+            </div>
+            <div>
+                <label htmlFor="radio-3">Option 3</label>
+                <input type="radio" id="radio-3" name="radio" value="radio-3" />
+            </div>
+        </form>
+    ),
+}
+
+export const RadioInsideLabel: Story = {
+    render: () => (
+        <form>
+            <div>
+                <label>
+                    Option 1
+                    <input type="radio" id="radio-1" name="radio" value="radio-1" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Option 2
+                    <input type="radio" id="radio-2" name="radio" value="radio-2" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    Option 3
+                    <input type="radio" id="radio-3" name="radio" value="radio-3" />
+                </label>
+            </div>
+        </form>
+    ),
+}
+
 export const Multiple: Story = {
     render: () => (
         <form>

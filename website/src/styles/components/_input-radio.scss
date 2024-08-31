@@ -1,14 +1,60 @@
 @use '../variables';
-@use './input-checkbox-or-radio' as parent;
+@use './input-base';
+
+%input-radio-replacement {
+    content: '';
+    cursor: pointer;
+    height: 0.75rem;
+    width: 0.75em;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    display: inline-block;
+    background: var(--color-secondary);
+    padding-top: 0.25em;
+}
+
+@mixin input-radio($position) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+
+    &:disabled {
+        @extend %input-disabled;
+    }
+
+    &::#{$position} {
+        @extend %input-radio-replacement;
+    }
+
+    &:focus::#{$position} {
+        box-shadow: var(--theme-box-shadow);
+    }
+
+    &:hover::after {
+        background-color: var(--color-secondary-dark);
+    }
+
+    &:checked::after {
+        background: var(--color-primary);
+    }
+
+    &:checked:hover::after {
+        background: var(--color-primary-light);
+    }
+}
 
 // By declaring this as an placeholder, this becomes "opt-in" for consuming packages
-%input-radio {
-    @include parent.input-checkbox-or-radio;
+%input-radio-after-label {
+    margin-left: 0.5em;
+    @include input-radio(after);
+}
 
-    // Box.
-    & + label:before {
-        border-radius: 50%;
-        width: 1em;
-        height: 1em;
-    }
+%input-radio-before-label {
+    margin-right: 0.5em;
+    @include input-radio(before);
+}
+
+%input-radio-inside-label {
+    @include input-radio(after);
 }
