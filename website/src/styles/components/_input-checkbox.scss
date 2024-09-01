@@ -1,28 +1,58 @@
 @use '../variables';
-@use './input-checkbox-or-radio' as parent;
+@use './input-base';
+
+// By declaring these as placeholders, they becomes "opt-in" for consuming packages
+%input-checkbox-replacement {
+    content: '';
+    cursor: pointer;
+    height: 0.75rem;
+    width: 0.75em;
+    border: 1px solid currentColor;
+    display: inline-block;
+    background: var(--color-secondary);
+}
+
+%input-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+
+    &:disabled {
+        @extend %input-disabled;
+    }
+
+    &::before {
+        @extend %input-checkbox-replacement;
+    }
+
+    &:focus::before {
+        box-shadow: var(--theme-box-shadow);
+    }
+
+    &:hover::before {
+        background-color: var(--color-secondary-dark);
+    }
+
+    &:checked::before {
+        background: var(--color-primary);
+    }
+
+    &:checked:hover::before {
+        background: var(--color-primary-light);
+    }
+}
+
+%input-checkbox-inside-label {
+    @extend %input-checkbox;
+}
 
 %input-checkbox-after-label {
-
+    margin-left: 0.5em;
+    @extend %input-checkbox;
 }
 
 %input-checkbox-before-label {
-
-}
-
-// By declaring this as an placeholder, this becomes "opt-in" for consuming packages
-%input-checkbox {
-    @include parent.input-checkbox-or-radio;
-
-    // Box.
-    & + label:before {
-        width: 1.2em;
-        height: 1.2em;
-    }
-
-    // Checkmark. Could be replaced with an image
-    &:checked + label:before {
-        content: '\2714';
-        line-height: 1.2em;
-        text-align: center;
-    }
+    margin-right: 0.5em;
+    @extend %input-checkbox;
 }
