@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { Input } from './input';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-    title: 'Input/Range',
+    title: 'Input/File',
     component: Input,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -17,17 +16,16 @@ const meta = {
     },
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
-        id: 'volume',
-        label: 'Volume',
-        name: 'volume',
-        min: 0,
-        max: 11,
+        accept: 'image/png, image/jpeg',
+        id: 'avatar',
+        label: 'Choose a profile picture:',
+        name: 'avatar',
     },
     render: (args) => (
         <form>
             <label>
                 {args.label}
-                <input type='range' {...args} />
+                <input type='file' {...args} />
             </label>
         </form>
     )
@@ -47,8 +45,8 @@ export const InputAfterLabel: Story = {
     },
     render: (args) => (
         <form>
-            <label htmlFor="test">Input Range</label>
-            <input type="range" id="test" {...args} />
+            <label htmlFor={args.id}>{args.label}</label>
+            <input type="file" {...args} />
         </form>
     )
 }

@@ -1,10 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 import { Input } from './input';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-    title: 'Input/Range',
+    title: 'Input/Text',
     component: Input,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -17,21 +16,25 @@ const meta = {
     },
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
-        id: 'volume',
-        label: 'Volume',
-        name: 'volume',
-        min: 0,
-        max: 11,
+        label: 'Name (4 to 8 characters):',
+        id: "name",
+        name: "name",
+        required: true,
+        minLength: 4,
+        maxLength: 8,
+        size: 10,
+        onChange: () => { },
+        type: 'text',
     },
     render: (args) => (
         <form>
             <label>
                 {args.label}
-                <input type='range' {...args} />
+                <input type='text' {...args} />
             </label>
         </form>
     )
-} satisfies Meta<typeof Input>;
+} satisfies Meta;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -42,13 +45,19 @@ export const Default: Story = {
     },
 };
 
+export const Placeholder: Story = {
+    args: {
+        placeholder: 'Enter Your Name',
+    }
+}
+
 export const InputAfterLabel: Story = {
     args: {
     },
     render: (args) => (
         <form>
-            <label htmlFor="test">Input Range</label>
-            <input type="range" id="test" {...args} />
+            <label htmlFor={args.id}>{args.label}</label>
+            <input id={args.id} {...args} />
         </form>
     )
 }

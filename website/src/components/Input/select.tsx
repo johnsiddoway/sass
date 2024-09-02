@@ -5,7 +5,7 @@ export interface InputProps extends SelectHTMLAttributes<HTMLSelectElement> {
     children?: ReactNode | undefined;
 }
 
-export function InputSelect({ children, label, ...props }: InputProps) {
+export function Select({ children, label, ...props }: InputProps) {
     return <label>
         {label}
         <select {...props}>

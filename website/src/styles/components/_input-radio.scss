@@ -18,6 +18,10 @@
     -moz-appearance: none;
     outline: none;
 
+    &:has(+ label) {
+        margin-right: 0.5em;
+    }
+
     &:disabled {
         @extend %input-disabled;
     }
@@ -41,19 +45,4 @@
     &:checked:hover::before {
         background: var(--color-primary-light);
     }
-}
-
-// By declaring this as an placeholder, this becomes "opt-in" for consuming packages
-%input-radio-inside-label {
-    @extend %input-radio;
-}
-
-%input-radio-after-label {
-    margin-left: 0.5em;
-    @extend %input-radio;
-}
-
-%input-radio-before-label {
-    margin-right: 0.5em;
-    @extend %input-radio;
 }

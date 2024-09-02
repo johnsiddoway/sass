@@ -8,39 +8,31 @@
     @include components.form;
     @include components.label;
 
-    input[type='checkbox']:has(+ label) {
-        @extend %input-checkbox-before-label;
+    input[type='checkbox'] {
+        @extend %input-checkbox;
     }
 
-    label {
-        & > input[type='checkbox'] {
-            @extend %input-checkbox-inside-label;
-        }
-
-        & + input[type='checkbox'] {
-            @extend %input-checkbox-after-label;
-        }
+    input[type='color'] {
+        @extend %input-color;
     }
 
-    input[type='radio']:has(+ label) {
-        @extend %input-radio-before-label;
+    input[type='file'] {
+        @extend %input-file;
     }
 
-    label {
-        & > input[type='radio'] {
-            @extend %input-radio-inside-label;
-        }
-
-        & + input[type='radio'] {
-            @extend %input-radio-after-label;
-        }
+    input[type='radio'] {
+        @extend %input-radio;
     }
 
     input[type='range'] {
         @extend %input-range;
     }
 
+    input:not([type='checkbox'], [type='file'], [type='radio'], [type='range']) {
+        @extend %input-text;
+    }
+
     select {
-        @extend %input-select;
+        @extend %select;
     }
 }

@@ -6,32 +6,35 @@
         cursor: pointer;
     }
 
-    label:has(input),
-    label:has(select) {
-        display: flex;
-        cursor: pointer;
+    // Start Vertical
+    label:not(.horizontal):has(+ input, + select) {
+        display: block;
+        margin-bottom: 0.25em;
     }
+
+    label:not(.horizontal):has(> input, > select) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.25em;
+    }
+    // End Vertical
+
+    // Start Horizontal
+    label.horizontal:has(+ input, + select) {
+        display: inline;
+        margin-right: 0.5em;
+    }
+
+    label.horizontal:has(> input, > select) {
+        display: flex;
+        flex-direction: row;
+        column-gap: 0.5em;
+    }
+    // End Horizontal
 
     input[disabled] + label,
     select[disabled] + label,
-    label:has(+ input[disabled]),
-    label:has(+ select[disabled]) {
+    label:has(+ input[disabled], > input[disabled], + select[disabled], > select[disabled]) {
         @extend %input-disabled;
-    }
-
-
-    label:has(input[type='checkbox'], input[type='radio']) {
-        flex-direction: row;
-        column-gap: 0.5em;
-
-        input[type='radio'] {
-            @extend %input-radio-inside-label;
-        }
-    }
-
-    label:has(input[type='range']),
-    label:has(select) {
-        flex-direction: column;
-        row-gap: 0.25em;
     }
 }

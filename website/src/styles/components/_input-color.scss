@@ -1,0 +1,5 @@
+%input-color {
+    &:has(+ label) {
+        margin-right: 0.5em;
+    }
+}

@@ -18,6 +18,10 @@
     -moz-appearance: none;
     outline: none;
 
+    &:has(+ label) {
+        margin-right: 0.5em;
+    }
+
     &:disabled {
         @extend %input-disabled;
     }
@@ -43,16 +47,16 @@
     }
 }
 
-%input-checkbox-inside-label {
-    @extend %input-checkbox;
-}
+// %input-checkbox-inside-label {
+//     @extend %input-checkbox;
+// }
 
-%input-checkbox-after-label {
-    margin-left: 0.5em;
-    @extend %input-checkbox;
-}
+// %input-checkbox-after-label {
+//     margin-left: 0.5em;
+//     @extend %input-checkbox;
+// }
 
-%input-checkbox-before-label {
-    margin-right: 0.5em;
-    @extend %input-checkbox;
-}
+// %input-checkbox-before-label {
+//     margin-right: 0.5em;
+//     @extend %input-checkbox;
+// }

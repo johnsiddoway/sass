@@ -1,4 +1,10 @@
+@use '../variables';
+
+%input-base {
+    width: 100%;
+}
+
 %input-disabled {
     pointer-events: none;
-    color: #ccc;
+    color: variables.$gray-70;
 }

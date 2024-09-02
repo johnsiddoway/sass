@@ -2,8 +2,8 @@
 
 #{variables.$dark-mode-selector} {
     --btn-background-color: #{variables.$button-background-color};
-    --btn-background-color-active: #{variables.$gray-600};
-    --btn-background-color-hover: #{variables.$gray-700};
+    --btn-background-color-active: #{variables.$gray-40};
+    --btn-background-color-hover: #{variables.$gray-30};
     --btn-border-color: #{variables.$button-border-color};
     --btn-border-width: #{variables.$button-border-width};
     --btn-color: #{variables.$button-color};
@@ -11,11 +11,11 @@
     --color-light: #{variables.$light};
     --color-primary: #{variables.$primary};
     --color-primary-light: #{variables.$primary-light};
-    --color-secondary: #{variables.$gray-400};
-    --color-secondary-dark: #{variables.$gray-500};
+    --color-secondary: #{variables.$gray-60};
+    --color-secondary-dark: #{variables.$gray-50};
     --color-secondary-light: #{variables.$secondary-light};
     --theme-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
 
-    background-color: #{variables.$gray-900};
+    background-color: #{variables.$gray-10};
     color: #{variables.$light};
 }

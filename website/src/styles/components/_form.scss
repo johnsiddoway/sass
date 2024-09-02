@@ -37,29 +37,9 @@
             }
         }
 
-        input:not([type='color'], [type='checkbox'], [type='radio'], [type='range'], [type='file']),
-        input::file-selector-button {
-            height: 2.375em;
-            padding: 0.375em 0.75em;
-        }
-
-        input[type='file'] {
-            border: 1px solid currentColor;
-            padding-right: 1em;
-
-            &::file-selector-button {
-                cursor: pointer;
-                border: 0px;
-                border-right: 1px solid currentColor;
-                margin-right: 1em;
-            }
-        }
-
-        // label:has(input[type='radio'], input[type='checkbox']) {
-        //     display: flex;
-        //     column-gap: 1em;
-        //     width: fit-content;
-        //     cursor: pointer;
+        // input:not([type='color'], [type='checkbox'], [type='radio'], [type='range']) {
+        //     height: 2.375em;
+        //     padding: 0.375em 0.75em;
         // }
 
         textarea {

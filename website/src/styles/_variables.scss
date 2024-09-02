@@ -4,15 +4,17 @@
 
 // scss-docs-start gray-color-variables
 $white: #ffffff !default; // hsl(30, 10%, 100%) | Same H value as our primary theme color
-$gray-100: #e8e6e3 !default; // hsl(30, 10%,  90%)
-$gray-200: #d1ccc7 !default; // hsl(30, 10%,  80%)
-$gray-300: #bab3ab !default; // hsl(30, 10%,  70%)
-$gray-400: #a3998f !default; // hsl(30, 10%,  60%)
-$gray-500: #8c8073 !default; // hsl(30, 10%,  50%)
-$gray-600: #70665c !default; // hsl(30, 10%,  40%)
-$gray-700: #544d45 !default; // hsl(30, 10%,  30%)
-$gray-800: #38332e !default; // hsl(30, 10%,  20%)
-$gray-900: #1c1a17 !default; // hsl(30, 10%,  10%)
+$gray-100: #ffffff !default; // hsl(30, 10%, 100%)
+$gray-90: #e8e6e3 !default; // hsl(30, 10%,  90%)
+$gray-80: #d1ccc7 !default; // hsl(30, 10%,  80%)
+$gray-70: #bab3ab !default; // hsl(30, 10%,  70%)
+$gray-60: #a3998f !default; // hsl(30, 10%,  60%)
+$gray-50: #8c8073 !default; // hsl(30, 10%,  50%)
+$gray-40: #70665c !default; // hsl(30, 10%,  40%)
+$gray-30: #544d45 !default; // hsl(30, 10%,  30%)
+$gray-20: #38332e !default; // hsl(30, 10%,  20%)
+$gray-10: #1c1a17 !default; // hsl(30, 10%,  10%)
+$gray-0: #000000 !default; // hsl(30, 10%,   0%)
 $black: #000000 !default; // hsl(30, 10%,   0%)
 // scss-docs-end gray-color-variables
 
@@ -33,9 +35,9 @@ $red: #ff3333 !default; // hsl(  0, 100%, 60%) |  5.77:1
 $primary: $orange !default;
 $primary-dark: #ff8000 !default;
 $primary-light: #ffb366 !default;
-$secondary: $gray-400 !default;
-$secondary-dark: $gray-500 !default;
-$secondary-light: $gray-300 !default;
+$secondary: $gray-60 !default;
+$secondary-dark: $gray-50 !default;
+$secondary-light: $gray-50 !default;
 $info: $cyan !default;
 $success: $green !default;
 $danger: $red !default;
