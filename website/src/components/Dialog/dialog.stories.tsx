@@ -24,7 +24,19 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-    args: {
-        label: 'Open Dialog',
-    },
+    render: () => (
+        <div>
+            <Dialog id="dialog-1" label="Open Dialog">
+                <article>
+                    <h2>Dialog Example</h2>
+                    <p>This is a <code>dialog</code> example.</p>
+                </article>
+                <form method="dialog">
+                    <button value="no">No</button>
+                    &nbsp;
+                    <button value="yes">Yes</button>
+                </form>
+            </Dialog>
+        </div>
+    ),
 };

@@ -16,6 +16,10 @@ $light-mode-selector: '.root.light';
 @include buttons;
 @include style-all-forms;
 
+dialog {
+    @extend %dialog;
+}
+
 .btn-large {
     @extend %btn-large;
 }

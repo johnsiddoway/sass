@@ -45,9 +45,7 @@ export const Default: Story = {
 };
 
 export const Color: Story = {
-    args: {
-    },
-    render: (args) => (
+    render: () => (
         <form>
             <fieldset>
                 <legend>Choose your monster's colors:</legend>
@@ -97,9 +95,7 @@ export const Color: Story = {
 };
 
 export const Date: Story = {
-    args: {
-    },
-    render: (args) => (
+    render: () => (
         <form>
             <fieldset>
                 <legend>Date Inputs</legend>
@@ -129,9 +125,7 @@ export const Date: Story = {
 };
 
 export const DateTimeLocal: Story = {
-    args: {
-    },
-    render: (args) => (
+    render: () => (
         <form>
             <fieldset>
                 <legend>Date Inputs</legend>

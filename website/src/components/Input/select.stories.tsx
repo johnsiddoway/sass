@@ -16,7 +16,6 @@ const meta = {
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
         label: 'Your favorite pet',
-        onChange: (e: any) => { },
         children: <>
             <option value="">--Please choose an option--</option>
             <option value="dog">Dog</option>
