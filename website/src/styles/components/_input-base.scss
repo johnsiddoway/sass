@@ -1,7 +1,15 @@
 @use '../variables';
 
 %input-base {
-    width: 100%;
+    // display: block;
+    outline: none;
+    border: 1px solid currentColor;
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        box-shadow: var(--theme-box-shadow);
+    }
 }
 
 %input-disabled {

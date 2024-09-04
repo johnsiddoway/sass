@@ -18,10 +18,6 @@
     -moz-appearance: none;
     outline: none;
 
-    &:has(+ label) {
-        margin-right: 0.5em;
-    }
-
     &:disabled {
         @extend %input-disabled;
     }

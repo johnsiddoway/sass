@@ -26,7 +26,7 @@ const meta = {
     },
     render: (args) => (
         <form>
-            <label className="horizontal">
+            <label>
                 <input type='checkbox' {...args} />
                 {args.label}
             </label>
@@ -63,11 +63,11 @@ export const InputAfterLabel: Story = {
             <fieldset>
                 <legend>Choose your monster's features:</legend>
                 <div>
-                    <label htmlFor="scales" className="horizontal">Scales</label>
+                    <label htmlFor="scales">Scales</label>
                     <input type="checkbox" id="scales" name="scales" checked />
                 </div>
                 <div>
-                    <label htmlFor="horns" className="horizontal">Horns</label>
+                    <label htmlFor="horns">Horns</label>
                     <input type="checkbox" id="horns" name="horns" />
                 </div>
             </fieldset>
@@ -99,13 +99,13 @@ export const InputInsideLabelAfterText: Story = {
             <fieldset>
                 <legend>Choose your monster's features:</legend>
                 <div>
-                    <label className="horizontal">
+                    <label>
                         Scales
                         <input type="checkbox" id="scales" name="scales" checked />
                     </label>
                 </div>
                 <div>
-                    <label className="horizontal">
+                    <label>
                         Horns
                         <input type="checkbox" id="horns" name="horns" />
                     </label>
@@ -121,13 +121,13 @@ export const InputInsideLabelBeforeText: Story = {
             <fieldset>
                 <legend>Choose your monster's features:</legend>
                 <div>
-                    <label className="horizontal">
+                    <label>
                         <input type="checkbox" id="scales" name="scales" checked />
                         Scales
                     </label>
                 </div>
                 <div>
-                    <label className="horizontal">
+                    <label>
                         <input type="checkbox" id="horns" name="horns" />
                         Horns
                     </label>

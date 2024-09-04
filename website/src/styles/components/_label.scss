@@ -3,16 +3,16 @@
 
 @mixin label {
     label {
+        display: block;
         cursor: pointer;
     }
 
     // Start Vertical
-    label:not(.horizontal):has(+ input, + select) {
-        display: block;
+    label:has(+ input, + select) {
         margin-bottom: 0.25em;
     }
 
-    label:not(.horizontal):has(> input, > select) {
+    label:has(> input, > select) {
         display: flex;
         flex-direction: column;
         row-gap: 0.25em;
@@ -20,15 +20,24 @@
     // End Vertical
 
     // Start Horizontal
+    label:has(+ input[type='checkbox'], + input[type='radio']),
     label.horizontal:has(+ input, + select) {
-        display: inline;
+        display: inline-block;
         margin-right: 0.5em;
     }
 
+    label:has(> input[type='checkbox'], > input[type='radio']),
     label.horizontal:has(> input, > select) {
         display: flex;
         flex-direction: row;
         column-gap: 0.5em;
+    }
+
+    input:is([type='checkbox'], [type='radio']) + label,
+    input + label.horizontal,
+    select + label.horizontal {
+        display: inline-block;
+        margin-left: 0.5em;
     }
     // End Horizontal
 

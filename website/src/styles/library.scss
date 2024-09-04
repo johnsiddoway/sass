@@ -12,10 +12,6 @@
         @extend %input-checkbox;
     }
 
-    input[type='color'] {
-        @extend %input-color;
-    }
-
     input[type='file'] {
         @extend %input-file;
     }
@@ -29,7 +25,7 @@
     }
 
     input:not([type='checkbox'], [type='file'], [type='radio'], [type='range']) {
-        @extend %input-text;
+        @extend %input-base;
     }
 
     select {
