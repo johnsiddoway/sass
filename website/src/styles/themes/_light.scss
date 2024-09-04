@@ -15,4 +15,6 @@
     --color-secondary-dark: #{variables.$secondary-dark};
     --color-secondary-light: #{variables.$secondary-light};
     --theme-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
+    --card-background-color: #{variables.$light};
+    --card-box-shadow: #{variables.$box-shadow-default};
 }

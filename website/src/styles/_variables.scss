@@ -37,7 +37,7 @@ $primary-dark: #ff8000 !default;
 $primary-light: #ffb366 !default;
 $secondary: $gray-60 !default;
 $secondary-dark: $gray-50 !default;
-$secondary-light: $gray-50 !default;
+$secondary-light: $gray-70 !default;
 $info: $cyan !default;
 $success: $green !default;
 $danger: $red !default;
@@ -172,6 +172,9 @@ $line-height-base: 1.5 !default;
 // $default-box-shadow: 0.25rem 0.25rem 0.25rem 0rem $gray-700 !default;
 // $default-padding: 0.375rem 0.75rem !default;
 // $default-margin-bottom: 1rem !default;
+$box-shadow-default: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
+$margin-bottom-default: 1rem !default;
+$padding-default: 0.375em 0.75em !default;
 
 $button-background-scale: 0% !default;
 $button-background-scale-hover: -15% !default;

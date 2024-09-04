@@ -1,0 +1,15 @@
+@use '../variables';
+
+%card {
+    margin-bottom: variables.$margin-bottom-default;
+	border: 1px solid currentColor;
+    padding: variables.$padding-default;
+	background-color: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
+}
+
+@mixin cards($selector: '.card') {
+    #{$selector} {
+        @extend %card;
+    }
+}

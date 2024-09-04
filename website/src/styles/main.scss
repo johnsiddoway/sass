@@ -14,6 +14,7 @@ $light-mode-selector: '.root.light';
 
 @include reset;
 @include buttons;
+@include cards;
 @include style-all-forms;
 
 dialog {
