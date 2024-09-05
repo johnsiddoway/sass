@@ -2,57 +2,59 @@
 @use '../functions';
 @use '../variables';
 
-%button {
-    --btn-border-width: #{variables.$button-border-width};
-    --btn-box-shadow-color: #{variables.$button-box-shadow-color};
-
-    padding: variables.$button-padding;
-    background-color: var(--btn-background-color);
-    color: var(--btn-color);
-    border: var(--btn-border-width) solid var(--btn-border-color);
-    cursor: pointer;
-    outline: none;
-
-    &:active {
-        background-color: var(--btn-background-color-active);
-    }
-
-    &:disabled {
-        cursor: default;
-        pointer-events: none;
-        opacity: 0.65;
-    }
-
-    &:focus-visible {
-        box-shadow: 0 0 0.75rem 0 var(--btn-box-shadow-color);
-    }
-
-    &:hover {
-        background-color: var(--btn-background-color-hover);
-    }
-}
-
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_buttons.scss
-%btn-large {
-    font-size: variables.$font-size-lg;
-    padding: 0.5rem 1rem;
+@mixin button-large($selector: '.btn-lg') {
+    #{$selector} {
+        font-size: variables.$font-size-lg;
+        padding: 0.5rem 1rem;
+    }
 }
 
-%btn-small {
-    font-size: variables.$font-size-sm;
-    padding: 0.25rem 0.5rem;
+@mixin button-small($selector: '.btn-sm') {
+    #{$selector} {
+        font-size: variables.$font-size-sm;
+        padding: 0.25rem 0.5rem;
+    }
 }
 
 @mixin buttons($font-size: variables.$button-font-size) {
     @include button-base($font-size: $font-size);
+    @include button-large;
+    @include button-small;
     @include themed-buttons;
     @include themed-buttons-inverted;
 }
 
 @mixin button-base($font-size: variables.$button-font-size) {
     button {
-        @extend %button;
+        --btn-border-width: #{variables.$button-border-width};
+        --btn-box-shadow-color: #{variables.$button-box-shadow-color};
+
+        padding: variables.$button-padding;
+        background-color: var(--btn-background-color);
+        color: var(--btn-color);
+        border: var(--btn-border-width) solid var(--btn-border-color);
+        cursor: pointer;
+        outline: none;
         font-size: $font-size;
+
+        &:active {
+            background-color: var(--btn-background-color-active);
+        }
+
+        &:disabled {
+            cursor: default;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        &:focus-visible {
+            box-shadow: 0 0 0.75rem 0 var(--btn-box-shadow-color);
+        }
+
+        &:hover {
+            background-color: var(--btn-background-color-hover);
+        }
     }
 }
 

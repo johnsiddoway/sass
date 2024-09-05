@@ -1,9 +1,3 @@
-$layout-root-selector: '.root';
-$dark-mode-selector: '.root.dark';
-$light-mode-selector: '.root.light';
-
-@import './library.scss';
-
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -12,22 +6,13 @@ $light-mode-selector: '.root.light';
     font-display: swap;
 }
 
-@include reset;
-@include buttons;
-@include cards;
-@include style-all-forms;
+$layout-root-selector: '.root';
+$dark-mode-selector: '.root.dark';
+$light-mode-selector: '.root.light';
 
-dialog {
-    @extend %dialog;
-}
+@import './library';
 
-.btn-large {
-    @extend %btn-large;
-}
-
-.btn-small {
-    @extend %btn-small;
-}
+@include reset();
 
 #{$layout-root-selector} {
     font-family: $font-family-sans-serif;
@@ -36,3 +21,11 @@ dialog {
     line-height: $line-height-base;
     text-align: start;
 }
+
+@include inputs;
+@include form;
+@include label;
+@include select;
+@include buttons;
+@include cards;
+@include dialog;

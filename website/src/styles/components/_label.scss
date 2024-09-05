@@ -1,18 +1,18 @@
 @use './input-base';
 @use './input-radio';
 
-@mixin label {
-    label {
+@mixin label($selector: 'label') {
+    #{$selector} {
         display: block;
         cursor: pointer;
     }
 
     // Start Vertical
-    label:has(+ input, + select) {
+    #{$selector}:has(+ input, + select) {
         margin-bottom: 0.25em;
     }
 
-    label:has(> input, > select) {
+    #{$selector}:has(> input, > select) {
         display: flex;
         flex-direction: column;
         row-gap: 0.25em;
@@ -20,30 +20,30 @@
     // End Vertical
 
     // Start Horizontal
-    label:has(+ input[type='checkbox'], + input[type='radio']),
-    label.horizontal:has(+ input, + select) {
+    #{$selector}:has(+ input[type='checkbox'], + input[type='radio']),
+    #{$selector}.horizontal:has(+ input, + select) {
         display: inline-block;
         margin-right: 0.5em;
     }
 
-    label:has(> input[type='checkbox'], > input[type='radio']),
-    label.horizontal:has(> input, > select) {
+    #{$selector}:has(> input[type='checkbox'], > input[type='radio']),
+    #{$selector}.horizontal:has(> input, > select) {
         display: flex;
         flex-direction: row;
         column-gap: 0.5em;
     }
 
-    input:is([type='checkbox'], [type='radio']) + label,
-    input + label.horizontal,
-    select + label.horizontal {
+    input:is([type='checkbox'], [type='radio']) + #{$selector},
+    input + #{$selector}.horizontal,
+    select + #{$selector}.horizontal {
         display: inline-block;
         margin-left: 0.5em;
     }
     // End Horizontal
 
-    input[disabled] + label,
-    select[disabled] + label,
-    label:has(+ input[disabled], > input[disabled], + select[disabled], > select[disabled]) {
-        @extend %input-disabled;
+    input[disabled] + #{$selector},
+    select[disabled] + #{$selector},
+    #{$selector}:has(+ input[disabled], > input[disabled], + select[disabled], > select[disabled]) {
+        @include input-base.input-disabled();
     }
 }

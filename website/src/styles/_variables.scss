@@ -172,9 +172,12 @@ $line-height-base: 1.5 !default;
 // $default-box-shadow: 0.25rem 0.25rem 0.25rem 0rem $gray-700 !default;
 // $default-padding: 0.375rem 0.75rem !default;
 // $default-margin-bottom: 1rem !default;
-$box-shadow-default: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
-$margin-bottom-default: 1rem !default;
+
+$margin-bottom-default: 1em !default;
+$border-default: 1px solid currentColor !default;
 $padding-default: 0.375em 0.75em !default;
+
+$box-shadow-default: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
 
 $button-background-scale: 0% !default;
 $button-background-scale-hover: -15% !default;

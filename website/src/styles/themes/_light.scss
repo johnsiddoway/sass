@@ -1,6 +1,6 @@
 @use '../variables';
 
-#{variables.$light-mode-selector} {
+%light-mode-root {
     --btn-background-color: #{variables.$button-background-color};
     --btn-background-color-active: #{variables.$gray-70};
     --btn-background-color-hover: #{variables.$gray-80};

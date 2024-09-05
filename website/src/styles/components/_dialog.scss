@@ -1,8 +1,12 @@
-%dialog {
-    border: 1px solid currentColor;
-    padding: 1rem;
+@use '../variables';
 
-    form {
-        margin-bottom: 0;
+@mixin dialog($selector: 'dialog') {
+    #{$selector} {
+        border: variables.$border-default;
+        padding: variables.$padding-default;
+
+        form {
+            margin-bottom: 0;
+        }
     }
 }

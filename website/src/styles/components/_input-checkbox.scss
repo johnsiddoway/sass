@@ -1,58 +1,42 @@
 @use '../variables';
 @use './input-base';
 
-// By declaring these as placeholders, they becomes "opt-in" for consuming packages
-%input-checkbox-replacement {
-    content: '';
-    cursor: pointer;
-    height: 0.75rem;
-    width: 0.75em;
-    border: 1px solid currentColor;
-    display: inline-block;
-    background: var(--color-secondary);
-}
+// By declaring these as mixins, they becomes "opt-in" for consuming packages
+@mixin input-checkbox($selector: 'input[type="checkbox"]') {
+    #{$selector} {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
 
-%input-checkbox {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    outline: none;
+        &:disabled {
+            @include input-base.input-disabled;
+        }
 
-    &:disabled {
-        @extend %input-disabled;
-    }
+        &::before {
+            content: '';
+            cursor: pointer;
+            height: 0.75rem;
+            width: 0.75em;
+            border: 1px solid currentColor;
+            display: inline-block;
+            background: var(--color-secondary);
+        }
 
-    &::before {
-        @extend %input-checkbox-replacement;
-    }
+        &:focus::before {
+            box-shadow: var(--theme-box-shadow);
+        }
 
-    &:focus::before {
-        box-shadow: var(--theme-box-shadow);
-    }
+        &:hover::before {
+            background-color: var(--color-secondary-dark);
+        }
 
-    &:hover::before {
-        background-color: var(--color-secondary-dark);
-    }
+        &:checked::before {
+            background: var(--color-primary);
+        }
 
-    &:checked::before {
-        background: var(--color-primary);
-    }
-
-    &:checked:hover::before {
-        background: var(--color-primary-light);
+        &:checked:hover::before {
+            background: var(--color-primary-light);
+        }
     }
 }
-
-// %input-checkbox-inside-label {
-//     @extend %input-checkbox;
-// }
-
-// %input-checkbox-after-label {
-//     margin-left: 0.5em;
-//     @extend %input-checkbox;
-// }
-
-// %input-checkbox-before-label {
-//     margin-right: 0.5em;
-//     @extend %input-checkbox;
-// }

@@ -4,31 +4,10 @@
 
 @use 'components';
 
-@mixin style-all-forms {
-    @include components.form;
-    @include components.label;
-
-    input[type='checkbox'] {
-        @extend %input-checkbox;
-    }
-
-    input[type='file'] {
-        @extend %input-file;
-    }
-
-    input[type='radio'] {
-        @extend %input-radio;
-    }
-
-    input[type='range'] {
-        @extend %input-range;
-    }
-
-    input:not([type='checkbox'], [type='file'], [type='radio'], [type='range']) {
-        @extend %input-base;
-    }
-
-    select {
-        @extend %select;
-    }
+@mixin inputs() {
+    @include components.input-base;
+    @include components.input-checkbox;
+    @include components.input-radio;
+    @include components.input-file;
+    @include components.input-range;
 }
