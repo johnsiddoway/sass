@@ -1,17 +1,2 @@
 @forward 'dark';
 @forward 'light';
-
-@use 'dark';
-@use 'light';
-
-@mixin enable-dark-mode($dark-mode-selector) {
-    #{$dark-mode-selector} {
-        @extend %dark-mode-root;
-    }
-}
-
-@mixin enable-light-mode($light-mode-selector) {
-    #{$light-mode-selector} {
-        @extend %light-mode-root;
-    }
-}

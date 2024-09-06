@@ -12,7 +12,7 @@ $light-mode-selector: '.root.light';
 
 @import './library';
 
-@include reset();
+@include reset;
 
 #{$layout-root-selector} {
     font-family: $font-family-sans-serif;
@@ -29,3 +29,6 @@ $light-mode-selector: '.root.light';
 @include buttons;
 @include cards;
 @include dialog;
+
+@include enable-dark-mode;
+@include enable-light-mode;

@@ -1,22 +1,5 @@
 @use '../variables';
 
-// %input-base {
-//     // display: block;
-//     outline: none;
-//     border: variables.$border-default;
-
-//     &:focus,
-//     &:focus-visible,
-//     &:focus-within {
-//         box-shadow: var(--theme-box-shadow);
-//     }
-// }
-
-%input-disabled {
-    pointer-events: none;
-    color: variables.$gray-70;
-}
-
 @mixin input-base($selector: "input:not([type='checkbox'], [type='file'], [type='radio'], [type='range'])") {
     #{$selector} {
         outline: none;
