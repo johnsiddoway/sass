@@ -22,6 +22,7 @@ $light-mode-selector: '.root.light';
     text-align: start;
 }
 
+@include abbr;
 @include inputs;
 @include form;
 @include label;
@@ -29,6 +30,7 @@ $light-mode-selector: '.root.light';
 @include buttons;
 @include cards;
 @include dialog;
+@include tooltip;
 
 @include enable-dark-mode;
 @include enable-light-mode;

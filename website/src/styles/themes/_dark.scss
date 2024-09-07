@@ -18,6 +18,9 @@
         --theme-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
         --card-background-color: #{variables.$gray-30};
         --card-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{variables.$gray-70};
+        --tooltip-background-color: #{variables.$gray-30};
+        --tooltip-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{variables.$gray-70};
+
         background-color: #{variables.$gray-10};
         color: #{variables.$light};
     }
