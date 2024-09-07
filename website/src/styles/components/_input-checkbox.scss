@@ -20,7 +20,7 @@
             width: 0.75em;
             border: 1px solid currentColor;
             display: inline-block;
-            background: var(--color-secondary);
+            background-color: var(--color-secondary);
         }
 
         &:focus::before {
@@ -32,11 +32,11 @@
         }
 
         &:checked::before {
-            background: var(--color-primary);
+            background-color: var(--color-primary);
         }
 
         &:checked:hover::before {
-            background: var(--color-primary-light);
+            background-color: var(--color-primary-light);
         }
     }
 }
