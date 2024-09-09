@@ -1,7 +1,6 @@
 import React from 'react'
 import type { Preview } from '@storybook/react'
 
-// import "./preview.scss";
 import "../src/styles/main.scss";
 
 const preview: Preview = {
@@ -27,4 +26,4 @@ const preview: Preview = {
     )],
 }
 
-export default preview
+export default preview;
