@@ -23,13 +23,14 @@ $light-mode-selector: '.root.light';
 }
 
 @include abbr;
+@include buttons;
+@include cards;
+@include details;
+@include dialog;
 @include inputs;
 @include form;
 @include label;
 @include select;
-@include buttons;
-@include cards;
-@include dialog;
 @include toggle;
 @include tooltip;
 
