@@ -23,7 +23,18 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Default: Story = {
+export const AbbreviationDefault: Story = {
+    render: () => (
+        <p>
+            The <Abbreviation title="Hypertext Markup Language">HTML</Abbreviation> abbreviation element.
+        </p>
+    ),
+};
+
+export const DarkMode: Story = {
+    parameters: {
+        backgrounds: { default: 'dark' },
+    },
     render: () => (
         <p>
             The <Abbreviation title="Hypertext Markup Language">HTML</Abbreviation> abbreviation element.
@@ -39,3 +50,13 @@ export const Tooltip: Story = {
     ),
 };
 
+export const TooltipDarkMode: Story = {
+    parameters: {
+        backgrounds: { default: 'dark' },
+    },
+    render: () => (
+        <p>
+            The <Abbreviation dataTooltip="Hypertext Markup Language">HTML</Abbreviation> abbreviation element.
+        </p>
+    ),
+};

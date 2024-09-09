@@ -36,3 +36,23 @@ export const Default: Story = {
         </>
     }
 };
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const DarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    args: {
+        children: <>
+            <h2>Lorem ipsum</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
+                diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
+                consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
+                at turpis.
+            </p>
+        </>
+    }
+};

@@ -4,6 +4,7 @@ const config: StorybookConfig = {
     staticDirs: ['../public'],
     stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     addons: [
+        "@storybook/addon-backgrounds",
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         "@chromatic-com/storybook",
