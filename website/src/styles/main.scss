@@ -14,13 +14,7 @@ $light-mode-selector: '.root.light';
 
 @include reset;
 
-#{$layout-root-selector} {
-    font-family: $font-family-sans-serif;
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    line-height: $line-height-base;
-    text-align: start;
-}
+@include layout-root;
 
 @include abbr;
 @include buttons;

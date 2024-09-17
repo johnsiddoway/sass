@@ -1,0 +1,11 @@
+@use '../variables';
+
+@mixin cards($selector: '.card') {
+    #{$selector} {
+        margin-bottom: variables.$margin-bottom-default;
+        border: 1px solid currentColor;
+        padding: variables.$padding-default;
+        background-color: var(--card-background-color);
+        box-shadow: var(--card-box-shadow);
+    }
+}

@@ -1,0 +1,71 @@
+@use '../variables';
+
+@mixin toggle($selector: '.toggle') {
+    #{$selector} {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+        user-select: none;
+    }
+
+    #{$selector} input[type='checkbox'] {
+        --background-color: #{variables.$white};
+        --toggle-background-off: #{variables.$gray-60};
+        --toggle-background-on: #{variables.$primary};
+        --toggle-height: 2rem;
+        --padding: 3px;
+        --border-width: 1px;
+        --indicator-size: calc(var(--toggle-height) - var(--padding) * 2 - var(--border-width) * 2);
+        --toggle-width: calc(var(--indicator-size) * 2 + var(--padding) * 2 + var(--border-width) * 2);
+        appearance: none;
+        position: relative;
+        cursor: pointer;
+        height: var(--toggle-height);
+        width: var(--toggle-width);
+        background-color: var(--toggle-background-off);
+        padding: var(--padding);
+        border: 1px solid currentColor;
+        transition: 0.1s linear background-color;
+
+        // Resolve conflict between this and _input-checkbox.scss
+        &:focus::before {
+            box-shadow: none;
+        }
+
+        &:focus {
+            box-shadow: var(--theme-box-shadow);
+        }
+    }
+
+    // Resolve conflict between this and _input-checkbox.scss
+    #{$selector} input:hover::before,
+    #{$selector} input:checked::before,
+    #{$selector} input:checked:hover::before {
+        background-color: var(--background-color);
+    }
+
+    #{$selector} input::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: var(--padding);
+        left: var(--padding);
+        width: var(--indicator-size);
+        height: var(--indicator-size);
+        border: 1px solid currentColor;
+        background-color: var(--background-color);
+        transition: 0.1s linear transform;
+        transform: translateX(0);
+    }
+
+    #{$selector} input:checked {
+        background-color: var(--toggle-background-on);
+    }
+
+    #{$selector} input:checked::before {
+        transform: translateX(
+            calc(var(--toggle-width) - var(--indicator-size) - var(--padding) * 2 - var(--border-width) * 2)
+        );
+    }
+}

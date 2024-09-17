@@ -1,7 +1,0 @@
-@mixin abbreviations($selector: 'abbr') {
-	#{$selector} {
-		text-decoration-line: none;
-		border-bottom: 1px dotted currentColor;
-		cursor: help;
-	}
-}

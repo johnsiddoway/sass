@@ -1,0 +1,109 @@
+@use 'sass:meta';
+@use '../functions';
+@use '../variables';
+
+// Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_buttons.scss
+@mixin button-large($selector: '.btn-lg') {
+    #{$selector} {
+        font-size: variables.$font-size-lg;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@mixin button-small($selector: '.btn-sm') {
+    #{$selector} {
+        font-size: variables.$font-size-sm;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+@mixin buttons($font-size: variables.$button-font-size) {
+    @include button-base($font-size: $font-size);
+    @include button-large;
+    @include button-small;
+    @include themed-buttons;
+    @include themed-buttons-inverted;
+}
+
+@mixin button-base($font-size: variables.$button-font-size) {
+    button {
+        --btn-border-width: #{variables.$button-border-width};
+        --btn-box-shadow-color: #{variables.$button-box-shadow-color};
+
+        padding: variables.$button-padding;
+        background-color: var(--btn-background-color);
+        color: var(--btn-color);
+        border: var(--btn-border-width) solid var(--btn-border-color);
+        cursor: pointer;
+        outline: none;
+        font-size: $font-size;
+
+        &:active {
+            background-color: var(--btn-background-color-active);
+        }
+
+        &:disabled {
+            cursor: default;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        &:focus-visible {
+            box-shadow: 0 0 0.75rem 0 var(--btn-box-shadow-color);
+        }
+
+        &:hover {
+            background-color: var(--btn-background-color-hover);
+        }
+    }
+}
+
+// Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
+// This has been turned into an opt-in mixin, instead of always including the classes in the compiled css
+@mixin themed-buttons($color-map: variables.$theme-colors) {
+    @each $name, $colors in $color-map {
+        .btn-#{$name} {
+            @include themed-button($theme-colors: $colors);
+        }
+    }
+}
+
+@mixin themed-buttons-inverted($color-map: variables.$theme-colors) {
+    @each $name, $colors in $color-map {
+        .btn-#{$name}-inverted {
+            @include themed-button-inverted($theme-colors: $colors);
+        }
+    }
+}
+
+@mixin themed-button(
+    $theme-colors,
+    $background-scale: variables.$button-background-scale,
+    $background-scale-hover: variables.$button-background-scale-hover,
+    $background-scale-active: variables.$button-background-scale-active,
+    $background-scale-disabled: variables.$button-background-scale-disabled
+) {
+    $theme-color-background: map-get($theme-colors, 'background-color');
+    $theme-color-foreground: map-get($theme-colors, 'color');
+    $theme-color-border: map-get($theme-colors, 'border-color');
+    --btn-background-color: #{$theme-color-background};
+    --btn-background-color-active: #{functions.shift-color($theme-color-background, $background-scale-active)};
+    --btn-background-color-hover: #{functions.shift-color($theme-color-background, $background-scale-active)};
+    --btn-border-color: #{$theme-color-border};
+    --btn-box-shadow-color: #{$theme-color-background};
+    --btn-color: #{$theme-color-foreground};
+}
+
+// Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
+// Except this version only includes a border for the :focus-visible state
+@mixin themed-button-inverted($theme-colors) {
+    $theme-color-background: map-get($theme-colors, 'background-color');
+    $theme-color-foreground: map-get($theme-colors, 'color');
+    $theme-color-border: map-get($theme-colors, 'border-color');
+    --btn-background-color: transparent;
+    --btn-background-color-active: transparent;
+    --btn-background-color-hover: transparent;
+    --btn-border-color: #{$theme-color-background};
+    --btn-box-shadow-color: #{$theme-color-background};
+    --btn-color: #{$theme-color-background};
+}

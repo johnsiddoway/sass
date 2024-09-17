@@ -1,5 +1,14 @@
-@forward 'utils/variables';
-@forward 'base';
+@forward './variables';
 @forward 'components';
-@forward 'layout';
+@forward 'layouts';
 @forward 'themes';
+
+@use 'components';
+
+@mixin inputs() {
+    @include components.input-base;
+    @include components.input-checkbox;
+    @include components.input-radio;
+    @include components.input-file;
+    @include components.input-range;
+}

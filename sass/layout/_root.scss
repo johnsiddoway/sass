@@ -1,8 +1,0 @@
-@use "flex";
-
-%root {
-    @include flex.make-flex($flex-direction: column);
-    & {
-        min-height: 100vh;
-    }
-}

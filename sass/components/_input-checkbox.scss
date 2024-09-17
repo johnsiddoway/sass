@@ -1,0 +1,42 @@
+@use '../variables';
+@use './input-base';
+
+// By declaring these as mixins, they becomes "opt-in" for consuming packages
+@mixin input-checkbox($selector: 'input[type="checkbox"]') {
+    #{$selector} {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+
+        &:disabled {
+            @include input-base.input-disabled;
+        }
+
+        &::before {
+            content: '';
+            cursor: pointer;
+            height: 0.75rem;
+            width: 0.75em;
+            border: 1px solid currentColor;
+            display: inline-block;
+            background-color: var(--color-secondary);
+        }
+
+        &:focus::before {
+            box-shadow: var(--theme-box-shadow);
+        }
+
+        &:hover::before {
+            background-color: var(--color-secondary-dark);
+        }
+
+        &:checked::before {
+            background-color: var(--color-primary);
+        }
+
+        &:checked:hover::before {
+            background-color: var(--color-primary-light);
+        }
+    }
+}
