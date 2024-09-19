@@ -1,6 +1,6 @@
 {
     "name": "@johnsiddoway/sass",
-    "version": "4.2.0",
+    "version": "4.2.1",
     "description": "Custom Sass files for use in my personal projects.",
     "main": "index.scss",
     "scripts": {

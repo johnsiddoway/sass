@@ -1,5 +1,5 @@
 %select {
-    height: 2.375em;
+    min-height: 2.375em;
     padding: 0.375em 1.65em 0.375em 0.75em;
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -21,7 +21,7 @@
 
 @mixin select($selector: 'select') {
     #{$selector} {
-        height: 2.375em;
+        min-height: 2.375em;
         padding: 0.375em 1.65em 0.375em 0.75em;
         -moz-appearance: none;
         -webkit-appearance: none;

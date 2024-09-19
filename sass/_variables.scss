@@ -137,30 +137,30 @@ $font-weight-bold: 700 !default;
 
 $line-height-base: 1.5 !default;
 
-// // containers start
-// $container-padding: 0 0.75rem !default;
-// $container-breakpoints: 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl' !default;
+// containers start
+$container-padding: 0 0.75rem !default;
+$container-breakpoints: 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl' !default;
 
-// $container-grid-breakpoints: (
-//     'xs': 0,
-//     'sm': 576px,
-//     'md': 768px,
-//     'lg': 992px,
-//     'xl': 1200px,
-//     '2xl': 1400px,
-//     '3xl': 1600px,
-//     '4xl': 1920px
-// ) !default;
-// $container-max-widths: (
-//     'sm': 540px,
-//     'md': 720px,
-//     'lg': 960px,
-//     'xl': 1140px,
-//     '2xl': 1320px,
-//     '3xl': 1500px,
-//     '4xl': 1800px
-// ) !default;
-// // containers end
+$container-grid-breakpoints: (
+    'xs': 0,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    '2xl': 1400px,
+    '3xl': 1600px,
+    '4xl': 1920px
+) !default;
+$container-max-widths: (
+    'sm': 540px,
+    'md': 720px,
+    'lg': 960px,
+    'xl': 1140px,
+    '2xl': 1320px,
+    '3xl': 1500px,
+    '4xl': 1800px
+) !default;
+// containers end
 
 // $footer-margin-top: auto !default;
 // $footer-padding: 0.5rem 0 !default;

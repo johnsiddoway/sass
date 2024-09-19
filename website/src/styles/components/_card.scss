@@ -9,3 +9,11 @@
         box-shadow: var(--card-box-shadow);
     }
 }
+
+@mixin make-card($padding: variables.$padding-default, $margin-bottom: variables.$margin-bottom-default, $border: 1px solid currentColor) {
+    margin-bottom: $margin-bottom;
+    border: $border;
+    padding: $padding;
+    background-color: var(--card-background-color);
+    box-shadow: var(--card-box-shadow);
+}
