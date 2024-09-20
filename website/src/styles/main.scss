@@ -10,7 +10,7 @@ $layout-root-selector: '.root';
 $dark-mode-selector: '.root.dark';
 $light-mode-selector: '.root.light';
 
-@import './library';
+@import '../../../sass/index.scss';
 
 @include reset;
 
@@ -28,5 +28,13 @@ $light-mode-selector: '.root.light';
 @include toggle;
 @include tooltip;
 
-@include enable-dark-mode;
-@include enable-light-mode;
+#{$light-mode-selector} {
+    @include light-mode-variables;
+}
+
+// In addition to setting a bunch of variables on the dark mode selector,
+// We need to explicitly set a couple of variables so components work as expected.
+#{$dark-mode-selector} {
+    color: var(--on-background);
+    @include dark-mode-variables;
+}

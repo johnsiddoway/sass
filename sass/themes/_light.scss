@@ -12,24 +12,21 @@
 
     --primary: transparent;
     --primary-variant: transparent;
+    --primary-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
+    --on-primary: transparent;
+
     --secondary: transparent;
     --secondary-variant: transparent;
-    --background: transparent;
-    --surface: transparent;
-
-    --on-primary: transparent;
+    --secondary-box-shadow: #{variables.$box-shadow-default};
     --on-secondary: transparent;
+
+    --background: transparent;
     --on-background: transparent;
+
+    --surface: transparent;
+    --surface-box-shadow: #{variables.$box-shadow-default};
     --on-surface: transparent;
 
     --border-color: currentColor;
     --border-width: 1px;
-
-    --box-shadow-primary: #{variables.$input-range-thumb-focus-box-shadow};
-    --box-shadow-secondary: #{variables.$box-shadow-default};
-
-    --card-background-color: #{variables.$light};
-    --card-box-shadow: #{variables.$box-shadow-default};
-    --tooltip-background-color: #{variables.$light};
-    --tooltip-box-shadow: #{variables.$box-shadow-default};
 }

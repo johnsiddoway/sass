@@ -1,27 +1,47 @@
 @use '../variables';
 
 @mixin dark-mode-variables {
-    --color-dark: #{variables.$light};
-    --color-light: #{variables.$dark};
-    --color-primary-light: #{variables.$orange-70};
-    --color-primary: #{variables.$orange-60};
-    --color-dark: #{variables.$orange-50};
-    --color-secondary-light: #{variables.$gray-70};
-    --color-secondary: #{variables.$gray-60};
-    --color-secondary-dark: #{variables.$gray-50};
+    // --color-dark: #{variables.$light};
+    // --color-light: #{variables.$dark};
+    // --color-primary-light: #{variables.$orange-70};
+    // --color-primary: #{variables.$orange-60};
+    // --color-dark: #{variables.$orange-50};
+    // --color-secondary-light: #{variables.$gray-70};
+    // --color-secondary: #{variables.$gray-60};
+    // --color-secondary-dark: #{variables.$gray-50};
 
-    --background-color: transparent;
-    --background-color-hover: transparent;
-    --background-color-active: transparent;
+    // --background-color: transparent;
+    // --background-color-hover: transparent;
+    // --background-color-active: transparent;
+    // --border-color: currentColor;
+    // --border-width: 1px;
+    // --color: inherit;
+
+    // --box-shadow-primary: #{variables.$input-range-thumb-focus-box-shadow};
+    // --box-shadow-secondary: 0.25rem 0.25rem 0.25rem 0rem #{variables.$gray-70};
+
+    // --card-background-color: #{variables.$gray-30};
+    // --card-box-shadow: var(--box-shadow-secondary);
+    // --tooltip-background-color: #{variables.$gray-30};
+    // --tooltip-box-shadow: var(--box-shadow-secondary);
+
+    --primary: transparent;
+    --primary-variant: transparent;
+    --primary-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
+    --on-primary: transparent;
+
+    --secondary: transparent;
+    --secondary-variant: transparent;
+    --secondary-box-shadow: #{variables.$box-shadow-default};
+    --on-secondary: transparent;
+
+    --background: transparent;
+    --on-background: transparent;
+
+    --surface: transparent;
+    --surface-box-shadow: #{variables.$box-shadow-default};
+    --on-surface: transparent;
+
     --border-color: currentColor;
     --border-width: 1px;
-    --color: inherit;
-
-    --box-shadow-primary: #{variables.$input-range-thumb-focus-box-shadow};
-    --box-shadow-secondary: 0.25rem 0.25rem 0.25rem 0rem #{variables.$gray-70};
-
-    --card-background-color: #{variables.$gray-30};
-    --card-box-shadow: var(--box-shadow-secondary);
-    --tooltip-background-color: #{variables.$gray-30};
-    --tooltip-box-shadow: var(--box-shadow-secondary);
 }

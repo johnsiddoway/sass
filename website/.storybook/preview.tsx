@@ -9,7 +9,7 @@ const preview: Preview = {
             default: 'light',
             values: [
                 { name: 'light', value: '#ffffff' },
-                { name: 'dark', value: '#1c1a17' }, // variables.$gray-10
+                { name: 'dark', value: '#1a1a1a' }, // variables.$gray-10
             ],
         },
         layout: 'centered',
