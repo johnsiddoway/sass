@@ -5,8 +5,9 @@
         margin-bottom: variables.$margin-bottom-default;
         border: var(--border-width) solid var(--border-color);
         padding: variables.$padding-default;
-        background-color: var(--card-background-color);
-        box-shadow: var(--card-box-shadow);
+        background-color: var(--surface);
+        color: var(--on-surface);
+        box-shadow: var(--surface-box-shadow);
     }
 }
 
@@ -14,6 +15,7 @@
     margin-bottom: $margin-bottom;
     border: var(--border-width) solid var(--border-color);
     padding: $padding;
-    background-color: var(--card-background-color);
-    box-shadow: var(--card-box-shadow);
+    background-color: var(--surface);
+    color: var(--on-surface);
+    box-shadow: var(--surface-box-shadow);
 }

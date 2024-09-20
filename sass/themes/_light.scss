@@ -1,20 +1,29 @@
 @use '../variables';
 
 @mixin light-mode-variables {
-    --color-dark: #{variables.$dark};
-    --color-light: #{variables.$light};
-    --color-primary: #{variables.$primary};
-    --color-primary-light: #{variables.$primary-light};
-    --color-secondary: #{variables.$secondary};
-    --color-secondary-dark: #{variables.$secondary-dark};
-    --color-secondary-light: #{variables.$secondary-light};
+    // --color-dark: #{variables.$dark};
+    // --color-light: #{variables.$light};
+    // --color-primary-light: #{variables.$orange-70};
+    // --color-primary: #{variables.$orange-60};
+    // --color-primary-dark: #{variables.$orange-50};
+    // --color-secondary-light: #{variables.$gray-70};
+    // --color-secondary: #{variables.$gray-60};
+    // --color-secondary-dark: #{variables.$gray-50};
 
-    --background-color: transparent;
-    --background-color-hover: transparent;
-    --background-color-active: transparent;
+    --primary: transparent;
+    --primary-variant: transparent;
+    --secondary: transparent;
+    --secondary-variant: transparent;
+    --background: transparent;
+    --surface: transparent;
+
+    --on-primary: transparent;
+    --on-secondary: transparent;
+    --on-background: transparent;
+    --on-surface: transparent;
+
     --border-color: currentColor;
     --border-width: 1px;
-    --color: inherit;
 
     --box-shadow-primary: #{variables.$input-range-thumb-focus-box-shadow};
     --box-shadow-secondary: #{variables.$box-shadow-default};

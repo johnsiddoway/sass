@@ -33,12 +33,12 @@
             margin-top: calc(calc(var(--track-height) - var(--thumb-height)) * 0.5);
             width: var(--thumb-width);
             height: var(--thumb-height);
-            background-color: var(--color-primary);
+            background-color: var(--primary);
             border: 1px solid currentColor;
         }
         &::-webkit-slider-runnable-track {
             height: var(--track-height);
-            background: var(--color-secondary);
+            background: var(--background);
         }
 
         // Mozilla-based browsers
@@ -47,12 +47,12 @@
             -webkit-appearance: none;
             width: var(--thumb-width);
             height: var(--thumb-height);
-            background-color: var(--color-primary);
+            background-color: var(--primary);
             border: 1px solid currentColor;
         }
         &::-moz-range-track {
             height: var(--track-height);
-            background: var(--color-secondary);
+            background: var(--background);
         }
 
         // IE
@@ -61,12 +61,12 @@
             -webkit-appearance: none;
             width: var(--thumb-width);
             height: var(--thumb-height);
-            background-color: var(--color-primary);
+            background-color: var(--primary);
             border: 1px solid currentColor;
         }
         &::-ms-track {
             height: var(--track-height);
-            background: var(--color-secondary);
+            background: var(--background);
         }
     }
 }

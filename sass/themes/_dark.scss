@@ -3,11 +3,12 @@
 @mixin dark-mode-variables {
     --color-dark: #{variables.$light};
     --color-light: #{variables.$dark};
-    --color-primary: #{variables.$primary};
-    --color-primary-light: #{variables.$primary-light};
+    --color-primary-light: #{variables.$orange-70};
+    --color-primary: #{variables.$orange-60};
+    --color-dark: #{variables.$orange-50};
+    --color-secondary-light: #{variables.$gray-70};
     --color-secondary: #{variables.$gray-60};
     --color-secondary-dark: #{variables.$gray-50};
-    --color-secondary-light: #{variables.$gray-70};
 
     --background-color: transparent;
     --background-color-hover: transparent;

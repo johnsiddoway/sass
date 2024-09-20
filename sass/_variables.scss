@@ -1,58 +1,154 @@
-// $configuration-include-theme: true !default;
-// $configuration-reset-styles: false !default;
-// $configuration-support-dark-mode: true !default;
+$white: #ffffff !default; // hsl(0, 0%, 100%)
+$black: #000000 !default; // hsl(0, 0%, 0%)
 
-// scss-docs-start gray-color-variables
-$white: #ffffff !default;    // hsl(30, 10%, 100%) | Same H value as our primary theme color
-$gray-100: #ffffff !default; // hsl(30, 10%, 100%)
-$gray-90: #e8e6e3 !default;  // hsl(30, 10%,  90%)
-$gray-80: #d1ccc7 !default;  // hsl(30, 10%,  80%)
-$gray-70: #bab3ab !default;  // hsl(30, 10%,  70%)
-$gray-60: #a3998f !default;  // hsl(30, 10%,  60%)
-$gray-50: #8c8073 !default;  // hsl(30, 10%,  50%)
-$gray-40: #70665c !default;  // hsl(30, 10%,  40%)
-$gray-30: #544d45 !default;  // hsl(30, 10%,  30%)
-$gray-20: #38332e !default;  // hsl(30, 10%,  20%)
-$gray-10: #1c1a17 !default;  // hsl(30, 10%,  10%)
-$gray-0: #000000 !default;   // hsl(30, 10%,   0%)
-$black: #000000 !default;    // hsl(30, 10%,   0%)
-// scss-docs-end gray-color-variables
+$gray-90: #e6e6e6 !default; // hsl(0, 0%, 90%)
+$gray-80: #cccccc !default; // hsl(0, 0%, 80%)
+$gray-70: #b3b3b3 !default; // hsl(0, 0%, 70%)
+$gray-60: #999999 !default; // hsl(0, 0%, 60%)
+$gray-50: #808080 !default; // hsl(0, 0%, 50%)
+$gray-40: #666666 !default; // hsl(0, 0%, 40%)
+$gray-30: #4d4d4d !default; // hsl(0, 0%, 30%)
+$gray-20: #333333 !default; // hsl(0, 0%, 20%)
+$gray-10: #1a1a1a !default; // hsl(0, 0%, 10%)
+$gray-05: #0d0d0d !default; // hsl(0, 0%,  5%)
 
-// scss-docs-start color-variables
-$orange: #ff9933 !default; // hsl( 30, 100%, 60%) |  9.86:1
-$yellow: #ffff33 !default; // hsl( 60, 100%, 60%) | 19.60:1
-$green: #33ff33 !default; // hsl(120, 100%, 60%) | 15.49:1
-$teal: #33ff99 !default; // hsl(150, 100%, 60%) | 15.90:1
-$cyan: #33ffff !default; // hsl(180, 100%, 60%) | 16.89:1
-$blue: #3399ff !default; // hsl(210, 100%, 60%) |  7.14:1
-$indigo: #6633ff !default; // hsl(255, 100%, 60%) |  3.14:1
-$purple: #9933ff !default; // hsl(270, 100%, 60%) |  4.27:1
-$pink: #ff33ff !default; // hsl(300, 100%, 60%) |  7.17:1
-$red: #ff3333 !default; // hsl(  0, 100%, 60%) |  5.77:1
-// scss-docs-end color-variables
+$orange-90: #ffe6cc !default; // hsl(30, 100%, 90%)
+$orange-80: #ffcc99 !default; // hsl(30, 100%, 80%)
+$orange-70: #ffb366 !default; // hsl(30, 100%, 70%)
+$orange-60: #ff9933 !default; // hsl(30, 100%, 60%)
+$orange-50: #ff8000 !default; // hsl(30, 100%, 50%)
+$orange-40: #cc6600 !default; // hsl(30, 100%, 40%)
+$orange-30: #994d00 !default; // hsl(30, 100%, 30%)
+$orange-20: #663300 !default; // hsl(30, 100%, 20%)
+$orange-10: #331a00 !default; // hsl(30, 100%, 10%)
+$orange-05: #1a0d00 !default; // hsl(30, 100%,  5%)
+
+$yellow-90: #ffffcc !default; // hsl(60, 100%, 90%)
+$yellow-80: #ffff99 !default; // hsl(60, 100%, 80%)
+$yellow-70: #ffff66 !default; // hsl(60, 100%, 70%)
+$yellow-60: #ffff33 !default; // hsl(60, 100%, 60%)
+$yellow-50: #ffff00 !default; // hsl(60, 100%, 50%)
+$yellow-40: #cccc00 !default; // hsl(60, 100%, 40%)
+$yellow-30: #999900 !default; // hsl(60, 100%, 30%)
+$yellow-20: #666600 !default; // hsl(60, 100%, 20%)
+$yellow-10: #333300 !default; // hsl(60, 100%, 10%)
+$yellow-05: #1a1a00 !default; // hsl(60, 100%,  5%)
+
+$green-90: #ccffcc !default; // hsl(120, 100%, 90%)
+$green-80: #99ff99 !default; // hsl(120, 100%, 80%)
+$green-70: #66ff66 !default; // hsl(120, 100%, 70%)
+$green-60: #33ff33 !default; // hsl(120, 100%, 60%)
+$green-50: #00ff00 !default; // hsl(120, 100%, 50%)
+$green-40: #00cc00 !default; // hsl(120, 100%, 40%)
+$green-30: #009900 !default; // hsl(120, 100%, 30%)
+$green-20: #006600 !default; // hsl(120, 100%, 20%)
+$green-10: #003300 !default; // hsl(120, 100%, 10%)
+$green-05: #001a00 !default; // hsl(120, 100%,  5%)
+
+$teal-90: #ccffe6 !default; // hsl(150, 100%, 90%)
+$teal-80: #99ffcc !default; // hsl(150, 100%, 80%)
+$teal-70: #66ffb3 !default; // hsl(150, 100%, 70%)
+$teal-60: #33ff99 !default; // hsl(150, 100%, 60%)
+$teal-50: #00ff80 !default; // hsl(150, 100%, 50%)
+$teal-40: #00cc66 !default; // hsl(150, 100%, 40%)
+$teal-30: #00994d !default; // hsl(150, 100%, 30%)
+$teal-20: #006633 !default; // hsl(150, 100%, 20%)
+$teal-10: #00331a !default; // hsl(150, 100%, 10%)
+$teal-05: #001a0d !default; // hsl(150, 100%,  5%)
+
+$cyan-90: #ccffff !default; // hsl(180, 100%, 90%)
+$cyan-80: #99ffff !default; // hsl(180, 100%, 80%)
+$cyan-70: #66ffff !default; // hsl(180, 100%, 70%)
+$cyan-60: #33ffff !default; // hsl(180, 100%, 60%)
+$cyan-50: #00ffff !default; // hsl(180, 100%, 50%)
+$cyan-40: #00cccc !default; // hsl(180, 100%, 40%)
+$cyan-30: #009999 !default; // hsl(180, 100%, 30%)
+$cyan-20: #006666 !default; // hsl(180, 100%, 20%)
+$cyan-10: #003333 !default; // hsl(180, 100%, 10%)
+$cyan-05: #001a1a !default; // hsl(180, 100%,  5%)
+
+$blue-90: #cce6ff !default; // hsl(210, 100%, 90%)
+$blue-80: #99ccff !default; // hsl(210, 100%, 80%)
+$blue-70: #66b3ff !default; // hsl(210, 100%, 70%)
+$blue-60: #3399ff !default; // hsl(210, 100%, 60%)
+$blue-50: #0080ff !default; // hsl(210, 100%, 50%)
+$blue-40: #0066cc !default; // hsl(210, 100%, 40%)
+$blue-30: #004d99 !default; // hsl(210, 100%, 30%)
+$blue-20: #003366 !default; // hsl(210, 100%, 20%)
+$blue-10: #001a33 !default; // hsl(210, 100%, 10%)
+$blue-05: #000d1a !default; // hsl(210, 100%,  5%)
+
+$indigo-90: #d9ccff !default; // hsl(255, 100%, 90%)
+$indigo-80: #b399ff !default; // hsl(255, 100%, 80%)
+$indigo-70: #8c66ff !default; // hsl(255, 100%, 70%)
+$indigo-60: #6633ff !default; // hsl(255, 100%, 60%)
+$indigo-50: #4000ff !default; // hsl(255, 100%, 50%)
+$indigo-40: #3300cc !default; // hsl(255, 100%, 40%)
+$indigo-30: #260099 !default; // hsl(255, 100%, 30%)
+$indigo-20: #1a0066 !default; // hsl(255, 100%, 20%)
+$indigo-10: #0d0033 !default; // hsl(255, 100%, 10%)
+$indigo-05: #06001a !default; // hsl(255, 100%,  5%)
+
+$purple-90: #e6ccff !default; // hsl(270, 100%, 90%)
+$purple-80: #cc99ff !default; // hsl(270, 100%, 80%)
+$purple-70: #b366ff !default; // hsl(270, 100%, 70%)
+$purple-60: #9933ff !default; // hsl(270, 100%, 60%)
+$purple-50: #8000ff !default; // hsl(270, 100%, 50%)
+$purple-40: #8000ff !default; // hsl(270, 100%, 40%)
+$purple-30: #4d0099 !default; // hsl(270, 100%, 30%)
+$purple-20: #330066 !default; // hsl(270, 100%, 20%)
+$purple-10: #1a0033 !default; // hsl(270, 100%, 10%)
+$purple-05: #0d001a !default; // hsl(270, 100%,  5%)
+
+$pink-90: #ffccff !default; // hsl(300, 100%, 90%)
+$pink-80: #ff99ff !default; // hsl(300, 100%, 80%)
+$pink-70: #ff66ff !default; // hsl(300, 100%, 70%)
+$pink-60: #ff33ff !default; // hsl(300, 100%, 60%)
+$pink-50: #ff00ff !default; // hsl(300, 100%, 50%)
+$pink-40: #cc00cc !default; // hsl(300, 100%, 40%)
+$pink-30: #990099 !default; // hsl(300, 100%, 30%)
+$pink-20: #660066 !default; // hsl(300, 100%, 20%)
+$pink-10: #330033 !default; // hsl(300, 100%, 10%)
+$pink-05: #1a001a !default; // hsl(300, 100%,  5%)
+
+$red-90: #ffcccc !default; // hsl(360, 100%, 90%)
+$red-80: #ff9999 !default; // hsl(360, 100%, 80%)
+$red-70: #ff6666 !default; // hsl(360, 100%, 70%)
+$red-60: #ff3333 !default; // hsl(360, 100%, 60%)
+$red-50: #ff0000 !default; // hsl(360, 100%, 50%)
+$red-40: #cc0000 !default; // hsl(360, 100%, 40%)
+$red-30: #990000 !default; // hsl(360, 100%, 30%)
+$red-20: #660000 !default; // hsl(360, 100%, 20%)
+$red-10: #330000 !default; // hsl(360, 100%, 10%)
+$red-05: #1a0000 !default; // hsl(360, 100%,  5%)
 
 // scss-docs-start theme-color-variables
-$primary: $orange !default;
-$primary-dark: #ff8000 !default;
-$primary-light: #ffb366 !default;
+$primary-light: $orange-70 !default;
+$primary: $orange-60 !default;
+$primary-dark: $orange-50 !default;
+$secondary-light: $gray-70 !default;
 $secondary: $gray-60 !default;
 $secondary-dark: $gray-50 !default;
-$secondary-light: $gray-70 !default;
-$info: $cyan !default;
-$success: $green !default;
-$danger: $red !default;
+$info: $cyan-60 !default;
+$success: $green-60 !default;
+$danger: $red-60 !default;
 $light: $white !default;
 $dark: $black !default;
 // scss-docs-end theme-color-variables
 
 $theme-colors: (
     'primary': (
-        'background-color': $orange,
+        'background-color': $primary,
+        'color': $dark,
+        'border-color': $dark
+    ),
+    'secondary': (
+        'background-color': $secondary,
         'color': $dark,
         'border-color': $dark
     ),
     'info': (
-        'background-color': $blue,
+        'background-color': $info,
         'color': $dark,
         'border-color': $dark
     ),
@@ -67,52 +163,52 @@ $theme-colors: (
         'border-color': $dark
     ),
     'orange': (
-        'background-color': $orange,
+        'background-color': $orange-60,
         'color': $dark,
         'border-color': $dark
     ),
     'yellow': (
-        'background-color': $yellow,
+        'background-color': $yellow-60,
         'color': $dark,
         'border-color': $dark
     ),
     'green': (
-        'background-color': $green,
+        'background-color': $green-60,
         'color': $dark,
         'border-color': $dark
     ),
     'teal': (
-        'background-color': $teal,
+        'background-color': $teal-60,
         'color': $dark,
         'border-color': $dark
     ),
     'cyan': (
-        'background-color': $cyan,
+        'background-color': $cyan-60,
         'color': $dark,
         'border-color': $dark
     ),
     'blue': (
-        'background-color': $blue,
+        'background-color': $blue-60,
         'color': $dark,
         'border-color': $dark
     ),
     'indigo': (
-        'background-color': $indigo,
+        'background-color': $indigo-60,
         'color': $dark,
         'border-color': $dark
     ),
     'purple': (
-        'background-color': $purple,
+        'background-color': $purple-60,
         'color': $dark,
         'border-color': $dark
     ),
     'pink': (
-        'background-color': $pink,
+        'background-color': $pink-60,
         'color': $dark,
         'border-color': $dark
     ),
     'red': (
-        'background-color': $red,
+        'background-color': $red-60,
         'color': $dark,
         'border-color': $dark
     )

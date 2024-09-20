@@ -1,15 +1,13 @@
-@use "../variables";
+@use '../variables';
 
 // Custom styling to help generate a 5-star rating block.
 // Uses display: flex and flex-flow: row-reverse,
 // so it's rendered in reverse order compared to how its child elements are declared.
 @mixin make-rating($rating-on-color: variables.$primary, $rating-off-color: variables.$gray-60) {
-    --rating-on-color: #{$rating-on-color};
-    --rating-off-color: #{$rating-off-color};
     display: flex;
     justify-content: space-evenly;
     flex-flow: row-reverse nowrap;
-    color: var(--rating-off-color);
+    color: var(--background);
     input {
         display: none;
     }
@@ -17,10 +15,10 @@
         margin: 0 !important;
     }
     label:hover,
-    label:hover~label,
-    input:checked+label,
-    input:checked+label~label {
-        color: var(--rating-on-color);
+    label:hover ~ label,
+    input:checked + label,
+    input:checked + label ~ label {
+        color: var(--primary);
         cursor: pointer;
     }
 }
