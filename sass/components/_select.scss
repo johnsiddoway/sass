@@ -15,7 +15,7 @@
     &:focus,
     &:focus-visible,
     &:focus-within {
-        box-shadow: var(--theme-box-shadow);
+        box-shadow: var(--input-box-shadow);
     }
 }
 
@@ -37,7 +37,7 @@
         &:focus,
         &:focus-visible,
         &:focus-within {
-            box-shadow: var(--theme-box-shadow);
+            box-shadow: var(--input-box-shadow);
         }
     }
 }
