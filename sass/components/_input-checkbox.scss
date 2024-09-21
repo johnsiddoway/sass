@@ -20,23 +20,23 @@
             width: 0.75em;
             border: 1px solid currentColor;
             display: inline-block;
-            background-color: var(--color-secondary);
+            background-color: var(--secondary);
         }
 
         &:focus::before {
-            box-shadow: var(--theme-box-shadow);
+            box-shadow: var(--primary-box-shadow);
         }
 
         &:hover::before {
-            background-color: var(--color-secondary-dark);
+            background-color: var(--secondary-variant);
         }
 
         &:checked::before {
-            background-color: var(--color-primary);
+            background-color: var(--primary);
         }
 
         &:checked:hover::before {
-            background-color: var(--color-primary-light);
+            background-color: var(--primary-variant);
         }
     }
 }

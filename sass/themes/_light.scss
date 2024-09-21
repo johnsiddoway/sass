@@ -1,31 +1,22 @@
 @use '../variables';
 
 @mixin light-mode-variables {
-    // --color-dark: #{variables.$dark};
-    // --color-light: #{variables.$light};
-    // --color-primary-light: #{variables.$orange-70};
-    // --color-primary: #{variables.$orange-60};
-    // --color-primary-dark: #{variables.$orange-50};
-    // --color-secondary-light: #{variables.$gray-70};
-    // --color-secondary: #{variables.$gray-60};
-    // --color-secondary-dark: #{variables.$gray-50};
-
-    --primary: transparent;
-    --primary-variant: transparent;
+    --primary: #{variables.$orange-60};
+    --primary-variant: #{variables.$orange-40};
     --primary-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
-    --on-primary: transparent;
+    --on-primary: #{variables.$dark};
 
-    --secondary: transparent;
-    --secondary-variant: transparent;
+    --secondary: #{variables.$gray-50};
+    --secondary-variant: #{variables.$gray-40};
     --secondary-box-shadow: #{variables.$box-shadow-default};
-    --on-secondary: transparent;
+    --on-secondary: #{variables.$dark};
 
-    --background: transparent;
-    --on-background: transparent;
+    --background: #{variables.$white};
+    --on-background: #{variables.$black};
 
-    --surface: transparent;
+    --surface: #{variables.$white};
     --surface-box-shadow: #{variables.$box-shadow-default};
-    --on-surface: transparent;
+    --on-surface: #{variables.$black};
 
     --border-color: currentColor;
     --border-width: 1px;

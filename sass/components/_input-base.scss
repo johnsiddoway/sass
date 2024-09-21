@@ -8,7 +8,7 @@
         &:focus,
         &:focus-visible,
         &:focus-within {
-            box-shadow: var(--theme-box-shadow);
+            box-shadow: var(--primary-box-shadow);
         }
     }
 }
