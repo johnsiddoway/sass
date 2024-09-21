@@ -2,19 +2,18 @@
 
 @mixin input-file($selector: "input[type='file']") {
     #{$selector} {
-        border: variables.$border-default;
+        border: var(--border-width) solid var(--border-color);
         outline: none;
 
         &:focus {
-            box-shadow: var(--primary-box-shadow);
+            box-shadow: var(--input-box-shadow);
         }
 
         &::file-selector-button {
-            height: 2.375em;
+            min-height: 2.375em;
             padding: 0.375em 0.75em;
             cursor: pointer;
-            border: 0px;
-            border-right: variables.$border-default;
+            border-width: 0 var(--border-width) 0 0;
             margin-right: 1em;
         }
     }
