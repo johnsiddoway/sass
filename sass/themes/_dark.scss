@@ -3,21 +3,21 @@
 @mixin dark-mode-variables {
     --primary: transparent;
     --primary-variant: transparent;
-    --primary-box-shadow: #{variables.$input-range-thumb-focus-box-shadow};
     --on-primary: transparent;
 
     --secondary: transparent;
     --secondary-variant: transparent;
-    --secondary-box-shadow: #{variables.$box-shadow-default};
     --on-secondary: transparent;
 
     --background: #{variables.$gray-10};
     --on-background: #{variables.$light};
 
     --surface: #{variables.$gray-20};
-    --surface-box-shadow: #{variables.$box-shadow-default};
+    --surface-box-shadow: #{variables.$surface-box-shadow};
     --on-surface: #{variables.$light};
 
     --border-color: currentColor;
     --border-width: 1px;
+
+    --input-box-shadow: #{variables.$input-box-shadow};
 }

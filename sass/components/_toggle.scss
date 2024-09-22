@@ -11,8 +11,6 @@
 
     #{$selector} input[type='checkbox'] {
         --background-color: #{variables.$white};
-        --toggle-background-off: #{variables.$gray-60};
-        --toggle-background-on: #{variables.$primary};
         --toggle-height: 2rem;
         --padding: 3px;
         --border-width: 1px;
@@ -23,7 +21,7 @@
         cursor: pointer;
         height: var(--toggle-height);
         width: var(--toggle-width);
-        background-color: var(--toggle-background-off);
+        background-color: var(--secondary);
         padding: var(--padding);
         border: 1px solid currentColor;
         transition: 0.1s linear background-color;
@@ -34,7 +32,7 @@
         }
 
         &:focus {
-            box-shadow: var(--theme-box-shadow);
+            box-shadow: var(--input-box-shadow);
         }
     }
 
@@ -42,7 +40,7 @@
     #{$selector} input:hover::before,
     #{$selector} input:checked::before,
     #{$selector} input:checked:hover::before {
-        background-color: var(--background-color);
+        background-color: var(--background);
     }
 
     #{$selector} input::before {
@@ -60,7 +58,7 @@
     }
 
     #{$selector} input:checked {
-        background-color: var(--toggle-background-on);
+        background-color: var(--primary);
     }
 
     #{$selector} input:checked::before {

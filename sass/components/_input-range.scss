@@ -16,13 +16,13 @@
         &:hover,
         &:focus-visible {
             &::-webkit-slider-thumb {
-                box-shadow: variables.$input-range-thumb-focus-box-shadow;
+                box-shadow: var(--input-box-shadow);
             }
             &::-moz-range-thumb {
-                box-shadow: variables.$input-range-thumb-focus-box-shadow;
+                box-shadow: var(--input-box-shadow);
             }
             &::-ms-thumb {
-                box-shadow: variables.$input-range-thumb-focus-box-shadow;
+                box-shadow: var(--input-box-shadow);
             }
         }
 
@@ -34,11 +34,11 @@
             width: var(--thumb-width);
             height: var(--thumb-height);
             background-color: var(--primary);
-            border: 1px solid currentColor;
+            border: var(--border-width) solid var(--border-color);
         }
         &::-webkit-slider-runnable-track {
             height: var(--track-height);
-            background: var(--background);
+            background: var(--secondary);
         }
 
         // Mozilla-based browsers
@@ -48,11 +48,11 @@
             width: var(--thumb-width);
             height: var(--thumb-height);
             background-color: var(--primary);
-            border: 1px solid currentColor;
+            border: var(--border-width) solid var(--border-color);
         }
         &::-moz-range-track {
             height: var(--track-height);
-            background: var(--background);
+            background: var(--secondary);
         }
 
         // IE
@@ -62,11 +62,11 @@
             width: var(--thumb-width);
             height: var(--thumb-height);
             background-color: var(--primary);
-            border: 1px solid currentColor;
+            border: var(--border-width) solid var(--border-color);
         }
         &::-ms-track {
             height: var(--track-height);
-            background: var(--background);
+            background: var(--secondary);
         }
     }
 }
