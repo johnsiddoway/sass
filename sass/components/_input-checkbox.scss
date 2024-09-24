@@ -18,7 +18,7 @@
             cursor: pointer;
             height: 0.75rem;
             width: 0.75em;
-            border: var(--border-width) solid var(--border-color);
+            border: var(--border-width) var(--border-style) var(--border-color);
             display: inline-block;
             background-color: var(--secondary);
         }

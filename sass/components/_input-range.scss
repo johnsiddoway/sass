@@ -34,7 +34,7 @@
             width: var(--thumb-width);
             height: var(--thumb-height);
             background-color: var(--primary);
-            border: var(--border-width) solid var(--border-color);
+            border: var(--border-width) var(--border-style) var(--border-color);
         }
         &::-webkit-slider-runnable-track {
             height: var(--track-height);

@@ -20,13 +20,23 @@ $light-mode-selector: '.root.light';
 @include buttons;
 @include cards;
 @include details;
-@include dialog;
-@include inputs;
 @include form;
+@include inputs;
 @include label;
+@include popover-auto;
+@include popover-manual;
 @include select;
+@include table;
 @include toggle;
 @include tooltip;
+
+.rating {
+    @include make-rating;
+}
+
+.text-truncate {
+    @include text-truncate;
+}
 
 #{$light-mode-selector} {
     @include light-mode-variables;

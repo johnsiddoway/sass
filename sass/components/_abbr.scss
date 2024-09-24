@@ -1,7 +1,7 @@
 @mixin abbr($selector: 'abbr') {
     #{$selector} {
         text-decoration-line: none;
-        border-bottom: 1px dotted currentColor;
+        border-bottom: var(--border-width) dotted var(--border-color);
         cursor: help;
     }
 }

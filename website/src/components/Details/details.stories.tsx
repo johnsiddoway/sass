@@ -48,3 +48,37 @@ export const Default: Story = {
         </article>
     ),
 };
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const DarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    render: () => (
+        <article>
+            <details name="details-demo">
+                <summary>
+                    This is an accordion summary
+                </summary>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta, diam
+                    sem porta sapien, ut dignissim velit erat quis sapien.
+                    Nullam vulputate enim placerat tortor consequat, vulputate blandit nunc tempor.
+                    Integer purus augue, fringilla eu molestie in, consequat at turpis.
+                </p>
+            </details>
+            <details name="details-demo">
+                <summary>
+                    This is another accordion summary
+                </summary>
+                <ul>
+                    <li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                    <li>Phasellus vel pulvinar orci, ac auctor urna.</li>
+                    <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
+                </ul>
+            </details>
+        </article>
+    ),
+};

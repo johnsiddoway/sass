@@ -3,7 +3,7 @@
 @mixin input-base($selector: "input:not([type='checkbox'], [type='file'], [type='radio'], [type='range'])") {
     #{$selector} {
         outline: none;
-        border: variables.$border-default;
+        border: var(--border-width) var(--border-style) var(--border-color);
 
         &:focus,
         &:focus-visible,

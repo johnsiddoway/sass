@@ -20,6 +20,12 @@ const meta = {
         label: 'Turn it up to Eleven',
         name: 'turn-it-up-to-eleven',
     },
+    render: (args) => (
+        <label className="toggle">
+            <input type="checkbox" {...args} />
+            {args.label}
+        </label>
+    )
 } satisfies Meta<typeof Toggle>;
 
 export default meta;
@@ -29,6 +35,12 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
     },
+    render: (args) => (
+        <label className="toggle">
+            <input type="checkbox" {...args} />
+            {args.label}
+        </label>
+    )
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
@@ -36,4 +48,45 @@ export const Checked: Story = {
     args: {
         checked: true,
     },
+    render: (args) => (
+        <label className="toggle">
+            <input type="checkbox" {...args} />
+            {args.label}
+        </label>
+    )
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const DefaultDarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    args: {
+    },
+    render: (args) => (
+        <label className="toggle">
+            <input type="checkbox" {...args} />
+            {args.label}
+        </label>
+    )
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const CheckedDarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    args: {
+        checked: true,
+    },
+    render: (args) => (
+        <label className="toggle">
+            <input type="checkbox" {...args} />
+            {args.label}
+        </label>
+    )
 };

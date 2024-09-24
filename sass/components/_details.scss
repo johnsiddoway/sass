@@ -2,7 +2,7 @@
 
 @mixin details($selector: 'details') {
     #{$selector} {
-        border-bottom: 1px solid currentColor;
+        border-bottom: var(--border-width) var(--border-style) var(--border-color);
 
         > summary {
             padding: variables.$padding-default;

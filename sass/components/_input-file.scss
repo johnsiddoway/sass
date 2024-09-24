@@ -2,7 +2,7 @@
 
 @mixin input-file($selector: "input[type='file']") {
     #{$selector} {
-        border: var(--border-width) solid var(--border-color);
+        border: var(--border-width) var(--border-style) var(--border-color);
         outline: none;
 
         &:focus {

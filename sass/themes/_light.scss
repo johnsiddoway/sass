@@ -16,8 +16,9 @@
     --surface-box-shadow: #{variables.$surface-box-shadow};
     --on-surface: #{variables.$black};
 
-    --border-color: currentColor;
     --border-width: 1px;
+    --border-style: solid;
+    --border-color: currentColor;
 
     --input-box-shadow: #{variables.$input-box-shadow};
 }

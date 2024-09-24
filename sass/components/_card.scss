@@ -3,7 +3,7 @@
 @mixin cards($selector: '.card') {
     #{$selector} {
         margin-bottom: variables.$margin-bottom-default;
-        border: var(--border-width) solid var(--border-color);
+        border: var(--border-width) var(--border-style) var(--border-color);
         padding: variables.$padding-default;
         background-color: var(--surface);
         color: var(--on-surface);
@@ -13,7 +13,7 @@
 
 @mixin make-card($padding: variables.$padding-default, $margin-bottom: variables.$margin-bottom-default) {
     margin-bottom: $margin-bottom;
-    border: var(--border-width) solid var(--border-color);
+    border: var(--border-width) var(--border-style) var(--border-color);
     padding: $padding;
     background-color: var(--surface);
     color: var(--on-surface);
