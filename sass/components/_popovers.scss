@@ -1,0 +1,26 @@
+%dialog {
+    border: var(--border-width) solid var(--border-color);
+    padding: 1rem;
+    form {
+        margin-bottom: 0;
+    }
+}
+
+%modal-dialog {
+    @extend %dialog;
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+@mixin popover-auto($selector: '[popover],[popover="auto"]') {
+    #{$selector} {
+        @extend %dialog;
+    }
+}
+
+@mixin popover-manual($selector: 'dialog,[popover="manual"]') {
+    #{$selector} {
+        @extend %modal-dialog;
+    }
+}
