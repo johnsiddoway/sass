@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'sass:meta';
 @use '../functions';
 @use '../variables';
@@ -83,9 +84,9 @@
     $background-scale-active: variables.$button-background-scale-active,
     $background-scale-disabled: variables.$button-background-scale-disabled
 ) {
-    $theme-color-background: map-get($theme-colors, 'background-color');
-    $theme-color-foreground: map-get($theme-colors, 'color');
-    $theme-color-border: map-get($theme-colors, 'border-color');
+    $theme-color-background: map.get($theme-colors, 'background-color');
+    $theme-color-foreground: map.get($theme-colors, 'color');
+    $theme-color-border: map.get($theme-colors, 'border-color');
     --btn-background-color: #{$theme-color-background};
     --btn-background-color-active: #{functions.shift-color($theme-color-background, $background-scale-active)};
     --btn-background-color-hover: #{functions.shift-color($theme-color-background, $background-scale-active)};
@@ -97,9 +98,9 @@
 // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // Except this version only includes a border for the :focus-visible state
 @mixin themed-button-inverted($theme-colors) {
-    $theme-color-background: map-get($theme-colors, 'background-color');
-    $theme-color-foreground: map-get($theme-colors, 'color');
-    $theme-color-border: map-get($theme-colors, 'border-color');
+    $theme-color-background: map.get($theme-colors, 'background-color');
+    $theme-color-foreground: map.get($theme-colors, 'color');
+    $theme-color-border: map.get($theme-colors, 'border-color');
     --btn-background-color: transparent;
     --btn-background-color-active: transparent;
     --btn-background-color-hover: transparent;
