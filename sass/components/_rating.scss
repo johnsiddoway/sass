@@ -1,9 +1,17 @@
 @use '../variables';
 
-// Custom styling to help generate a 5-star rating block.
-// Uses display: flex and flex-flow: row-reverse,
-// so it's rendered in reverse order compared to how its child elements are declared.
-@mixin make-rating($rating-on-color: variables.$primary, $rating-off-color: variables.$gray-60) {
+/* Custom styling to help generate a 5-star rating block. */
+/*
+    * Uses display: flex and flex-flow: row-reverse
+      so it's rendered in reverse order compared to
+      how its child elements are declared.
+    * Uses the following variables:
+      var(--primary): Fill color for :hover and :checked
+      var(--secondary): Default fill color
+      var(--border-color): SVG Path Stroke Color
+      var(--border-width): SVG Path Stroke Width
+*/
+@mixin make-rating() {
     display: flex;
     justify-content: space-evenly;
     flex-flow: row-reverse nowrap;
@@ -20,5 +28,9 @@
     input:checked + label ~ label {
         color: var(--primary);
         cursor: pointer;
+    }
+    path {
+        stroke: var(--border-color);
+        stroke-width: var(--border-width);
     }
 }
