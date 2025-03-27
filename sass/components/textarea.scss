@@ -1,0 +1,12 @@
+@mixin textarea($selector: 'textarea') {
+    #{$selector} {
+        width: 100%;
+        outline: none;
+
+        &:focus,
+        &:focus-visible,
+        &:focus-within {
+            box-shadow: var(--box-shadow-primary);
+        }
+    }
+}

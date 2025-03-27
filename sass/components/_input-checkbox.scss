@@ -24,7 +24,7 @@
         }
 
         &:focus::before {
-            box-shadow: var(--input-box-shadow);
+            box-shadow: var(--box-shadow-primary);
         }
 
         &:hover::before {

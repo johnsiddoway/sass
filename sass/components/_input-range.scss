@@ -16,13 +16,13 @@
         &:hover,
         &:focus-visible {
             &::-webkit-slider-thumb {
-                box-shadow: var(--input-box-shadow);
+                box-shadow: var(--box-shadow-primary);
             }
             &::-moz-range-thumb {
-                box-shadow: var(--input-box-shadow);
+                box-shadow: var(--box-shadow-primary);
             }
             &::-ms-thumb {
-                box-shadow: var(--input-box-shadow);
+                box-shadow: var(--box-shadow-primary);
             }
         }
 
