@@ -1,0 +1,33 @@
+@use '../variables';
+
+@mixin dl($selector: 'dl') {
+    #{$selector} {
+        dt {
+            font-weight: variables.$font-weight-bold;
+        }
+
+        dd {
+            margin-bottom: 0.5rem;
+            margin-left: 0;
+        }
+
+        &.row {
+            display: flex;
+            flex-wrap: wrap;
+
+            > * {
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            dt {
+                width: 10%;
+            }
+
+            dd {
+                width: 90%;
+            }
+        }
+    }
+}
