@@ -2,17 +2,17 @@
 
 @mixin tooltip($selector: 'data-tooltip') {
     [#{$selector}] {
-        position: relative; /* making the .tooltip span a container for the tooltip text */
-        border-bottom: 1px dashed currentColor; /* little indicater to indicate it's hoverable */
+        position: relative; // making the .tooltip span a container for the tooltip text
+        border-bottom: 1px dashed currentColor; // little indicater to indicate it's hoverable
     }
     [#{$selector}]:before {
-        display: none; /* hide by default */
-        content: attr(#{$selector}); /* here's the magic */
+        display: none; // hide by default
+        content: attr(#{$selector}); // here's the magic
         position: absolute;
         z-index: 10;
         // Position the tooltip below the original element
         top: 125%;
-        /* basic styles */
+        // basic styles
         width: max-content;
         max-width: calc(100dvw - 3rem);
         border: var(--border-width) var(--border-style) var(--border-color);
