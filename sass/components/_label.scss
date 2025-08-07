@@ -2,36 +2,36 @@
 @use './input-radio';
 
 @mixin label($selector: 'label') {
-    #{$selector} {
-        display: block;
-        cursor: pointer;
-    }
+    // #{$selector} {
+    //     display: block;
+    //     cursor: pointer;
+    // }
 
-    #{$selector}:has(> input, > select) {
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.25em;
-    }
+    // #{$selector}:has(> input, > select) {
+    //     display: flex;
+    //     flex-direction: column;
+    //     row-gap: 0.25em;
+    // }
 
-    #{$selector}:has(+ input[type='checkbox'], + input[type='radio']),
-    #{$selector}.horizontal:has(+ input, + select) {
-        display: inline-block;
-        margin-right: 0.5em;
-    }
+    // #{$selector}:has(+ input[type='checkbox'], + input[type='radio']),
+    // #{$selector}.horizontal:has(+ input, + select) {
+    //     display: inline-block;
+    //     margin-right: 0.5em;
+    // }
 
-    #{$selector}:has(> input[type='checkbox'], > input[type='radio']),
-    #{$selector}.horizontal:has(> input, > select) {
-        display: flex;
-        flex-direction: row;
-        column-gap: 0.5em;
-    }
+    // #{$selector}:has(> input[type='checkbox'], > input[type='radio']),
+    // #{$selector}.horizontal:has(> input, > select) {
+    //     display: flex;
+    //     flex-direction: row;
+    //     column-gap: 0.5em;
+    // }
 
-    input:is([type='checkbox'], [type='radio']) + #{$selector},
-    input + #{$selector}.horizontal,
-    select + #{$selector}.horizontal {
-        display: inline-block;
-        margin-left: 0.5em;
-    }
+    // input:is([type='checkbox'], [type='radio']) + #{$selector},
+    // input + #{$selector}.horizontal,
+    // select + #{$selector}.horizontal {
+    //     display: inline-block;
+    //     margin-left: 0.5em;
+    // }
     // // End Horizontal
 
     // input[disabled] + #{$selector},

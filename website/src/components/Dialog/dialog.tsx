@@ -1,26 +1,25 @@
-import { DialogHTMLAttributes, useEffect, useRef, useState } from "react";
+import { DialogHTMLAttributes, useRef } from "react";
 
 export interface DialogProps extends DialogHTMLAttributes<HTMLDialogElement> {
     label?: string;
 }
 
-export function Dialog({ children, id, label, ...props }: DialogProps) {
+export function Dialog({ id, label, ...props }: DialogProps) {
     // See https://stackoverflow.com/a/76567796
     const dialogRef = useRef<HTMLDialogElement>(null);
-    const [showModal, setShowModal] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (dialogRef.current?.open) {
-            dialogRef.current?.close();
-        } else {
-            dialogRef.current?.showModal();
-        }
-    }, [showModal]);
-
-    return <>
+return <>
         <dialog ref={dialogRef} id={id} {...props}>
-            {children}
+            <article>
+                <h2>Dialog Example</h2>
+                <p>This is a <code>dialog</code> example.</p>
+            </article>
+            <form method="dialog">
+                <button value="no">No</button>
+                &nbsp;
+                <button value="yes">Yes</button>
+            </form>
         </dialog>
-        <button type="button" data-dialog={id} onClick={() => setShowModal(!showModal)}>{label}</button>
+        <button type="button" data-dialog={id} onClick={() => dialogRef.current?.showModal()}>{label}</button>
     </>;
 }

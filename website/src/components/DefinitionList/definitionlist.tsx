@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export interface DefinitionListProps extends HTMLAttributes<HTMLDListElement> {
 }
 
