@@ -10,20 +10,15 @@
     }
 
     #{$selector} input[type='checkbox'] {
-        --background-color: #{variables.$white};
-        --toggle-height: 2rem;
-        --padding: 3px;
-        --border-width: 1px;
+        --toggle-height: 2em;
+        --padding: 0.125em;
         --indicator-size: calc(var(--toggle-height) - var(--padding) * 2 - var(--border-width) * 2);
         --toggle-width: calc(var(--indicator-size) * 2 + var(--padding) * 2 + var(--border-width) * 2);
-        appearance: none;
-        position: relative;
         cursor: pointer;
         height: var(--toggle-height);
         width: var(--toggle-width);
-        background-color: var(--secondary);
         padding: var(--padding);
-        border: 1px solid currentColor;
+        border: var(--border-width) var(--border-style) var(--border-color);
         transition: 0.1s linear background-color;
 
         // Resolve conflict between this and _input-checkbox.scss
@@ -36,29 +31,12 @@
         }
     }
 
-    // Resolve conflict between this and _input-checkbox.scss
-    #{$selector} input:hover::before,
-    #{$selector} input:checked::before,
-    #{$selector} input:checked:hover::before {
-        background-color: var(--background);
-    }
-
     #{$selector} input::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: var(--padding);
-        left: var(--padding);
+        --background: var(--secondary);
         width: var(--indicator-size);
         height: var(--indicator-size);
-        border: 1px solid currentColor;
-        background-color: var(--background-color);
         transition: 0.1s linear transform;
         transform: translateX(0);
-    }
-
-    #{$selector} input:checked {
-        background-color: var(--primary);
     }
 
     #{$selector} input:checked::before {

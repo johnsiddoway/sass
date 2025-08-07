@@ -1,0 +1,7 @@
+@import '../../../../sass/index.scss';
+
+.container {
+    border: var(--border-width) var(--border-style) var(--border-color);
+    padding: 1em;
+    @extend %container;
+}

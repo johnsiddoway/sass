@@ -28,6 +28,7 @@
 
 @mixin button-base($font-size: variables.$button-font-size) {
     button {
+        --btn-border-color: #{variables.$button-border-color};
         --btn-border-width: #{variables.$button-border-width};
         --btn-box-shadow-color: #{variables.$button-box-shadow-color};
 

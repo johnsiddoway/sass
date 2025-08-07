@@ -1,6 +1,6 @@
-@use '../variables';
+@use "../variables";
 
-@mixin dark-mode-variables {
+%dark-mode-variables {
     --primary: #{variables.$orange-60};
     --primary-variant: #{variables.$orange-40};
     --on-primary: #{variables.$dark};
@@ -21,4 +21,8 @@
     --border-color: currentColor;
 
     --input-box-shadow: #{variables.$input-box-shadow};
+}
+
+@mixin dark-mode-variables {
+    @extend %dark-mode-variables;
 }

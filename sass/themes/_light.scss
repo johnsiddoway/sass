@@ -1,6 +1,6 @@
-@use '../variables';
+@use "../variables";
 
-@mixin light-mode-variables {
+%light-mode-variables {
     --primary: #{variables.$orange-60};
     --primary-variant: #{variables.$orange-40};
     --on-primary: #{variables.$dark};
@@ -21,4 +21,8 @@
     --border-color: currentColor;
 
     --input-box-shadow: #{variables.$input-box-shadow};
+}
+
+@mixin light-mode-variables() {
+    @extend %light-mode-variables;
 }

@@ -28,7 +28,7 @@
         input[type='submit'] {
             padding: 0.375em 0.75em;
             color: inherit;
-            border: 1px solid currentColor;
+            border: var(--border-width) var(--border-style) var(--border-color);
             cursor: pointer;
 
             &:disabled {

@@ -33,7 +33,33 @@ export const Default: Story = {
     ),
 };
 
+export const DarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    render: (args) => (
+        <p>
+            <Tooltip {...args} />
+        </p>
+    ),
+};
+
 export const Larger: Story = {
+    render: () => (
+        <p>
+            <Tooltip tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</Tooltip> to see a tooltip with a ton of text.
+        </p>
+    ),
+};
+
+export const LargerDarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
     render: () => (
         <p>
             <Tooltip tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</Tooltip> to see a tooltip with a ton of text.

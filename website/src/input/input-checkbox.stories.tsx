@@ -17,7 +17,6 @@ const meta = {
     },
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
-        className: 'checkbox',
         id: 'test',
         label: 'Check this box',
         name: 'test',
@@ -44,9 +43,20 @@ export const Default: Story = {
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const DarkMode: Story = {
+    parameters: {
+        backgrounds: {
+            default: 'dark',
+        },
+    },
+    args: {
+    },
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Checked: Story = {
     args: {
-        checked: true,
+        defaultChecked: true,
     },
 };
 
@@ -64,11 +74,11 @@ export const InputAfterLabel: Story = {
                 <legend>Choose your monster's features:</legend>
                 <div>
                     <label htmlFor="scales">Scales</label>
-                    <input type="checkbox" id="scales" name="scales" checked />
+                    <input type="checkbox" id="scales" name="feature" defaultChecked={true} />
                 </div>
                 <div>
                     <label htmlFor="horns">Horns</label>
-                    <input type="checkbox" id="horns" name="horns" />
+                    <input type="checkbox" id="horns" name="feature" />
                 </div>
             </fieldset>
         </form>
@@ -81,11 +91,11 @@ export const InputBeforeLabel: Story = {
             <fieldset>
                 <legend>Choose your monster's features:</legend>
                 <div>
-                    <input type="checkbox" id="scales" name="scales" checked />
+                    <input type="checkbox" id="scales" name="feature" defaultChecked={true} />
                     <label htmlFor="scales">Scales</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="horns" name="horns" />
+                    <input type="checkbox" id="horns" name="feature" />
                     <label htmlFor="horns">Horns</label>
                 </div>
             </fieldset>
@@ -101,13 +111,13 @@ export const InputInsideLabelAfterText: Story = {
                 <div>
                     <label>
                         Scales
-                        <input type="checkbox" id="scales" name="scales" checked />
+                        <input type="checkbox" id="scales" name="feature" defaultChecked={true} />
                     </label>
                 </div>
                 <div>
                     <label>
                         Horns
-                        <input type="checkbox" id="horns" name="horns" />
+                        <input type="checkbox" id="horns" name="feature" />
                     </label>
                 </div>
             </fieldset>
@@ -122,13 +132,13 @@ export const InputInsideLabelBeforeText: Story = {
                 <legend>Choose your monster's features:</legend>
                 <div>
                     <label>
-                        <input type="checkbox" id="scales" name="scales" checked />
+                        <input type="checkbox" id="scales" name="feature" defaultChecked={true} />
                         Scales
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" id="horns" name="horns" />
+                        <input type="checkbox" id="horns" name="feature" />
                         Horns
                     </label>
                 </div>

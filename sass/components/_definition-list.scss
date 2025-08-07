@@ -1,36 +1,43 @@
-@use '../variables';
+@use "sass:map";
+@use "../variables";
 
-@mixin dl($selector: 'dl') {
-    #{$selector} {
-        dt {
-            font-weight: variables.$font-weight-bold;
+%dl {
+    dt {
+        font-weight: variables.$font-weight-bold;
+    }
+
+    dd {
+        dl,
+        p {
+            margin-block-end: 0;
         }
+    }
 
-        dd {
-            margin-bottom: 0.5rem;
-            margin-left: 0;
-        }
-
-        &.row {
+    &.row {
+        --dt-width: 30%;
+        @media (min-width: map.get(variables.$container-breakpoints, "sm")) {
             display: flex;
             flex-wrap: wrap;
-
-            > * {
-                flex: 0 0 auto;
-                width: 100%;
-                max-width: 100%;
+            > dt {
+                width: var(--dt-width);
+                &:has(+ dt) {
+                    width: 100%; // override the width if a term has a subsequent term
+                }
             }
+            > dd {
+                margin-inline-start: 0;
+                width: calc(100% - var(--dt-width));
 
-            dt {
-                width: 10%;
-            }
-
-            dd {
-                width: 90%;
-                & + dd {
-                    margin-left: 10%;
+                + dd {
+                    margin-inline-start: var(--dt-width);
                 }
             }
         }
+    }
+}
+
+@mixin dl($selector: "dl") {
+    #{$selector} {
+        @extend %dl;
     }
 }

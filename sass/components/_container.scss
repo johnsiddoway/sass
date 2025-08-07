@@ -1,24 +1,34 @@
-@use 'sass:map';
-@use '../variables';
+@use "sass:map";
+@use "../variables";
 
-@mixin make-container($padding: variables.$container-padding, $breakpoints: variables.$container-breakpoints, $grid-breakpoints: variables.$container-grid-breakpoints, $max-widths: variables.$container-max-widths) {
-	padding: $padding;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+%container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 
-	@each $breakpoint in $breakpoints {
-		@if not map.has-key($map: $grid-breakpoints, $key: #{$breakpoint}) {
-			@debug "container-grid-breakpoints does not have an entry for #{$breakpoint}, skipping";
-		} @else if not map.has-key($map: $max-widths, $key: #{$breakpoint}) {
-			@warn "container-max-widths does not have an entry for #{$breakpoint}, cannot create a media rule for this breakpoint";
-		} @else {
-			$grid-breakpoint: map.get($grid-breakpoints, #{$breakpoint});
-			$max-width: map.get($max-widths, #{$breakpoint});
+    @each $breakpoint, $max-width in variables.$container-max-widths {
+        @if not map.has-key($map: variables.$container-breakpoints, $key: #{$breakpoint}) {
+            @debug "container-breakpoints does not have an entry for #{$breakpoint}, skipping";
+        } @else {
+            @media (min-width: map.get(variables.$container-breakpoints, #{$breakpoint})) {
+                max-width: $max-width;
+            }
+        }
+    }
+}
 
-			@media (min-width: $grid-breakpoint) {
-				max-width: $max-width;
-			}
-		}
-	}
+@mixin make-container($max-widths: variables.$container-max-widths, $breakpoints: variables.$container-breakpoints) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    @each $breakpoint, $max-width in $max-widths {
+        @if not map.has-key($map: $breakpoints, $key: #{$breakpoint}) {
+            @debug "breakpoints map provided does not have an entry for #{$breakpoint}, skipping";
+        } @else {
+            @media (min-width: map.get($breakpoints, #{$breakpoint})) {
+                max-width: $max-width;
+            }
+        }
+    }
 }

@@ -4,10 +4,12 @@
 // By declaring these as mixins, they becomes "opt-in" for consuming packages
 @mixin input-checkbox($selector: 'input[type="checkbox"]') {
     #{$selector} {
+        color: var(--on-surface);
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
         outline: none;
+        align-self: center;
 
         &:disabled {
             @include input-base.input-disabled;
@@ -16,27 +18,27 @@
         &::before {
             content: '';
             cursor: pointer;
-            height: 0.75rem;
-            width: 0.75em;
+            height: 1em;
+            width: 1em;
             border: var(--border-width) var(--border-style) var(--border-color);
-            display: inline-block;
-            background-color: var(--secondary);
+            display: block;
+            background: var(--background);
         }
 
         &:focus::before {
-            box-shadow: var(--box-shadow-primary);
+            box-shadow: var(--input-box-shadow);
         }
 
         &:hover::before {
-            background-color: var(--secondary-variant);
+            --background: var(--primary-variant);
         }
 
         &:checked::before {
-            background-color: var(--primary);
+            --background: var(--primary);
         }
 
         &:checked:hover::before {
-            background-color: var(--primary-variant);
+            --background: var(--primary-variant);
         }
     }
 }

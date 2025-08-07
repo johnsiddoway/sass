@@ -242,10 +242,7 @@ $text-align-base: start !default;
 // typography variables end
 
 // containers start
-$container-padding: 0 0.75rem !default;
-$container-breakpoints: 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl' !default;
-
-$container-grid-breakpoints: (
+$container-breakpoints: (
     'xs': 0,
     'sm': 576px,
     'md': 768px,
