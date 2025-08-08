@@ -1,0 +1,65 @@
+@use "../../../../sass" as *;
+
+%flex-space-between {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem; // minimum space between columns
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 20vh;
+    background-color: var(--background);
+    color: var(--on-background);
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    text-align: $text-align-base;
+
+    > .header,
+    > .footer {
+        padding: $layout-padding;
+        background: var(--on-background);
+        color: var(--background);
+
+        a {
+            color: var(--background);
+            text-decoration: none;
+        }
+    }
+
+    > .header,
+    > .main {
+        margin-block-end: $layout-margin-block-end;
+    }
+
+    > .header {
+        .nav {
+            @extend %flex-space-between;
+            @extend %container;
+
+            a.brand {
+                font-weight: $font-weight-bold;
+                font-size: $font-size-lg;
+            }
+
+            div {
+                @extend %flex-space-between;
+            }
+        }
+    }
+
+    > .main {
+        padding-inline: $layout-padding-inline;
+        @extend %container;
+    }
+
+    > .footer {
+        justify-content: center;
+        margin-block-start: auto;
+        @extend %flex-space-between;
+    }
+}

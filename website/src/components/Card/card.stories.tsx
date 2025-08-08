@@ -40,9 +40,7 @@ export const Default: Story = {
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const DarkMode: Story = {
     parameters: {
-        backgrounds: {
-            default: 'dark',
-        },
+        background: 'dark',
     },
     args: {
         children: <>

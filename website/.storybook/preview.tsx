@@ -5,13 +5,7 @@ import "../src/styles/main.scss";
 
 const preview: Preview = {
     parameters: {
-        backgrounds: {
-            default: 'light',
-            values: [
-                { name: 'light', value: '#ffffff' },
-                { name: 'dark', value: '#1a1a1a' }, // variables.$gray-10
-            ],
-        },
+        background: 'light',
         layout: 'centered',
         options: {
             storySort: {
@@ -19,11 +13,9 @@ const preview: Preview = {
             },
         },
     },
-    decorators: [(Story, context) => (
-        <div className={`root ${context.parameters.backgrounds.default}`}>
-            <Story />
-        </div>
-    )],
+    decorators: [
+        (Story, context) => <div className={`root ${context.parameters.background}`}><Story /></div>
+    ],
 }
 
 export default preview;
