@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Abbreviation } from './abbreviation';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -32,8 +32,10 @@ export const AbbreviationDefault: Story = {
 };
 
 export const DarkMode: Story = {
-    parameters: {
-        backgrounds: { default: 'dark' },
+    globals: {
+        backgrounds: {
+            value: 'dark',
+        },
     },
     render: () => (
         <p>
@@ -51,8 +53,10 @@ export const Tooltip: Story = {
 };
 
 export const TooltipDarkMode: Story = {
-    parameters: {
-        backgrounds: { default: 'dark' },
+    globals: {
+        backgrounds: {
+            value: 'dark',
+        },
     },
     render: () => (
         <p>

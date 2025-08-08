@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Dialog } from './dialog';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -24,6 +24,30 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
+    render: () => (
+        <div>
+            <Dialog id="dialog-1" label="Open Dialog">
+                <article>
+                    <h2>Dialog Example</h2>
+                    <p>This is a <code>dialog</code> example.</p>
+                </article>
+                <form method="dialog">
+                    <button value="no">No</button>
+                    &nbsp;
+                    <button value="yes">Yes</button>
+                </form>
+            </Dialog>
+        </div>
+    ),
+};
+
+// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const DarkMode: Story = {
+    globals: {
+        backgrounds: {
+            value: 'dark',
+        },
+    },
     render: () => (
         <div>
             <Dialog id="dialog-1" label="Open Dialog">

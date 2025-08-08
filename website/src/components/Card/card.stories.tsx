@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Card } from './card';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -17,6 +17,15 @@ const meta = {
     // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
     args: {
     },
+    render: () => (<div className="card" >
+        <h2>Lorem ipsum</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
+            diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
+            consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
+            at turpis.
+        </p>
+    </div>),
 } satisfies Meta<typeof Card>;
 
 export default meta;
@@ -24,33 +33,31 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-    args: {
-        children: <>
-            <h2>Lorem ipsum</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
-                diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
-                consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
-                at turpis.
-            </p>
-        </>
-    }
+    render: () => (<div className="card" >
+        <h2>Lorem ipsum</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
+            diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
+            consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
+            at turpis.
+        </p>
+    </div>),
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const DarkMode: Story = {
-    parameters: {
-        background: 'dark',
+    globals: {
+        backgrounds: {
+            value: 'dark',
+        },
     },
-    args: {
-        children: <>
-            <h2>Lorem ipsum</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
-                diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
-                consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
-                at turpis.
-            </p>
-        </>
-    }
+    render: () => (<div className="card" >
+        <h2>Lorem ipsum</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
+            diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
+            consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
+            at turpis.
+        </p>
+    </div>),
 };

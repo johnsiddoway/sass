@@ -1,11 +1,16 @@
 import React from 'react'
-import type { Preview } from '@storybook/react'
+import type { Preview } from '@storybook/react-vite'
 
 import "../src/styles/main.scss";
 
 const preview: Preview = {
     parameters: {
-        background: 'light',
+        backgrounds: {
+            options: {
+                light: { name: 'Light', value: '#fff' }, // $white
+                dark: { name: 'Dark', value: '#1a1a1a' }, // $gray-10
+            },
+        },
         layout: 'centered',
         options: {
             storySort: {
@@ -13,8 +18,18 @@ const preview: Preview = {
             },
         },
     },
+    initialGlobals: {
+        // 👇 Set the initial background color
+        backgrounds: { value: 'light' },
+    },
     decorators: [
-        (Story, context) => <div className={`root ${context.parameters.background}`}><Story /></div>
+        (Story, context) => {
+            console.info('Globals:');
+            console.info(context.globals);
+            console.info('Parameters:');
+            console.info(context.parameters);
+            return <div className={`root ${context.globals.backgrounds.value}`}><Story /></div>
+        }
     ],
 }
 

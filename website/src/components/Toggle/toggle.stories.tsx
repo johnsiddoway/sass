@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Toggle } from './toggle';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -41,20 +41,18 @@ export const Checked: Story = {
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const DefaultDarkMode: Story = {
-    parameters: {
+    globals: {
         backgrounds: {
-            default: 'dark',
+            value: 'dark',
         },
-    },
-    args: {
     },
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const CheckedDarkMode: Story = {
-    parameters: {
+    globals: {
         backgrounds: {
-            default: 'dark',
+            value: 'dark',
         },
     },
     args: {

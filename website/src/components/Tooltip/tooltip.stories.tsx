@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Tooltip } from './tooltip';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -34,9 +34,9 @@ export const Default: Story = {
 };
 
 export const DarkMode: Story = {
-    parameters: {
+    globals: {
         backgrounds: {
-            default: 'dark',
+            value: 'dark',
         },
     },
     render: (args) => (
@@ -55,9 +55,9 @@ export const Larger: Story = {
 };
 
 export const LargerDarkMode: Story = {
-    parameters: {
+    globals: {
         backgrounds: {
-            default: 'dark',
+            value: 'dark',
         },
     },
     render: () => (

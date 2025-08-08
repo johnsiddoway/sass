@@ -1,4 +1,4 @@
-@import '../../../../sass';
+@use '../../../../sass';
 
 .container {
     border: var(--border-width) var(--border-style) var(--border-color);

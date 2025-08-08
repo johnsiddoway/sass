@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -51,9 +51,9 @@ export const Default: Story = {
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const DarkMode: Story = {
-    parameters: {
+    globals: {
         backgrounds: {
-            default: 'dark',
+            value: 'dark',
         },
     },
     render: () => (
