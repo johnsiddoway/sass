@@ -1,13 +1,13 @@
 {
-    "name": "@johnsiddoway/sass",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
-        "storybook": "cd website && npm run storybook",
-        "dev": "cd website && npm run dev",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "description": ""
+  "name": "@johnsiddoway/sass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "cd website && npm run storybook",
+    "dev": "cd website && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

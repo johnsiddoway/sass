@@ -1,7 +1,23 @@
+import { useLayoutEffect, useRef, useState } from "react";
+
 export function StyleTest() {
+    const [showDialog, setShowDialog] = useState<boolean>(false);
+    const dialogRef = useRef<HTMLDialogElement>(null);
+
+    useLayoutEffect(() => {
+        if (dialogRef.current?.open && !showDialog) {
+            dialogRef.current.close();
+        } else if (!dialogRef.current?.open && showDialog) {
+            dialogRef.current?.showModal();
+        }
+    }, [showDialog]);
+
     return <>
         <p>This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).</p>
-        <p>A hesitant shout-out to a recent article I read, [You Don't Need a CSS Framework](https://www.infoq.com/articles/no-need-css-framework/). I don't agree with several points made in the article, but the author's reference site, [starterapp.style](https://www.starterapp.style/), is really well laid out for showcasing how a stylesheet will render.</p>
+        <p>
+            A hesitant shout-out to a recent article I read, <a href="https://www.infoq.com/articles/no-need-css-framework/">You Don't Need a CSS Framework</a>.
+            I don't agree with several points made in the article, but the author's reference site, <a href="https://www.starterapp.style/">starterapp.style</a>, is really well laid out for showcasing how a stylesheet will render.
+        </p>
         <h2>Typography</h2>
         <div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -286,17 +302,14 @@ export function StyleTest() {
         </div>
         <h2>Modals</h2>
         <div>
-            <dialog id="dialog-example">
+            <dialog ref={dialogRef}>
                 <article>
                     <h2>Dialog Example</h2>
                     This is a <code>dialog</code> example.
                 </article>
-                <form method="dialog">
-                    <button value="no">No</button>
-                    <button value="yes">Yes</button>
-                </form>
+                <button value="no" onClick={() => setShowDialog(!showDialog)}>Close</button>
             </dialog>
-            <button type="button" data-dialog="dialog-example">Open Dialog</button>
+            <button type="button" data-dialog="dialog-example" onClick={() => setShowDialog(!showDialog)}>Open Dialog</button>
             <div id="popover-non-modal" popover="auto">
                 <article>
                     <h2>Non-Modal Popover</h2>
@@ -309,7 +322,7 @@ export function StyleTest() {
             <div id="popover-modal" popover="manual">
                 <article>
                     <h2>Modal Popover</h2>
-                    This is a `<div popover="manual">popover</div>` example.
+                    This is a <code>&lt;div popover="manual"&gt;popover&lt;/div&gt;</code> example.
                 </article>
                 <button value="no" popoverTarget="popover-modal" popoverTargetAction="hide">No</button>
                 <button value="yes" popoverTarget="popover-modal" popoverTargetAction="hide">Yes</button>
