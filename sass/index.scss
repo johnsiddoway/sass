@@ -1,4 +1,7 @@
 // @forward 'components';
+@forward 'components/abbr';
+@forward 'components/code';
+@forward 'components/tooltip';
 @forward 'functions';
 @forward 'layout';
 @forward 'reset';

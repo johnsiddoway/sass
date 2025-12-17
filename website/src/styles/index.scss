@@ -10,9 +10,16 @@
 
 @include reset;
 
+:root {
+    --theme-primary: #{$orange-60};
+}
+
+html {
+    accent-color: var(--theme-primary);
+}
+
 .root {
-    @extend %layout;
-    
+    @extend %default-theme-root;
     &.dark {
         @extend %dark-mode-variables;
     }
@@ -21,7 +28,8 @@
     }
 }
 
-// @include abbr;
+@include abbr;
+@include code;
 // @include buttons;
 // @include cards;
 // @include details;
@@ -34,7 +42,7 @@
 // @include select;
 // @include table;
 // @include toggle;
-// @include tooltip;
+@include tooltip;
 
 // .rating {
 //     // Add some custom style specific to Storybutton

@@ -20,11 +20,18 @@ export function StyleTest() {
         </p>
         <h2>Typography</h2>
         <div>
+            <h3>Basic Text</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
     ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
     anim id est laborum.</p>
+            <h3>Links</h3>
+            <p><a href="#">Test a:link</a></p>
+            <p><a href="#" className="visited">Test a:visited</a></p>
+            <p><a href="#" className="hover">Test a:hover</a></p>
+            <p><a href="#" className="active">Test a:active</a></p>
+            <h3>Lists</h3>
             <ol>
                 <li>Some</li>
                 <li>List</li>
@@ -35,6 +42,16 @@ export function StyleTest() {
                 <li>List</li>
                 <li>Items</li>
             </ul>
+            <h3>Abbreviations</h3>
+            <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
+            <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
+            <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
+            <h2>Code</h2>
+            <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block</p>
+            <pre><code>
+                like this,
+                with &lt;pre&gt; and &lt;code&gt;
+            </code></pre>
         </div>
         <h2>Buttons</h2>
         <div>
@@ -334,12 +351,6 @@ export function StyleTest() {
             <span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.
             <span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
         </div>
-        <h2>Abbreviations</h2>
-        <div>
-            <p>The <code><abbr/></code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
-            <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
-            <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
-        </div>
         <h2>Cards</h2>
         <div>
             <div className="card">
@@ -371,14 +382,6 @@ export function StyleTest() {
                     vestibulum quis enim at, posuere iaculis neque.
                 </p>
             </div>
-        </div>
-        <h2>Code</h2>
-        <div>
-            <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block</p>
-            <pre><code>
-                like this,
-                with &lt;pre&gt; and &lt;code&gt;
-            </code></pre>
         </div>
         <h2>Toggles</h2>
         <div>

@@ -1,12 +1,27 @@
-@use "../variables" as *;
+@use '../variables' as *;
+@use '../components';
+@use '../layout';
 
 %light-mode-variables {
-    --primary: #{$orange-60};
-    --background: #{$white};
-    --on-background: #{$black};
+    --theme-primary: #{$orange-60};
 
-    --header: #{$black};
-    --on-header: #{$white};
+    --theme-background: #{$white};
+    --theme-on-background: #{$black};
+    --theme-background-inverse: #{$black};
+    --theme-on-background-inverse: #{$white};
+
+    --theme-surface: #{$gray-20};
+    --theme-on-surface: #{$white};
+    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-30};
+
+    --theme-link: #{$blue-40};
+    --theme-link-visited: #{$purple-40};
+    --theme-link-active: #{$red-40};
+
+    --theme-border-width: 1px;
+    --theme-border-style: solid;
+    --theme-border-color: currentColor;
+
     // --primary: #{variables.$orange-60};
     // --primary-variant: #{variables.$orange-40};
     // --on-primary: #{variables.$dark};
@@ -22,20 +37,29 @@
     // // --surface-box-shadow: #{variables.$surface-box-shadow};
     // --on-surface: #{variables.$black};
 
-    // --border-width: 1px;
-    // --border-style: solid;
-    // --border-color: currentColor;
-
     // // --input-box-shadow: #{variables.$input-box-shadow};
 }
 
 %dark-mode-variables {
-    --primary: #{$orange-60};
-    --background: #{$gray-20};
-    --on-background: #{$white};
+    --theme-primary: #{$orange-60};
 
-    --header: #{$black};
-    --on-header: #{$white};
+    --theme-background: #{$gray-20};
+    --theme-on-background: #{$white};
+    --theme-background-inverse: #{$black};
+    --theme-on-background-inverse: #{$white};
+
+    --theme-surface: #{$gray-30};
+    --theme-on-surface: currentColor;
+    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-30};
+
+    --theme-link: #{$blue-60};
+    --theme-link-visited: #{$purple-80};
+    --theme-link-active: #{$red-60};
+
+    --theme-border-width: 1px;
+    --theme-border-style: solid;
+    --theme-border-color: currentColor;
+
     // --primary: #{variables.$orange-60};
     // --primary-variant: #{variables.$orange-40};
     // --on-primary: #{variables.$dark};
@@ -48,7 +72,7 @@
     // --on-background: #{variables.$light};
 
     // --surface: #{variables.$gray-20};
-    // // --surface-box-shadow: #{variables.$surface-box-shadow};
+    
     // --on-surface: #{variables.$light};
 
     // --border-width: 1px;
@@ -64,4 +88,76 @@
 
 @mixin dark-mode-variables {
     @extend %dark-mode-variables;
+}
+
+%default-theme-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--theme-background);
+    color: var(--theme-on-background);
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    text-align: $text-align-base;
+
+    a {
+        &:link {
+            color: var(--theme-link);
+        }
+        &.visited,
+        &:visited {
+            color: var(--theme-link-visited);
+        }
+        &.active,
+        &:active {
+            color: var(--theme-link-active);
+        }
+    }
+
+    > header,
+    footer {
+        background: var(--theme-background-inverse);
+        color: var(--theme-on-background-inverse);
+
+        a:any-link {
+            color: var(--theme-on-background-inverse);
+            text-decoration: none;
+        }
+    }
+
+    > header {
+        margin-block-end: $layout-margin-block-end;
+
+        nav {
+            padding: $layout-padding;
+            @extend %flex-between;
+            @extend %container;
+
+            div {
+                @extend %flex-between;
+            }
+        }
+
+        a.brand {
+            background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
+            background-clip: text;
+            color: transparent;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-lg;
+        }
+    }
+
+    > main {
+        margin-block-end: $layout-margin-block-end;
+        padding-inline: $layout-padding-inline;
+        @extend %container;
+    }
+
+    > footer {
+        margin-top: auto;
+        padding: $layout-padding;
+        text-align: center;
+    }
 }
