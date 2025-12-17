@@ -123,101 +123,99 @@ $red-10: #330000 !default; // hsl(360, 100%, 10%)
 $red-05: #1a0000 !default; // hsl(360, 100%,  5%)
 
 // scss-docs-start theme-color-variables
-$primary-light: $orange-70 !default;
-$primary: $orange-60 !default;
-$primary-dark: $orange-50 !default;
-$secondary-light: $gray-70 !default;
-$secondary: $gray-60 !default;
-$secondary-dark: $gray-50 !default;
-$info: $cyan-60 !default;
-$success: $green-60 !default;
-$danger: $red-60 !default;
-$light: $white !default;
-$dark: $black !default;
+// $primary-light: $orange-70 !default;
+// $primary: $orange-60 !default;
+// $primary-dark: $orange-50 !default;
+// $secondary-light: $gray-70 !default;
+// $secondary: $gray-60 !default;
+// $secondary-dark: $gray-50 !default;
+// $info: $cyan-60 !default;
+// $success: $green-60 !default;
+// $danger: $red-60 !default;
+// $light: $white !default;
+// $dark: $black !default;
 // scss-docs-end theme-color-variables
 
-$theme-colors: (
-    'primary': (
-        'background-color': $primary,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'secondary': (
-        'background-color': $secondary,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'info': (
-        'background-color': $info,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'success': (
-        'background-color': $success,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'danger': (
-        'background-color': $danger,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'orange': (
-        'background-color': $orange-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'yellow': (
-        'background-color': $yellow-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'green': (
-        'background-color': $green-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'teal': (
-        'background-color': $teal-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'cyan': (
-        'background-color': $cyan-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'blue': (
-        'background-color': $blue-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'indigo': (
-        'background-color': $indigo-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'purple': (
-        'background-color': $purple-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'pink': (
-        'background-color': $pink-60,
-        'color': $dark,
-        'border-color': $dark
-    ),
-    'red': (
-        'background-color': $red-60,
-        'color': $dark,
-        'border-color': $dark
-    )
-) !default;
+// $theme-colors: (
+//     'primary': (
+//         'background-color': $primary,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'secondary': (
+//         'background-color': $secondary,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'info': (
+//         'background-color': $info,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'success': (
+//         'background-color': $success,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'danger': (
+//         'background-color': $danger,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'orange': (
+//         'background-color': $orange-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'yellow': (
+//         'background-color': $yellow-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'green': (
+//         'background-color': $green-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'teal': (
+//         'background-color': $teal-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'cyan': (
+//         'background-color': $cyan-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'blue': (
+//         'background-color': $blue-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'indigo': (
+//         'background-color': $indigo-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'purple': (
+//         'background-color': $purple-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'pink': (
+//         'background-color': $pink-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     ),
+//     'red': (
+//         'background-color': $red-60,
+//         'color': $dark,
+//         'border-color': $dark
+//     )
+// ) !default;
 
-
-
-// layout variables start
-$layout-root-selector: body !default;
+// // layout variables start
+// $layout-root-selector: body !default;
 
 $layout-margin-block-end: 1.5rem !default;
 
@@ -263,46 +261,46 @@ $container-max-widths: (
 ) !default;
 // containers end
 
-$margin-bottom-default: 1em !default;
-$border-default: 1px solid currentColor !default;
-$padding-default: 0.375em 0.75em !default;
+// $margin-bottom-default: 1em !default;
+// $border-default: 1px solid currentColor !default;
+// $padding-default: 0.375em 0.75em !default;
 
-$button-background-scale: 0% !default;
-$button-background-scale-hover: -15% !default;
-$button-background-scale-active: -50% !default;
-$button-background-scale-disabled: -30% !default;
-$button-background-color: transparent;
-$button-background-color-active: $button-background-color;
-$button-background-color-hover: $button-background-color;
-$button-border-color: currentColor;
-$button-border-width: 1px;
-$button-box-shadow-color: currentColor;
-$button-color: currentColor;
-$button-font-size: $font-size-base !default;
-$button-padding: 0.375em 0.75em !default;
+// $button-background-scale: 0% !default;
+// $button-background-scale-hover: -15% !default;
+// $button-background-scale-active: -50% !default;
+// $button-background-scale-disabled: -30% !default;
+// $button-background-color: transparent;
+// $button-background-color-active: $button-background-color;
+// $button-background-color-hover: $button-background-color;
+// $button-border-color: currentColor;
+// $button-border-width: 1px;
+// $button-box-shadow-color: currentColor;
+// $button-color: currentColor;
+// $button-font-size: $font-size-base !default;
+// $button-padding: 0.375em 0.75em !default;
 
-$input-range-thumb-width: 0.5rem !default;
-$input-range-thumb-height: 1.5rem !default;
-$input-range-thumb-border-color: shade-color($primary, 25%) !default;
-$input-range-thumb-border-radius: 0 !default;
-$input-range-thumb-cursor: pointer !default;
-$input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
+// $input-range-thumb-width: 0.5rem !default;
+// $input-range-thumb-height: 1.5rem !default;
+// $input-range-thumb-border-color: shade-color($primary, 25%) !default;
+// $input-range-thumb-border-radius: 0 !default;
+// $input-range-thumb-cursor: pointer !default;
+// $input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
 
-$input-range-track-height: 0.25rem !default;
-$input-range-track-border-radius: 0 !default;
-$input-range-track-cursor: none !default;
+// $input-range-track-height: 0.25rem !default;
+// $input-range-track-border-radius: 0 !default;
+// $input-range-track-cursor: none !default;
 
-$layout-root-selector: body !default;
-$dark-mode-selector: 'body.dark' !default;
-$light-mode-selector: $layout-root-selector !default;
+// $layout-root-selector: body !default;
+// $dark-mode-selector: 'body.dark' !default;
+// $light-mode-selector: $layout-root-selector !default;
 
-$surface: $white !default;
-$on-surface: $black !default;
-$surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
+// $surface: $white !default;
+// $on-surface: $black !default;
+// $surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
 
-$background: $white !default;
-$on-background: $black !default;
+// $background: $white !default;
+// $on-background: $black !default;
 
-$input-box-shadow:
-    0 0 0.05rem 0.05rem $light,
-    0 0 0.25rem 0.25rem var(--primary) !default;
+// $input-box-shadow:
+//     0 0 0.05rem 0.05rem $light,
+//     0 0 0.25rem 0.25rem var(--primary) !default;

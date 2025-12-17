@@ -1,14 +1,16 @@
-@forward './variables';
-@forward 'components';
+// @forward 'components';
+@forward 'functions';
 @forward 'layout';
+@forward 'reset';
 @forward 'themes';
+@forward 'variables';
 
-@use 'components';
+// @use 'components';
 
-@mixin inputs() {
-    @include components.input-base;
-    @include components.input-checkbox;
-    @include components.input-radio;
-    @include components.input-file;
-    @include components.input-range;
-}
+// @mixin inputs() {
+//     @include components.input-base;
+//     @include components.input-checkbox;
+//     @include components.input-radio;
+//     @include components.input-file;
+//     @include components.input-range;
+// }

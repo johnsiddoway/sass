@@ -1,9 +1,10 @@
 {
     "name": "@johnsiddoway/sass",
-    "version": "4.4.0",
+    "version": "5.0.0",
     "description": "Custom Sass files for use in my personal projects.",
     "main": "index.scss",
     "scripts": {
+        "build": "sass .:./dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -19,7 +20,6 @@
         "url": "https://github.com/johnsiddoway/sass/issues"
     },
     "homepage": "https://github.com/johnsiddoway/sass#readme",
-    "dependencies": {},
     "publishConfig": {
         "access": "public"
     }

@@ -1,0 +1,55 @@
+@use '../../../sass' as *;
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/OpenSans.ttf') format('truetype');
+    font-display: swap;
+}
+
+@include reset;
+
+.root {
+    @extend %layout;
+    
+    &.dark {
+        @extend %dark-mode-variables;
+    }
+    &.light {
+        @extend %light-mode-variables;
+    }
+}
+
+// @include abbr;
+// @include buttons;
+// @include cards;
+// @include details;
+// @include dl;
+// @include form;
+// @include inputs;
+// @include label;
+// @include popover-auto;
+// @include popover-manual;
+// @include select;
+// @include table;
+// @include toggle;
+// @include tooltip;
+
+// .rating {
+//     // Add some custom style specific to Storybutton
+//     font-size: $font-size-xl;
+//     min-width: 10em;
+
+//     @extend %rating;
+// }
+
+// .text-truncate {
+//     @include text-truncate;
+// }
+
+// pre {
+//     background: $gray-20;
+//     color: $gray-90;
+//     padding: 1em;
+// }

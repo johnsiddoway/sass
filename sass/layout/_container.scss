@@ -1,23 +1,23 @@
 @use "sass:map";
-@use "../variables";
+@use "../variables" as *;
 
 %container {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
 
-    @each $breakpoint, $max-width in variables.$container-max-widths {
-        @if not map.has-key($map: variables.$container-breakpoints, $key: #{$breakpoint}) {
+    @each $breakpoint, $max-width in $container-max-widths {
+        @if not map.has-key($map: $container-breakpoints, $key: #{$breakpoint}) {
             @debug "container-breakpoints does not have an entry for #{$breakpoint}, skipping";
         } @else {
-            @media (min-width: map.get(variables.$container-breakpoints, #{$breakpoint})) {
+            @media (min-width: map.get($container-breakpoints, #{$breakpoint})) {
                 max-width: $max-width;
             }
         }
     }
 }
 
-@mixin make-container($max-widths: variables.$container-max-widths, $breakpoints: variables.$container-breakpoints) {
+@mixin make-container($max-widths: $container-max-widths, $breakpoints: $container-breakpoints) {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
