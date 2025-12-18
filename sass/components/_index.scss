@@ -28,10 +28,10 @@
 @use 'text-truncate';
 @use 'tooltip';
 
-@mixin use-all-components() {
+@mixin components() {
     @include abbr.abbr;
     @include anchor.anchor;
-    @include button.all-buttons;
+    @include button.buttons;
     @include code.code;
     @include text-truncate.text-truncate;
     @include tooltip.tooltip;

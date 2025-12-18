@@ -1,11 +1,7 @@
-%abbr {
-    text-decoration-line: none;
-    border-bottom: var(--theme-border-width) dotted var(--theme-border-color);
-    cursor: help;
-}
-
 @mixin abbr($selector: 'abbr') {
     #{$selector} {
-        @extend %abbr;
+        text-decoration-line: none;
+        border-bottom: var(--theme-border-width) dotted var(--theme-border-color);
+        cursor: help;
     }
 }

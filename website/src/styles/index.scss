@@ -1,6 +1,7 @@
-@use '../../../sass' as *;
+@use 'sass:meta';
+@use '../../../sass';
 
-@layer reset, default, layout, components;
+@layer reset, components, theme;
 
 @font-face {
     font-family: 'Open Sans';
@@ -11,36 +12,25 @@
 }
 
 @layer reset {
-    @include reset;
+    @include sass.reset;
 }
 
-:root {
-    --theme-primary: #{$orange-60};
+@layer components {
+    @include sass.components;
 }
 
-html {
-    accent-color: var(--theme-primary);
-}
-
-.root {
-    @extend %default-theme-root;
-    &.dark {
-        @extend %dark-mode-variables;
+@layer theme {
+    .root {
+        @include sass.theme-layout-root;
+        &.dark {
+            @include sass.theme-dark-mode-variables;
+        }
+        &.light {
+            @include sass.theme-light-mode-variables;
+        }
     }
-    &.light {
-        @extend %light-mode-variables;
-    }
+    @include sass.buttons-themed;
 }
-
-button,
-a[role=button]:any-link,
-[type=button],
-[type=submit],
-[type=reset] {
-    @extend %button-base;
-}
-
-@include use-all-components;
 
 /** EVERYTHING ABOVE HERE SHOULD BE THE 'DEFAULT' **/
 /** EVERYTHING BELOW IS JUST TO HELP MAKE THE STYLE TEST PAGE LOOK BETTER **/

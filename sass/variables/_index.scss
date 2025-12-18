@@ -89,16 +89,16 @@ $indigo-20: #1a0066 !default; // hsl(255, 100%, 20%)
 $indigo-10: #0d0033 !default; // hsl(255, 100%, 10%)
 $indigo-05: #06001a !default; // hsl(255, 100%,  5%)
 
-$purple-90: #e6ccff !default; // hsl(270, 100%, 90%)
-$purple-80: #cc99ff !default; // hsl(270, 100%, 80%)
-$purple-70: #b366ff !default; // hsl(270, 100%, 70%)
-$purple-60: #9933ff !default; // hsl(270, 100%, 60%)
-$purple-50: #8000ff !default; // hsl(270, 100%, 50%)
-$purple-40: #8000ff !default; // hsl(270, 100%, 40%)
-$purple-30: #4d0099 !default; // hsl(270, 100%, 30%)
-$purple-20: #330066 !default; // hsl(270, 100%, 20%)
-$purple-10: #1a0033 !default; // hsl(270, 100%, 10%)
-$purple-05: #0d001a !default; // hsl(270, 100%,  5%)
+$violet-90: #e6ccff !default; // hsl(270, 100%, 90%)
+$violet-80: #cc99ff !default; // hsl(270, 100%, 80%)
+$violet-70: #b366ff !default; // hsl(270, 100%, 70%)
+$violet-60: #9933ff !default; // hsl(270, 100%, 60%)
+$violet-50: #8000ff !default; // hsl(270, 100%, 50%)
+$violet-40: #8000ff !default; // hsl(270, 100%, 40%)
+$violet-30: #4d0099 !default; // hsl(270, 100%, 30%)
+$violet-20: #330066 !default; // hsl(270, 100%, 20%)
+$violet-10: #1a0033 !default; // hsl(270, 100%, 10%)
+$violet-05: #0d001a !default; // hsl(270, 100%,  5%)
 
 $pink-90: #ffccff !default; // hsl(300, 100%, 90%)
 $pink-80: #ff99ff !default; // hsl(300, 100%, 80%)
@@ -136,12 +136,26 @@ $red-05: #1a0000 !default; // hsl(360, 100%,  5%)
 // $dark: $black !default;
 // scss-docs-end theme-color-variables
 
+$theme-color-map: (
+    'primary': $orange-60,
+    'secondary': $gray-70,
+    'info': $cyan-60,
+    'success': $green-60,
+    'danger': $red-60,
+    'red': $red-60,
+    'orange': $orange-60,
+    'yellow': $yellow-60,
+    'green': $green-60,
+    'teal': $teal-60,
+    'cyan': $cyan-60,
+    'blue': $blue-60,
+    'indigo': $indigo-60,
+    'violet': $violet-60,
+    'pink': $pink-60,
+) !default;
+
 // $theme-colors: (
-//     'primary': (
-//         'background-color': $primary,
-//         'color': $dark,
-//         'border-color': $dark
-//     ),
+//     'primary': $orange-60
 //     'secondary': (
 //         'background-color': $secondary,
 //         'color': $dark,

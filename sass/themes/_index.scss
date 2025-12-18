@@ -1,9 +1,9 @@
 @use '../variables' as *;
 @use '../components';
-@use '../layout';
+@use '../layout-utilities';
 
-%light-mode-variables {
-    --theme-primary: #{$orange-60};
+@mixin theme-light-mode-variables {
+     --theme-primary: #{$orange-60};
 
     --theme-background: #{$white};
     --theme-on-background: #{$black};
@@ -15,7 +15,7 @@
     --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
 
     --theme-link: #{$blue-40};
-    --theme-link-visited: #{$purple-40};
+    --theme-link-visited: #{$violet-40};
     --theme-link-active: #{$red-40};
 
     --theme-border-width: 1px;
@@ -23,7 +23,7 @@
     --theme-border-color: currentColor;
 }
 
-%dark-mode-variables {
+@mixin theme-dark-mode-variables {
     --theme-primary: #{$orange-60};
 
     --theme-background: #{$gray-20};
@@ -36,7 +36,7 @@
     --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-50};
 
     --theme-link: #{$blue-60};
-    --theme-link-visited: #{$purple-80};
+    --theme-link-visited: #{$violet-80};
     --theme-link-active: #{$red-60};
 
     --theme-border-width: 1px;
@@ -44,15 +44,7 @@
     --theme-border-color: currentColor;
 }
 
-@mixin light-mode-variables() {
-    @extend %light-mode-variables;
-}
-
-@mixin dark-mode-variables {
-    @extend %dark-mode-variables;
-}
-
-%default-theme-root {
+@mixin theme-layout-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -80,11 +72,11 @@
 
         nav {
             padding: $layout-padding;
-            @extend %flex-between;
-            @extend %container;
+            @include layout-utilities.flex-between;
+            @include layout-utilities.container;
 
             div {
-                @extend %flex-between;
+                @include layout-utilities.flex-between;
             }
         }
 
@@ -100,7 +92,7 @@
     > main {
         margin-block-end: $layout-margin-block-end;
         padding-inline: $layout-padding-inline;
-        @extend %container;
+        @include layout-utilities.container;
     }
 
     > footer {

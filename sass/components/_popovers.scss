@@ -1,26 +1,33 @@
-%dialog {
-    border: var(--border-width) var(--border-style) var(--border-color);
-    padding: 1rem;
-    form {
-        margin-bottom: 0;
-    }
-}
+// %dialog {
+//     border: var(--border-width) var(--border-style) var(--border-color);
+//     padding: 1rem;
+//     form {
+//         margin-bottom: 0;
+//     }
+// }
 
-%modal-dialog {
-    @extend %dialog;
-    &::backdrop {
-        background: rgba(0, 0, 0, 0.1);
-    }
-}
+// %modal-dialog {
+//     @extend %dialog;
+//     &::backdrop {
+//         background: rgba(0, 0, 0, 0.1);
+//     }
+// }
 
 @mixin popover-auto($selector: '[popover],[popover="auto"]') {
     #{$selector} {
-        @extend %dialog;
+        border: var(--border-width) var(--border-style) var(--border-color);
+        padding: 1rem;
+        form {
+            margin-bottom: 0;
+        }
     }
 }
 
 @mixin popover-manual($selector: 'dialog,[popover="manual"]') {
     #{$selector} {
-        @extend %modal-dialog;
+        @include popover-auto($selector: $selector);
+        &::backdrop {
+            background: rgba(0, 0, 0, 0.1);
+        }
     }
 }
