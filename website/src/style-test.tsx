@@ -26,6 +26,15 @@ export function StyleTest() {
     ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
     anim id est laborum.</p>
+            <h3>Truncated Text</h3>
+            <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code> on an inline element, like a <code>&lg;span/&gt;</code>.</p>
+            <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}}>
+                This is a long block of text that goes on forever.
+            </div>
+            <p>This can be paired with the Tooltip (further down the page) too.</p>
+            <div className="text-truncate" aria-label="This is a long block of text that goes on forever." data-tooltip="This is a long block of text that goes on forever.">
+                This is a long block of text that goes on forever.
+            </div>
             <h3>Links</h3>
             <p><a href="#">Test a:link</a></p>
             <p><a href="#" className="visited">Test a:visited</a></p>
@@ -45,7 +54,7 @@ export function StyleTest() {
             <h3>Abbreviations</h3>
             <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
             <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
-            <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
+            <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element, using <code>data-tooltip</code> instead of <code>title</code></p>
             <h3>Tooltips</h3>
             <p><span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.</p>
             <p><span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.</p>
