@@ -15,7 +15,7 @@
 // @forward 'popovers';
 // @forward 'rating';
 // @forward 'select';
-// @forward 'table';
+@forward 'table';
 // @forward 'textarea';
 @forward 'text-truncate';
 // @forward 'toggle';
@@ -25,6 +25,7 @@
 @use 'anchor';
 @use 'button';
 @use 'code';
+@use 'table';
 @use 'text-truncate';
 @use 'tooltip';
 
@@ -33,6 +34,7 @@
     @include anchor.anchor;
     @include button.buttons;
     @include code.code;
+    @include table.table;
     @include text-truncate.text-truncate;
     @include tooltip.tooltip;
 }

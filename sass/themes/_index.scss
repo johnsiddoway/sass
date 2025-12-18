@@ -2,9 +2,12 @@
 @use '../components';
 @use '../layout-utilities';
 
-@mixin theme-light-mode-variables {
-     --theme-primary: #{$orange-60};
+@mixin theme-variables-root {
+    --theme-primary: #{$orange-60};
+    --theme-padding: #{$padding-default};
+}
 
+@mixin theme-variables-light {
     --theme-background: #{$white};
     --theme-on-background: #{$black};
     --theme-background-inverse: #{$black};
@@ -23,9 +26,7 @@
     --theme-border-color: currentColor;
 }
 
-@mixin theme-dark-mode-variables {
-    --theme-primary: #{$orange-60};
-
+@mixin theme-variables-dark {
     --theme-background: #{$gray-20};
     --theme-on-background: #{$white};
     --theme-background-inverse: #{$black};

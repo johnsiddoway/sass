@@ -28,7 +28,7 @@ export function StyleTest() {
             <h3>Truncated Text</h3>
             <div>
                 <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.</p>
-                <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}}>
+                <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}} title="This is a long block of text that goes on forever.">
                     This is a long block of text that goes on forever.
                 </div>
             </div>
@@ -68,7 +68,7 @@ export function StyleTest() {
         </div>
         <h2>Buttons</h2>
         <div>
-            <h3>Default Buttons</h3>
+            <h3>Sized Buttons</h3>
             <div className="button-grid">
                 <button>Default</button>
                 <button className="btn-lg">Large</button>
@@ -76,11 +76,11 @@ export function StyleTest() {
             </div>
             <h3>Links and Inputs</h3>
             <div className="button-grid">
-                <a className="btn-primary" href="#" role="button">Link</a>
-                <button className="btn-primary" type="submit">Button</button>
-                <input className="btn-primary" type="button" value="Input"/>
-                <input className="btn-primary" type="submit" value="Submit"/>
-                <input className="btn-primary" type="reset" value="Reset"/>
+                <a href="#" role="button">Link</a>
+                <button type="submit">Button</button>
+                <input type="button" value="Input"/>
+                <input type="submit" value="Submit"/>
+                <input type="reset" value="Reset"/>
             </div>
             <h3>Themed Buttons</h3>
             <div className="button-grid">
@@ -244,23 +244,26 @@ export function StyleTest() {
             <table>
                 <thead>
                 <tr>
-                    <th role="columnheader" style={{width: "100px"}}></th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{width: "100px"}}>Heading</th>
-                    <th role="columnheader">Overflow?</th>
-                    <th role="columnheader">Overflow?</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}></th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
+                    <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -280,22 +283,6 @@ export function StyleTest() {
                     <td>Cell</td>
                     <td>Cell</td>
                     <td>Cell</td>
-                    <td>Overflow Cell</td>
-                    <td>Overflow Cell</td>
-                </tr>
-                <tr>
-                    <th role="rowheader">Row</th>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
                     <td>Cell</td>
                     <td>Cell</td>
                     <td>Cell</td>
@@ -304,6 +291,31 @@ export function StyleTest() {
                 </tr>
                 <tr>
                     <th role="rowheader">Row</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Overflow Cell</td>
+                    <td>Overflow Cell</td>
+                </tr>
+                <tr>
+                    <th role="rowheader">Row</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
                     <td>Cell</td>
                     <td>Cell</td>
                     <td>Cell</td>
@@ -325,6 +337,9 @@ export function StyleTest() {
                 <tfoot>
                 <tr>
                     <th role="rowheader">Total</th>
+                    <td>Total</td>
+                    <td>Total</td>
+                    <td>Total</td>
                     <td>Total</td>
                     <td>Total</td>
                     <td>Total</td>

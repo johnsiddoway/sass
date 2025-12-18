@@ -20,16 +20,20 @@
 }
 
 @layer theme {
+    :root {
+        @include sass.theme-variables-root;
+    }
     .root {
         @include sass.theme-layout-root;
         &.dark {
-            @include sass.theme-dark-mode-variables;
+            @include sass.theme-variables-dark;
         }
         &.light {
-            @include sass.theme-light-mode-variables;
+            @include sass.theme-variables-light;
         }
     }
     @include sass.buttons-themed;
+    @include sass.buttons-themed-inverted;
 }
 
 /** EVERYTHING ABOVE HERE SHOULD BE THE 'DEFAULT' **/

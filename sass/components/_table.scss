@@ -1,19 +1,20 @@
 @mixin table($selector: 'table', $wrapper-selector: '.table-wrapper') {
     @if $wrapper-selector {
         #{$wrapper-selector} {
+            display: block;
             overflow-x: auto;
+            white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
     }
 
     #{$selector} {
-        max-width: 100%;
         border-collapse: collapse;
 
         th,
         td {
-            border-bottom: var(--border-width) var(--border-style) var(--border-color);
-            padding: 0.375em 0.75em;
+            border-bottom: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
+            padding: var(--theme-padding);
         }
     }
 }

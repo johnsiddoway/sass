@@ -16,14 +16,13 @@
         --theme-background: transparent;
         --theme-on-background: currentColor;
         --theme-font-size: #{variables.$font-size-base};
-        --theme-padding: #{variables.$padding-default};
 
         background-color: var(--theme-background);
         color: var(--theme-on-background);
         border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
         padding: var(--theme-padding);
-        outline-color: var(--theme-primary);
-        outline-offset: 0.25em;
+        // outline-color: var(--theme-primary);
+        // outline-offset: 0.25em;
         
         // box-shadow: var(--theme-surface-box-shadow);
         font-size: var(--theme-font-size);
@@ -46,48 +45,6 @@
     }
 }
 
-// @mixin buttons($font-size: variables.$button-font-size) {
-//     @include button-base($font-size: $font-size);
-//     @include button-large;
-//     @include button-small;
-//     @include themed-buttons;
-//     @include themed-buttons-inverted;
-// }
-
-// @mixin button-base($font-size: variables.$button-font-size) {
-//     button {
-//         --btn-border-color: #{variables.$button-border-color};
-//         --btn-border-width: #{variables.$button-border-width};
-//         --btn-box-shadow-color: #{variables.$button-box-shadow-color};
-
-//         padding: variables.$button-padding;
-//         background-color: var(--btn-background-color);
-//         color: var(--btn-color);
-//         border: var(--btn-border-width) solid var(--btn-border-color);
-//         cursor: pointer;
-//         outline: none;
-//         font-size: $font-size;
-
-//         &:active {
-//             background-color: var(--btn-background-color-active);
-//         }
-
-//         &:disabled {
-//             cursor: default;
-//             pointer-events: none;
-//             opacity: 0.65;
-//         }
-
-//         &:focus-visible {
-//             box-shadow: 0 0 0.75rem 0 var(--btn-box-shadow-color);
-//         }
-
-//         &:hover {
-//             background-color: var(--btn-background-color-hover);
-//         }
-//     }
-// }
-
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
 // This has been turned into an opt-in mixin, instead of always including the classes in the compiled css
 @mixin buttons-themed($color-map: variables.$theme-color-map) {
@@ -98,44 +55,19 @@
     }
 }
 
-@mixin button-themed(
-    $theme-color
-    // ,$background-scale: variables.$button-background-scale,
-    // $background-scale-hover: variables.$button-background-scale-hover,
-    // $background-scale-active: variables.$button-background-scale-active,
-    // $background-scale-disabled: variables.$button-background-scale-disabled
-) {
-    // $color: map.get($theme-color, 'color');
-    // $background: map.get($theme-color, 'background');
-    // $border-color: map.get($theme-color, 'border-color');
-    --theme-background: #{$theme-color};
-    // --theme-on-background: #{$color};
-    // --theme-border-color: #{$border-color};
-    // --btn-background-color-active: #{functions.shift-color($theme-color-background, $background-scale-active)};
-    // --btn-background-color-hover: #{functions.shift-color($theme-color-background, $background-scale-active)};
-    // --btn-border-color: #{$theme-color-border};
-    // --btn-box-shadow-color: #{$theme-color-background};
-    // --btn-color: #{$theme-color-foreground};
+@mixin buttons-themed-inverted($color-map: variables.$theme-color-map) {
+    @each $key, $value in $color-map {
+        .btn-#{$key}-inverted {
+            @include button-themed-inverted($theme-color: $value);
+        }
+    }
 }
 
-// @mixin themed-buttons-inverted($color-map: variables.$theme-colors) {
-//     @each $name, $colors in $color-map {
-//         .btn-#{$name}-inverted {
-//             @include themed-button-inverted($theme-colors: $colors);
-//         }
-//     }
-// }
+@mixin button-themed($theme-color) {
+    --theme-background: #{$theme-color};
+}
 
-// // Based loosely on Bootstrap's button-outline-variant: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/mixins/_buttons.scss
-// // Except this version only includes a border for the :focus-visible state
-// @mixin themed-button-inverted($theme-colors) {
-//     $theme-color-background: map.get($theme-colors, 'background-color');
-//     $theme-color-foreground: map.get($theme-colors, 'color');
-//     $theme-color-border: map.get($theme-colors, 'border-color');
-//     --btn-background-color: transparent;
-//     --btn-background-color-active: transparent;
-//     --btn-background-color-hover: transparent;
-//     --btn-border-color: #{$theme-color-background};
-//     --btn-box-shadow-color: #{$theme-color-background};
-//     --btn-color: #{$theme-color-background};
-// }
+@mixin button-themed-inverted($theme-color) {
+    --theme-on-background: #{$theme-color};
+    --theme-border-color: #{$theme-color};
+}
