@@ -21,26 +21,26 @@ export function StyleTest() {
         <h2>Typography</h2>
         <div>
             <h3>Basic Text</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-    nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-    anim id est laborum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <h3>Truncated Text</h3>
-            <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code> on an inline element, like a <code>&lg;span/&gt;</code>.</p>
-            <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}}>
-                This is a long block of text that goes on forever.
-            </div>
-            <p>This can be paired with the Tooltip (further down the page) too.</p>
-            <div className="text-truncate" aria-label="This is a long block of text that goes on forever." data-tooltip="This is a long block of text that goes on forever.">
-                This is a long block of text that goes on forever.
+            <div>
+                <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.</p>
+                <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}}>
+                    This is a long block of text that goes on forever.
+                </div>
             </div>
             <h3>Links</h3>
+            <div>
             <p><a href="#">Test a:link</a></p>
             <p><a href="#" className="visited">Test a:visited</a></p>
             <p><a href="#" className="hover">Test a:hover</a></p>
             <p><a href="#" className="active">Test a:active</a></p>
+            </div>
             <h3>Lists</h3>
+            <div>
             <ol>
                 <li>Some</li>
                 <li>List</li>
@@ -51,6 +51,7 @@ export function StyleTest() {
                 <li>List</li>
                 <li>Items</li>
             </ul>
+            </div>
             <h3>Abbreviations</h3>
             <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
             <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
@@ -59,7 +60,7 @@ export function StyleTest() {
             <p><span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.</p>
             <p><span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.</p>
             <h3>Code</h3>
-            <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block</p>
+            <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block.</p>
             <pre><code>
                 like this,
                 with &lt;pre&gt; and &lt;code&gt;
@@ -67,11 +68,13 @@ export function StyleTest() {
         </div>
         <h2>Buttons</h2>
         <div>
+            <h3>Default Buttons</h3>
             <div className="button-grid">
                 <button>Default</button>
                 <button className="btn-lg">Large</button>
                 <button className="btn-sm">Small</button>
             </div>
+            <h3>Links and Inputs</h3>
             <div className="button-grid">
                 <a className="btn-primary" href="#" role="button">Link</a>
                 <button className="btn-primary" type="submit">Button</button>
@@ -79,34 +82,38 @@ export function StyleTest() {
                 <input className="btn-primary" type="submit" value="Submit"/>
                 <input className="btn-primary" type="reset" value="Reset"/>
             </div>
+            <h3>Themed Buttons</h3>
             <div className="button-grid">
                 <button className="btn-primary">Primary</button>
-                <button className="btn-primary-inverted">Primary</button>
                 <button className="btn-info">Info</button>
-                <button className="btn-info-inverted">Info</button>
                 <button className="btn-success">Success</button>
-                <button className="btn-success-inverted">Success</button>
                 <button className="btn-danger">Danger</button>
-                <button className="btn-danger-inverted">Danger</button>
                 <button className="btn-orange">Orange</button>
-                <button className="btn-orange-inverted">Orange</button>
                 <button className="btn-yellow">Yellow</button>
-                <button className="btn-yellow-inverted">Yellow</button>
                 <button className="btn-green">Green</button>
-                <button className="btn-green-inverted">Green</button>
                 <button className="btn-teal">Teal</button>
-                <button className="btn-teal-inverted">Teal</button>
                 <button className="btn-cyan">Cyan</button>
-                <button className="btn-cyan-inverted">Cyan</button>
                 <button className="btn-blue">Blue</button>
-                <button className="btn-blue-inverted">Blue</button>
                 <button className="btn-indigo">Indigo</button>
-                <button className="btn-indigo-inverted">Indigo</button>
-                <button className="btn-purple">Purple</button>
-                <button className="btn-purple-inverted">Purple</button>
+                <button className="btn-violet">Violet</button>
                 <button className="btn-pink">Pink</button>
-                <button className="btn-pink-inverted">Pink</button>
                 <button className="btn-red">Red</button>
+            </div>
+            <h3>Inverted Themed Buttons</h3>
+            <div className="button-grid">
+                <button className="btn-primary-inverted">Primary</button>
+                <button className="btn-info-inverted">Info</button>
+                <button className="btn-success-inverted">Success</button>
+                <button className="btn-danger-inverted">Danger</button>
+                <button className="btn-orange-inverted">Orange</button>
+                <button className="btn-yellow-inverted">Yellow</button>
+                <button className="btn-green-inverted">Green</button>
+                <button className="btn-teal-inverted">Teal</button>
+                <button className="btn-cyan-inverted">Cyan</button>
+                <button className="btn-blue-inverted">Blue</button>
+                <button className="btn-indigo-inverted">Indigo</button>
+                <button className="btn-violet-inverted">Violet</button>
+                <button className="btn-pink-inverted">Pink</button>
                 <button className="btn-red-inverted">Red</button>
             </div>
         </div>
