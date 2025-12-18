@@ -1,5 +1,7 @@
 @use '../../../sass' as *;
 
+@layer reset, default, layout, components;
+
 @font-face {
     font-family: 'Open Sans';
     font-style: normal;
@@ -8,7 +10,9 @@
     font-display: swap;
 }
 
-@include reset;
+@layer reset {
+    @include reset;
+}
 
 :root {
     --theme-primary: #{$orange-60};
@@ -28,21 +32,27 @@ html {
     }
 }
 
-@include abbr;
-@include code;
-// @include buttons;
-// @include cards;
-// @include details;
-// @include dl;
-// @include form;
-// @include inputs;
-// @include label;
-// @include popover-auto;
-// @include popover-manual;
-// @include select;
-// @include table;
-// @include toggle;
-@include tooltip;
+button,
+a[role=button]:any-link,
+[type=button],
+[type=submit],
+[type=reset] {
+    @extend %button-base;
+}
+
+@include use-all-components;
+
+/** EVERYTHING ABOVE HERE SHOULD BE THE 'DEFAULT' **/
+/** EVERYTHING BELOW IS JUST TO HELP MAKE THE STYLE TEST PAGE LOOK BETTER **/
+
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+    margin-bottom: .5rem;
+    justify-items: center;
+    align-items: center;
+}
 
 // .rating {
 //     // Add some custom style specific to Storybutton

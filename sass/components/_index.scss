@@ -1,21 +1,36 @@
 @forward 'abbr';
+@forward 'anchor';
 @forward 'button';
-@forward 'card';
+// @forward 'card';
 @forward 'code';
-@forward 'definition-list';
-@forward 'details';
-@forward 'form';
-@forward 'input-base';
-@forward 'input-checkbox';
-@forward 'input-file';
-@forward 'input-radio';
-@forward 'input-range';
-@forward 'label';
-@forward 'popovers';
-@forward 'rating';
-@forward 'select';
-@forward 'table';
-@forward 'textarea';
-@forward 'text-truncate';
-@forward 'toggle';
+// @forward 'definition-list';
+// @forward 'details';
+// @forward 'form';
+// @forward 'input-base';
+// @forward 'input-checkbox';
+// @forward 'input-file';
+// @forward 'input-radio';
+// @forward 'input-range';
+// @forward 'label';
+// @forward 'popovers';
+// @forward 'rating';
+// @forward 'select';
+// @forward 'table';
+// @forward 'textarea';
+// @forward 'text-truncate';
+// @forward 'toggle';
 @forward 'tooltip';
+
+@use 'abbr';
+@use 'anchor';
+@use 'button';
+@use 'code';
+@use 'tooltip';
+
+@mixin use-all-components() {
+    @include abbr.abbr;
+    @include anchor.anchor;
+    @include button.all-buttons;
+    @include code.code;
+    @include tooltip.tooltip;
+}

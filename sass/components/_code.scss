@@ -1,21 +1,21 @@
 @use '../variables' as *;
 
-@mixin code() {
-    pre,
-    code {
+@mixin code($pre-selector: 'pre', $code-selector: 'code') {
+    #{$pre-selector},
+    #{$code-selector} {
         background: var(--theme-surface);
         color: var(--theme-on-surface);
     }
 
-    pre {
+    #{$pre-selector} {
         padding: 1em;
         overflow: auto;
-        & > code {
+        & > #{$code-selector} {
             padding: 0;
         }
     }
 
-    code {
+    #{code} {
         padding: $padding-sm;
     }
 }

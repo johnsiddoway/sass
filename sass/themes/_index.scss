@@ -10,9 +10,9 @@
     --theme-background-inverse: #{$black};
     --theme-on-background-inverse: #{$white};
 
-    --theme-surface: #{$gray-20};
-    --theme-on-surface: #{$white};
-    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-30};
+    --theme-surface: #{$gray-90};
+    --theme-on-surface: currentColor;
+    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
 
     --theme-link: #{$blue-40};
     --theme-link-visited: #{$purple-40};
@@ -21,23 +21,6 @@
     --theme-border-width: 1px;
     --theme-border-style: solid;
     --theme-border-color: currentColor;
-
-    // --primary: #{variables.$orange-60};
-    // --primary-variant: #{variables.$orange-40};
-    // --on-primary: #{variables.$dark};
-
-    // --secondary: #{variables.$gray-50};
-    // --secondary-variant: #{variables.$gray-40};
-    // --on-secondary: #{variables.$dark};
-
-    // --background: #{variables.$white};
-    // --on-background: #{variables.$black};
-
-    // --surface: #{variables.$white};
-    // // --surface-box-shadow: #{variables.$surface-box-shadow};
-    // --on-surface: #{variables.$black};
-
-    // // --input-box-shadow: #{variables.$input-box-shadow};
 }
 
 %dark-mode-variables {
@@ -59,27 +42,6 @@
     --theme-border-width: 1px;
     --theme-border-style: solid;
     --theme-border-color: currentColor;
-
-    // --primary: #{variables.$orange-60};
-    // --primary-variant: #{variables.$orange-40};
-    // --on-primary: #{variables.$dark};
-
-    // --secondary: #{variables.$gray-50};
-    // --secondary-variant: #{variables.$gray-40};
-    // --on-secondary: #{variables.$dark};
-
-    // --background: #{variables.$gray-10};
-    // --on-background: #{variables.$light};
-
-    // --surface: #{variables.$gray-20};
-    
-    // --on-surface: #{variables.$light};
-
-    // --border-width: 1px;
-    // --border-style: solid;
-    // --border-color: currentColor;
-
-    // // --input-box-shadow: #{variables.$input-box-shadow};
 }
 
 @mixin light-mode-variables() {
@@ -101,20 +63,6 @@
     font-weight: $font-weight-base;
     line-height: $line-height-base;
     text-align: $text-align-base;
-
-    a {
-        &:link {
-            color: var(--theme-link);
-        }
-        &.visited,
-        &:visited {
-            color: var(--theme-link-visited);
-        }
-        &.active,
-        &:active {
-            color: var(--theme-link-active);
-        }
-    }
 
     > header,
     footer {

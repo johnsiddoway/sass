@@ -55,4 +55,8 @@
     ul ol {
         margin-bottom: 0;
     }
+
+    [type=button], [type=reset], [type=submit], button {
+        --webkit-appearance: button;
+    }
 }

@@ -46,7 +46,10 @@ export function StyleTest() {
             <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
             <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
             <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
-            <h2>Code</h2>
+            <h3>Tooltips</h3>
+            <p><span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.</p>
+            <p><span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.</p>
+            <h3>Code</h3>
             <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block</p>
             <pre><code>
                 like this,
@@ -57,6 +60,15 @@ export function StyleTest() {
         <div>
             <div className="button-grid">
                 <button>Default</button>
+                <button className="btn-lg">Large</button>
+                <button className="btn-sm">Small</button>
+            </div>
+            <div className="button-grid">
+                <a className="btn-primary" href="#" role="button">Link</a>
+                <button className="btn-primary" type="submit">Button</button>
+                <input className="btn-primary" type="button" value="Input"/>
+                <input className="btn-primary" type="submit" value="Submit"/>
+                <input className="btn-primary" type="reset" value="Reset"/>
             </div>
             <div className="button-grid">
                 <button className="btn-primary">Primary</button>
@@ -317,7 +329,7 @@ export function StyleTest() {
                 </tfoot>
             </table>
         </div>
-        <h2>Modals</h2>
+        <h2>Dialogs and Popovers</h2>
         <div>
             <dialog ref={dialogRef}>
                 <article>
@@ -327,29 +339,24 @@ export function StyleTest() {
                 <button value="no" onClick={() => setShowDialog(!showDialog)}>Close</button>
             </dialog>
             <button type="button" data-dialog="dialog-example" onClick={() => setShowDialog(!showDialog)}>Open Dialog</button>
-            <div id="popover-non-modal" popover="auto">
+            <div id="popover-auto" popover="auto">
                 <article>
-                    <h2>Non-Modal Popover</h2>
+                    <h2>Auto Popovers</h2>
                     This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
                     You can click anywhere outside this popover to close it, or click the button.
                 </article>
-                <button popoverTarget="popover-non-modal" popoverTargetAction="hide">Close</button>
+                <button popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
             </div>
-            <button type="button" popoverTarget="popover-non-modal">Open Non-Modal Popover</button>
-            <div id="popover-modal" popover="manual">
+            <button type="button" popoverTarget="popover-auto">Open Auto Popover</button>
+            <div id="popover-manual" popover="manual">
                 <article>
-                    <h2>Modal Popover</h2>
+                    <h2>Manual Popover</h2>
                     This is a <code>&lt;div popover="manual"&gt;popover&lt;/div&gt;</code> example.
                 </article>
-                <button value="no" popoverTarget="popover-modal" popoverTargetAction="hide">No</button>
-                <button value="yes" popoverTarget="popover-modal" popoverTargetAction="hide">Yes</button>
+                <button value="no" popoverTarget="popover-manual" popoverTargetAction="hide">No</button>
+                <button value="yes" popoverTarget="popover-manual" popoverTargetAction="hide">Yes</button>
             </div>
-            <button type="button" popoverTarget="popover-modal">Open Modal Popover</button>
-        </div>
-        <h2>Tooltips</h2>
-        <div>
-            <span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.
-            <span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.
+            <button type="button" popoverTarget="popover-manual">Open Modal Popover</button>
         </div>
         <h2>Cards</h2>
         <div>
