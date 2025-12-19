@@ -10,13 +10,13 @@
     #{$pre-selector} {
         padding: var(--component-padding-lg);
         overflow: auto;
-        & > #{$code-selector} {
-            padding: 0;
-            vertical-align: inherit;
-        }
+        // & > #{$code-selector} {
+        //     padding: 0;
+        //     vertical-align: inherit;
+        // }
     }
 
-    #{code} {
+    :not(pre) > #{code} {
         padding: var(--component-padding-sm);
         vertical-align: text-bottom;
     }

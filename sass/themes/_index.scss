@@ -33,6 +33,7 @@
 
     --theme-primary: #{$orange-60};
     --theme-secondary: #{$gray-80};
+    --theme-white: #{$white};
 }
 
 @mixin theme-variables-light {
