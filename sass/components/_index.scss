@@ -3,7 +3,7 @@
 @forward 'button';
 @forward 'card';
 @forward 'code';
-// @forward 'definition-list';
+@forward 'definition-list';
 @forward 'details';
 // @forward 'form';
 // @forward 'input-base';
@@ -25,8 +25,9 @@
 @use 'anchor';
 @use 'button';
 @use 'card';
-@use 'details';
 @use 'code';
+@use 'definition-list';
+@use 'details';
 @use 'popovers';
 @use 'switch';
 @use 'table';
@@ -40,6 +41,7 @@
     @include button.buttons;
     @include card.card;
     @include code.code;
+    @include definition-list.dl;
     @include details.details;
     @include popovers.popovers;
     @include switch.switch;

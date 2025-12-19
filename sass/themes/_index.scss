@@ -13,7 +13,9 @@
     --default-padding-y: 0.75em;
     --default-padding: var(--default-padding-x) var(--default-padding-y);
 
-    --font-size: $font-size-base;
+    --font-size: #{$font-size-base};
+    --font-weight-normal: #{$font-weight-base};
+    --font-weight-bold: #{$font-weight-bold};
 
     --surface-color: var(--default-color);
     --surface-border-width: calc(2 * var(--default-border-width));

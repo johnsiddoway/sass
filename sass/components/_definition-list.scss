@@ -4,9 +4,8 @@
 @mixin dl($selector: "dl") {
     #{$selector} {
         dt {
-            font-weight: variables.$font-weight-bold;
+            font-weight: var(--font-weight-bold);
         }
-
         dd {
             dl,
             p {
@@ -15,14 +14,15 @@
         }
 
         &.row {
-            --dt-width: 30%;
+            --dt-width: 20%; // TODO: Doesn't really need to be a variable, we never change it
             @media (min-width: map.get(variables.$container-breakpoints, "sm")) {
                 display: flex;
                 flex-wrap: wrap;
                 > dt {
                     width: var(--dt-width);
+                    // Make this term fill a whole row if it has a subsequent term
                     &:has(+ dt) {
-                        width: 100%; // override the width if a term has a subsequent term
+                        width: 100%;
                     }
                 }
                 > dd {

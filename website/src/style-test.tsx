@@ -69,6 +69,53 @@ export function StyleTest() {
                     with &lt;pre&gt; and &lt;code&gt;
                 </code></pre>
             </section>
+            <section id="definition-list">
+                <h3>Definition Lists</h3>
+                <dl>
+                    <dt>Description lists</dt>
+                    <dd>A description list is perfect for defining terms.</dd>
+                    <dt>Term</dt>
+                    <dd>
+                        <p>Definition for the term.</p>
+                        <p>And some more placeholder definition text.</p>
+                    </dd>
+                    <dt>Another term</dt>
+                    <dd>This definition is short, so no extra paragraphs or anything.</dd>
+                    <dt>First Term</dt>
+                    <dt>Second Term</dt>
+                    <dd>This description should apply to both terms above</dd>
+                    <dt>Nesting</dt>
+                    <dd>
+                        <dl>
+                            <dt>Nested definition list</dt>
+                            <dd>I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+                        </dl>
+                    </dd>
+                </dl>
+                <dl className="row">
+                    <dt>Row-Based Description lists</dt>
+                    <dd>A description list is perfect for defining terms.</dd>
+                    <dt>Row-Based Term</dt>
+                    <dd>
+                        <p>Definition for the term.</p>
+                        <p>And some more placeholder definition text.</p>
+                    </dd>
+                    <dt>Another term</dt>
+                    <dd>This definition is short, so no extra paragraphs or anything.</dd>
+                    <dt>First Term</dt>
+                    <dt>Second Term</dt>
+                    <dd>This description should apply to both terms above</dd>
+                    <dt className="text-truncate" aria-describedby="dl-row-truncated-text"><span id="dl-row-truncated-text">Extremely long text will eventually get truncated depending on how wide your screen is</span></dt>
+                    <dd>This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+                    <dt>Nesting</dt>
+                    <dd>
+                        <dl>
+                            <dt>Nested definition list</dt>
+                            <dd>I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
+                        </dl>
+                    </dd>
+                </dl>
+            </section>
         </section>
         <section id="buttons">
             <h2>Buttons</h2>
