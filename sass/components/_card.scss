@@ -1,21 +1,16 @@
 @use '../variables';
 
-@mixin cards($selector: '.card') {
-    #{$selector} {
-        margin-bottom: variables.$margin-bottom-default;
-        border: var(--border-width) var(--border-style) var(--border-color);
-        padding: variables.$padding-default;
-        background-color: var(--surface);
-        color: var(--on-surface);
-        box-shadow: var(--surface-box-shadow);
-    }
+@mixin card-style($padding: variables.$padding-default, $margin-bottom: variables.$margin-bottom-default) {
+    margin-bottom: $margin-bottom;
+    border: var(--surface-border);
+    padding: var(--surface-padding);
+    background-color: var(--surface-background);
+    color: var(--surface-color);
+    box-shadow: var(--surface-box-shadow);
 }
 
-@mixin make-card($padding: variables.$padding-default, $margin-bottom: variables.$margin-bottom-default) {
-    margin-bottom: $margin-bottom;
-    border: var(--border-width) var(--border-style) var(--border-color);
-    padding: $padding;
-    background-color: var(--surface);
-    color: var(--on-surface);
-    box-shadow: var(--surface-box-shadow);
+@mixin card($selector: '.card') {
+    #{$selector} {
+        @include card-style;
+    }
 }

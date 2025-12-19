@@ -288,7 +288,7 @@ export function StyleTest() {
         <section id="cards">
             <h2>Cards</h2>
             <div className="card">
-                <h2>Lorem ipsum</h2>
+                <h3>Lorem ipsum</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
                     diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
@@ -297,7 +297,7 @@ export function StyleTest() {
                 </p>
             </div>
             <div className="card">
-                <h2>Orci varius</h2>
+                <h3>Orci varius</h3>
                 <p>
                     Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel
                     pulvinar orci, ac auctor urna. Nulla aliquam enim rutrum, auctor urna at, facilisis metus. Vivamus
@@ -308,7 +308,7 @@ export function StyleTest() {
                 </p>
             </div>
             <div className="card">
-                <h2>Mauris felis</h2>
+                <h3>Mauris felis</h3>
                 <p>
                     Mauris felis lorem, condimentum vel lobortis et, condimentum eu libero. Fusce eget iaculis metus.
                     Pellentesque quis ligula eget sem bibendum ultrices. Maecenas et ante id ex ultrices sagittis.
@@ -317,20 +317,20 @@ export function StyleTest() {
                 </p>
             </div>
         </section>
-        <h2>Toggles</h2>
-        <div>
-        <p>Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.</p>
-        <label className="toggle">
-            <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false}/>
-            Turn it up to eleven
-        </label>
-        </div>
-        <h2>Accordions</h2>
-        <div>
+        <section id="switches">
+            <h2>Switches</h2>
+            <p>Switches should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.</p>
+            <label className="switch">
+                <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false}/>
+                <span>Turn it up to eleven</span>
+            </label>
+        </section>
+        <section id="details">
+            <h2>Accordions</h2>
             <p>If a group of <code>&lt;details&gt;</code> elements all have the same <code>name</code> attribute, most browsers will only allow one of them to be open at a time. Firefox <a href="https://caniuse.com/mdn-html_elements_details_name">doesn't support this</a>, but it's supported by most other browsers, and degrades relatively gracefully.</p>
             <details name="accordion-demo">
                 <summary>
-                    This is an accordion summary
+                    This is a details summary
                 </summary>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta, diam
@@ -341,7 +341,7 @@ export function StyleTest() {
             </details>
             <details name="accordion-demo">
                 <summary>
-                    This is another accordion summary
+                    This is another details summary
                 </summary>
                 <ul>
                     <li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
@@ -349,7 +349,7 @@ export function StyleTest() {
                     <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
                 </ul>
             </details>
-        </div>
+        </section>
         <h2>Forms</h2>
         <form>
             <fieldset>

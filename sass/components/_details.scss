@@ -1,16 +1,13 @@
-@use '../variables';
-
 @mixin details($selector: 'details') {
     #{$selector} {
-        border-bottom: var(--border-width) var(--border-style) var(--border-color);
+        border-bottom: var(--component-border);
 
         > summary {
-            padding: variables.$padding-default;
+            padding: var(--component-padding);
             cursor: pointer;
         }
 
         > :not(summary) {
-            margin-top: 1em;
             margin-bottom: 1em;
         }
     }

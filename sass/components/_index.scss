@@ -1,10 +1,10 @@
 @forward 'abbr';
 @forward 'anchor';
 @forward 'button';
-// @forward 'card';
+@forward 'card';
 @forward 'code';
 // @forward 'definition-list';
-// @forward 'details';
+@forward 'details';
 // @forward 'form';
 // @forward 'input-base';
 // @forward 'input-checkbox';
@@ -15,17 +15,20 @@
 @forward 'popovers';
 // @forward 'rating';
 // @forward 'select';
+@forward 'switch';
 @forward 'table';
 @forward 'title';
 // @forward 'textarea';
 @forward 'text-truncate';
-// @forward 'toggle';
 
 @use 'abbr';
 @use 'anchor';
 @use 'button';
+@use 'card';
+@use 'details';
 @use 'code';
 @use 'popovers';
+@use 'switch';
 @use 'table';
 @use 'text-truncate';
 @use 'title';
@@ -35,8 +38,11 @@
     @include abbr.data-abbr;
     @include anchor.anchor;
     @include button.buttons;
+    @include card.card;
     @include code.code;
+    @include details.details;
     @include popovers.popovers;
+    @include switch.switch;
     @include table.table;
     @include text-truncate.text-truncate;
     @include title.data-title;

@@ -32,6 +32,7 @@
     --component-padding-sm: #{$padding-sm};
 
     --theme-primary: #{$orange-60};
+    --theme-secondary: #{$gray-80};
 }
 
 @mixin theme-variables-light {
@@ -40,7 +41,7 @@
     --page-background-inverse: #{$black};
     --page-color-inverse: #{$white};
 
-    --surface-background: #{$gray-80};
+    --surface-background: #{$gray-90};
     --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
 
     --component-background: #{$gray-80};

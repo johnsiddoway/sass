@@ -1,0 +1,39 @@
+@use '../variables';
+
+@mixin switch($selector: '.switch') {
+    #{$selector} {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .75em;
+    
+        & input[type=checkbox] {
+            --component-height: 1.5em;
+            --component-padding: 2px;
+            --indicator-size: calc(var(--component-height) - var(--component-padding) * 2 - var(--component-border-width) * 2);
+            --component-width: calc(var(--indicator-size) * 2 + var(--component-padding) * 2 + var(--component-border-width) * 2);
+            appearance: none;
+            height: var(--component-height);
+            width: var(--component-width);
+            border: var(--component-border);
+            padding: var(--component-padding);
+            background-color: var(--theme-secondary);
+            cursor: pointer;
+            &::before {
+                content: "";
+                display: block;
+                height: var(--indicator-size);
+                width: var(--indicator-size);
+                border: var(--component-border);
+                background-color: var(--page-background);
+                transition: .1s linear transform;
+            }
+            &:checked {
+                background-color: var(--theme-primary);
+                &::before {
+                    transform: translateX(calc(var(--component-width) - var(--indicator-size) - var(--component-padding) * 2 - var(--component-border-width) * 2));
+                }
+            }
+        }
+    }
+}
