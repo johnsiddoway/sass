@@ -1,16 +1,25 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 export function StyleTest() {
-    const [showDialog, setShowDialog] = useState<boolean>(false);
-    const dialogRef = useRef<HTMLDialogElement>(null);
+    // const [showDialogAuto, setShowDialogAuto] = useState<boolean>(false);
+    const dialogAutoRef = useRef<HTMLDialogElement>(null);
+    // const [showDialogManual, setShowDialogManual] = useState<boolean>(false);
+    const dialogManualRef = useRef<HTMLDialogElement>(null);
 
-    useLayoutEffect(() => {
-        if (dialogRef.current?.open && !showDialog) {
-            dialogRef.current.close();
-        } else if (!dialogRef.current?.open && showDialog) {
-            dialogRef.current?.showModal();
-        }
-    }, [showDialog]);
+    // useLayoutEffect(() => {
+    //     if (dialogAutoRef.current?.open && !showDialogAuto) {
+    //         dialogAutoRef.current.close();
+    //     } else if (!dialogAutoRef.current?.open && showDialogAuto) {
+    //         dialogAutoRef.current?.showModal();
+    //     }
+    // }, [showDialogAuto]);
+    // useLayoutEffect(() => {
+    //     if (dialogManualRef.current?.open && !showDialogManual) {
+    //         dialogManualRef.current.close();
+    //     } else if (!dialogManualRef.current?.open && showDialogManual) {
+    //         dialogManualRef.current?.showModal();
+    //     }
+    // }, [showDialogManual]);
 
     return <>
         <p>This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).</p>
@@ -362,23 +371,30 @@ export function StyleTest() {
         </div>
         <h2>Dialogs and Popovers</h2>
         <div>
-            <dialog ref={dialogRef}>
-                <article>
+            <dialog closedby="any" ref={dialogAutoRef}>
+                <article >
                     <h2>Dialog Example</h2>
-                    This is a <code>dialog</code> example.
+                    <p>This is a <code>dialog</code> example.</p>
+                    <button className="btn-primary" onClick={() => dialogAutoRef.current?.close()}>Close</button>
                 </article>
-                <button value="no" onClick={() => setShowDialog(!showDialog)}>Close</button>
             </dialog>
-            <button type="button" data-dialog="dialog-example" onClick={() => setShowDialog(!showDialog)}>Open Dialog</button>
+            <dialog ref={dialogManualRef}>
+                <form method="dialog">
+                    <h2>Dialog Example</h2>
+                    <p>This is a <code>dialog</code> example.</p>
+                    <label htmlFor="dialog-input">Example input</label>
+                    <input type="text" id="dialog-input" placeholder="Example input"/>
+                    <button className="btn-primary" type="submit">Close</button>
+                </form>
+            </dialog>
             <div id="popover-auto" popover="auto">
                 <article>
                     <h2>Auto Popovers</h2>
                     This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
                     You can click anywhere outside this popover to close it, or click the button.
                 </article>
-                <button popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
+                <button className="btn-primary" popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
             </div>
-            <button type="button" popoverTarget="popover-auto">Open Auto Popover</button>
             <div id="popover-manual" popover="manual">
                 <article>
                     <h2>Manual Popover</h2>
@@ -387,7 +403,12 @@ export function StyleTest() {
                 <button value="no" popoverTarget="popover-manual" popoverTargetAction="hide">No</button>
                 <button value="yes" popoverTarget="popover-manual" popoverTargetAction="hide">Yes</button>
             </div>
-            <button type="button" popoverTarget="popover-manual">Open Modal Popover</button>
+            <div className="button-grid">
+                <button type="button" className="btn-primary" onClick={() => dialogAutoRef.current?.showModal()}>Open Auto Dialog</button>
+                <button type="button" className="btn-primary" onClick={() => dialogManualRef.current?.showModal()}>Open Manual Dialog</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-auto">Open Auto Popover</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-manual">Open Modal Popover</button>
+            </div>
         </div>
         <h2>Cards</h2>
         <div>

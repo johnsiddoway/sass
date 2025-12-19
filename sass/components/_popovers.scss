@@ -1,3 +1,5 @@
+@use '../variables';
+
 // %dialog {
 //     border: var(--border-width) var(--border-style) var(--border-color);
 //     padding: 1rem;
@@ -13,9 +15,17 @@
 //     }
 // }
 
-@mixin popover-auto($selector: '[popover],[popover="auto"]') {
+@mixin popovers() {
+    @include popover-auto('[popover]');
+    @include popover-manual('[popover="manual"]');
+    @include dialog('dialog');
+    @include dialog-any('dialog[closedby=any]');
+}
+
+@mixin popover-auto($selector: '[popover],[popover=auto]') {
     #{$selector} {
-        border: var(--border-width) var(--border-style) var(--border-color);
+        --surface-border-width: 2px;
+        border: var(--surface-border-width) var(--theme-border-style) var(--theme-border-color);
         padding: 1rem;
         form {
             margin-bottom: 0;
@@ -23,11 +33,32 @@
     }
 }
 
-@mixin popover-manual($selector: 'dialog,[popover="manual"]') {
+@mixin popover-manual($selector: 'dialog,[popover=manual]') {
     #{$selector} {
-        @include popover-auto($selector: $selector);
         &::backdrop {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@mixin dialog($selector: 'dialog') {
+    #{$selector} {
+        --surface-border-width: 2px;
+        border: var(--surface-border-width) var(--theme-border-style) var(--theme-border-color);
+        padding: 1rem;
+        form {
+            margin-bottom: 0;
+        }
+        &::backdrop {
+            background: rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+@mixin dialog-any($selector: 'dialog[closedby=any]') {
+    #{$selector} {
+        &::backdrop {
+            background: transparent;
         }
     }
 }
