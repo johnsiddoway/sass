@@ -1,7 +1,74 @@
-@mixin abbr($selector: 'abbr') {
-    #{$selector} {
-        text-decoration-line: none;
-        border-bottom: var(--theme-border-width) dotted var(--theme-border-color);
-        cursor: help;
+@mixin abbr-style {
+    text-decoration-line: none;
+    border-bottom: var(--component-border);
+    border-bottom-style: dotted;
+    cursor: help;
+}
+
+@mixin data-abbr-style($attribute-selector) {
+    position: relative;
+    &:before {
+        // TODO: Maybe just use the page-background variable directly?
+        --component-background: var(--page-background);
+        display: none; // hide by default
+        content: attr(#{$attribute-selector}); // here's the magic. It doesn't preserve new lines though
+        position: absolute;
+        z-index: 10;
+        // Position the tooltip below the original element
+        // TODO: Replace with Anchor positioning once it's widely available
+        // https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using
+        top: 125%;
+        left: 100%;
+        // basic styles
+        width: max-content;
+        max-width: calc(100dvw - 3rem);
+        border: var(--component-border);
+        padding: var(--component-padding);
+        background-color: var(--component-background);
+        color: var(--component-color);
+        box-shadow: var(--component-box-shadow);
     }
+    &:hover:before {
+        display: block;
+    }
+}
+
+@mixin abbr($element-selector: 'abbr') {
+    #{$element-selector} {
+        @include abbr-style;
+    }
+}
+
+// TODO: Switch to Anchor Positioning once it's widely available
+// https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning
+// Once that's done, might need a way to pass in the anchor name to use for each specific tooltip?
+@mixin data-abbr($attribute-selector: 'data-abbr') {
+    [#{$attribute-selector}] {
+        @include abbr-style;
+        @include data-abbr-style($attribute-selector: $attribute-selector);
+    }
+    // [#{$attribute-selector}]:before {
+    //     // TODO: Maybe just use the page-background variable directly?
+    //     --component-background: var(--page-background);
+    //     display: none; // hide by default
+    //     content: attr(#{$attribute-selector}); // here's the magic. It doesn't preserve new lines though
+    //     position: absolute;
+    //     z-index: 10;
+    //     // Position the tooltip below the original element
+    //     // TODO: Replace with Anchor positioning once it's widely available
+    //     // https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using
+    //     top: 125%;
+    //     left: 100%;
+    //     // basic styles
+    //     width: max-content;
+    //     max-width: calc(100dvw - 3rem);
+    //     border: var(--component-border);
+    //     padding: var(--component-padding);
+    //     background-color: var(--component-background);
+    //     color: var(--component-color);
+    //     box-shadow: var(--component-box-shadow);
+    // }
+    // [#{$attribute-selector}]:hover:before {
+    //     display: block;
+    // }
 }

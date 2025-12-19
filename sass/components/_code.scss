@@ -3,19 +3,21 @@
 @mixin code($pre-selector: 'pre', $code-selector: 'code') {
     #{$pre-selector},
     #{$code-selector} {
-        background: var(--theme-surface);
-        color: var(--theme-on-surface);
+        background: var(--component-background);
+        color: var(--component-color);
     }
 
     #{$pre-selector} {
-        padding: 1em;
+        padding: var(--component-padding-lg);
         overflow: auto;
         & > #{$code-selector} {
             padding: 0;
+            vertical-align: inherit;
         }
     }
 
     #{code} {
-        padding: $padding-sm;
+        padding: var(--component-padding-sm);
+        vertical-align: text-bottom;
     }
 }

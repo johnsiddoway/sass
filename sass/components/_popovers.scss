@@ -1,20 +1,5 @@
 @use '../variables';
 
-// %dialog {
-//     border: var(--border-width) var(--border-style) var(--border-color);
-//     padding: 1rem;
-//     form {
-//         margin-bottom: 0;
-//     }
-// }
-
-// %modal-dialog {
-//     @extend %dialog;
-//     &::backdrop {
-//         background: rgba(0, 0, 0, 0.1);
-//     }
-// }
-
 @mixin popovers() {
     @include popover-auto('[popover]');
     @include popover-manual('[popover="manual"]');
@@ -22,14 +7,17 @@
     @include dialog-any('dialog[closedby=any]');
 }
 
+@mixin popover-style {
+    border: var(--surface-border);
+    padding: var(--surface-padding);
+    form {
+        margin-bottom: 0;
+    }
+}
+
 @mixin popover-auto($selector: '[popover],[popover=auto]') {
     #{$selector} {
-        --surface-border-width: 2px;
-        border: var(--surface-border-width) var(--theme-border-style) var(--theme-border-color);
-        padding: 1rem;
-        form {
-            margin-bottom: 0;
-        }
+        @include popover-style;
     }
 }
 
@@ -43,15 +31,7 @@
 
 @mixin dialog($selector: 'dialog') {
     #{$selector} {
-        --surface-border-width: 2px;
-        border: var(--surface-border-width) var(--theme-border-style) var(--theme-border-color);
-        padding: 1rem;
-        form {
-            margin-bottom: 0;
-        }
-        &::backdrop {
-            background: rgba(0, 0, 0, 0.2);
-        }
+        @include popover-style;
     }
 }
 

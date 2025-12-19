@@ -1,0 +1,7 @@
+@use 'abbr';
+
+@mixin data-title($attribute-selector: 'data-title') {
+    [#{$attribute-selector}] {
+        @include abbr.data-abbr-style($attribute-selector: $attribute-selector);
+    }
+}

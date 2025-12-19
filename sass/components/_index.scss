@@ -16,10 +16,10 @@
 // @forward 'rating';
 // @forward 'select';
 @forward 'table';
+@forward 'title';
 // @forward 'textarea';
 @forward 'text-truncate';
 // @forward 'toggle';
-@forward 'tooltip';
 
 @use 'abbr';
 @use 'anchor';
@@ -28,15 +28,16 @@
 @use 'popovers';
 @use 'table';
 @use 'text-truncate';
-@use 'tooltip';
+@use 'title';
 
 @mixin components() {
     @include abbr.abbr;
+    @include abbr.data-abbr;
     @include anchor.anchor;
     @include button.buttons;
     @include code.code;
     @include popovers.popovers;
     @include table.table;
     @include text-truncate.text-truncate;
-    @include tooltip.tooltip;
+    @include title.data-title;
 }

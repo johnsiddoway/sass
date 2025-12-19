@@ -2,68 +2,90 @@
 @use '../components';
 @use '../layout-utilities';
 
+// TODO: MOVE EVERYTHING TO VARIABLES
 @mixin theme-variables-root {
+    
+    --default-color: currentColor;
+    --default-border-width: 1px;
+    --default-border-style: solid;
+    --default-border-color: currentColor;
+    --default-padding-x: 0.375em;
+    --default-padding-y: 0.75em;
+    --default-padding: var(--default-padding-x) var(--default-padding-y);
+
+    --font-size: $font-size-base;
+
+    --surface-color: var(--default-color);
+    --surface-border-width: calc(2 * var(--default-border-width));
+    --surface-border-style: var(--default-border-style);
+    --surface-border-color: var(--default-border-color);
+    --surface-border: var(--surface-border-width) var(--surface-border-style) var(--surface-border-color);
+    --surface-padding: 1em;
+
+    --component-color: var(--default-color);
+    --component-border-width: var(--default-border-width);
+    --component-border-style: var(--default-border-style);
+    --component-border-color: var(--default-border-color);
+    --component-border: var(--component-border-width) var(--component-border-style) var(--component-border-color);
+    --component-padding: var(--default-padding);
+    --component-padding-lg: #{$padding-lg};
+    --component-padding-sm: #{$padding-sm};
+
     --theme-primary: #{$orange-60};
-    --theme-padding: #{$padding-default};
 }
 
 @mixin theme-variables-light {
-    --theme-background: #{$white};
-    --theme-on-background: #{$black};
-    --theme-background-inverse: #{$black};
-    --theme-on-background-inverse: #{$white};
+    --page-background: #{$white};
+    --page-color: #{$black};
+    --page-background-inverse: #{$black};
+    --page-color-inverse: #{$white};
 
-    --theme-surface: #{$gray-90};
-    --theme-on-surface: currentColor;
-    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
+    --surface-background: #{$gray-80};
+    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
+
+    --component-background: #{$gray-80};
+    --component-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
 
     --theme-link: #{$blue-40};
     --theme-link-visited: #{$violet-40};
     --theme-link-active: #{$red-40};
-
-    --theme-border-width: 1px;
-    --theme-border-style: solid;
-    --theme-border-color: currentColor;
 }
 
 @mixin theme-variables-dark {
-    --theme-background: #{$gray-20};
-    --theme-on-background: #{$white};
-    --theme-background-inverse: #{$black};
-    --theme-on-background-inverse: #{$white};
+    --page-background: #{$gray-20};
+    --page-color: #{$white};
+    --page-background-inverse: #{$black};
+    --page-color-inverse: #{$white};
 
-    --theme-surface: #{$gray-30};
-    --theme-on-surface: currentColor;
-    --theme-surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-50};
+    --surface-background: #{$gray-30};
+    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-50};
+
+    --component-background: #{gray-30};
 
     --theme-link: #{$blue-60};
     --theme-link-visited: #{$violet-80};
     --theme-link-active: #{$red-60};
-
-    --theme-border-width: 1px;
-    --theme-border-style: solid;
-    --theme-border-color: currentColor;
 }
 
 @mixin theme-layout-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--theme-background);
-    color: var(--theme-on-background);
+    background-color: var(--page-background);
+    color: var(--page-color);
     font-family: $font-family-sans-serif;
-    font-size: $font-size-base;
+    font-size: var(--font-size);
     font-weight: $font-weight-base;
     line-height: $line-height-base;
     text-align: $text-align-base;
 
     > header,
     footer {
-        background: var(--theme-background-inverse);
-        color: var(--theme-on-background-inverse);
+        background: var(--page-background-inverse);
+        color: var(--page-color-inverse);
 
         a:any-link {
-            color: var(--theme-on-background-inverse);
+            color: var(--page-color-inverse);
             text-decoration: none;
         }
     }

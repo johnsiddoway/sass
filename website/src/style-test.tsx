@@ -1,25 +1,8 @@
 import { useRef } from "react";
 
 export function StyleTest() {
-    // const [showDialogAuto, setShowDialogAuto] = useState<boolean>(false);
     const dialogAutoRef = useRef<HTMLDialogElement>(null);
-    // const [showDialogManual, setShowDialogManual] = useState<boolean>(false);
     const dialogManualRef = useRef<HTMLDialogElement>(null);
-
-    // useLayoutEffect(() => {
-    //     if (dialogAutoRef.current?.open && !showDialogAuto) {
-    //         dialogAutoRef.current.close();
-    //     } else if (!dialogAutoRef.current?.open && showDialogAuto) {
-    //         dialogAutoRef.current?.showModal();
-    //     }
-    // }, [showDialogAuto]);
-    // useLayoutEffect(() => {
-    //     if (dialogManualRef.current?.open && !showDialogManual) {
-    //         dialogManualRef.current.close();
-    //     } else if (!dialogManualRef.current?.open && showDialogManual) {
-    //         dialogManualRef.current?.showModal();
-    //     }
-    // }, [showDialogManual]);
 
     return <>
         <p>This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).</p>
@@ -27,56 +10,68 @@ export function StyleTest() {
             A hesitant shout-out to a recent article I read, <a href="https://www.infoq.com/articles/no-need-css-framework/">You Don't Need a CSS Framework</a>.
             I don't agree with several points made in the article, but the author's reference site, <a href="https://www.starterapp.style/">starterapp.style</a>, is really well laid out for showcasing how a stylesheet will render.
         </p>
-        <h2>Typography</h2>
-        <div>
-            <h3>Basic Text</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <h3>Truncated Text</h3>
-            <div>
-                <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.</p>
-                <div className="text-truncate" style={{width: "100px", border: "1px solid currentColor"}} title="This is a long block of text that goes on forever.">
-                    This is a long block of text that goes on forever.
+        <section id="typography">
+            <h2>Typography</h2>
+            <section>
+                <h3>Basic Text</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </section>
+            <section>
+                <h3>Abbreviations</h3>
+                <p><div className="test"></div>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can also use a <code>[data-abbr]</code> attribute by itself or on the <code>&lt;abbr/&gt;</code> element to use some custom styling.</p>
+                <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
+                <p>The <abbr data-abbr="Hypertext Markup Language">HTML</abbr> abbreviation element, using <code>data-abbr</code> instead of <code>title</code></p>
+            </section>
+            <section>
+                <h3>Titles</h3>
+                <p>By adding a <code>[data-title]</code> attribute to an element, you can add a more stylish version of the default <code>[title]</code> attribute.
+                   The popup uses the same style as the <code>[data-abbr]</code> popup. The difference is that the <code>[data-title]</code> doesn't add styles to the anchoring element.
+                   Currently, these do not respect new line characters. I'd like to fix that.</p>
+                <p><span data-title="Here is some additional info">Hover over me to see a tooltip.</span></p>
+                <p><span data-title="Here is some additional info. This one is very long. Just to show what it looks like.">Hover over me to see a tooltip with a ton of text.</span></p>
+            </section>
+            <section>
+                <h3>Links</h3>
+                <p><a href="#">Test a:link</a></p>
+                <p><a href="#" className="visited">Test a:visited</a></p>
+                <p><a href="#" className="hover">Test a:hover</a></p>
+                <p><a href="#" className="active">Test a:active</a></p>
+            </section>
+            <section>
+                <h3>Truncated Text</h3>
+                <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.
+                   You can pair this with a <code>[title]</code> to let users actually read all of the text.</p>
+                <div className="text-truncate" style={{width: "200px", border: "1px solid currentColor", padding: "var(--component-padding)"}} title="[title] Example of a long block of text that goes on forever.">
+                    [title] Example of a long block of text that goes on forever.
                 </div>
-            </div>
-            <h3>Links</h3>
-            <div>
-            <p><a href="#">Test a:link</a></p>
-            <p><a href="#" className="visited">Test a:visited</a></p>
-            <p><a href="#" className="hover">Test a:hover</a></p>
-            <p><a href="#" className="active">Test a:active</a></p>
-            </div>
-            <h3>Lists</h3>
-            <div>
-            <ol>
-                <li>Some</li>
-                <li>List</li>
-                <li>Items</li>
-            </ol>
-            <ul>
-                <li>Some</li>
-                <li>List</li>
-                <li>Items</li>
-            </ul>
-            </div>
-            <h3>Abbreviations</h3>
-            <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can pair this with Tooltips to customize the popup.</p>
-            <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
-            <p>The <abbr data-tooltip="Hypertext Markup Language">HTML</abbr> abbreviation element, using <code>data-tooltip</code> instead of <code>title</code></p>
-            <h3>Tooltips</h3>
-            <p><span data-tooltip="Here is some additional info">Hover over me</span> to see a tooltip.</p>
-            <p><span data-tooltip="Here is some additional info. What do you think of it? I'd say it's very nice.">Hover over me</span> to see a tooltip with a ton of text.</p>
-            <h3>Code</h3>
-            <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block.</p>
-            <pre><code>
-                like this,
-                with &lt;pre&gt; and &lt;code&gt;
-            </code></pre>
-        </div>
-        <h2>Buttons</h2>
-        <div>
+            </section>
+            <section>
+                <h3>Lists</h3>
+                <ol>
+                    <li>Some</li>
+                    <li>List</li>
+                    <li>Items</li>
+                </ol>
+                <ul>
+                    <li>Some</li>
+                    <li>List</li>
+                    <li>Items</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Code</h3>
+                <p>Code can be displayed inline with the <code>&lt;code&gt;</code> tag, or in a block.</p>
+                <pre><code>
+                    like this,
+                    with &lt;pre&gt; and &lt;code&gt;
+                </code></pre>
+            </section>
+        </section>
+        <section id="buttons">
+            <h2>Buttons</h2>
             <h3>Sized Buttons</h3>
             <div className="button-grid">
                 <button>Default</button>
@@ -125,6 +120,235 @@ export function StyleTest() {
                 <button className="btn-pink-inverted">Pink</button>
                 <button className="btn-red-inverted">Red</button>
             </div>
+        </section>
+        <section id="tables">
+            <h2>Tables</h2>
+            <div className="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th role="columnheader" style={{minWidth: "100px"}}></th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
+                        <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th role="rowheader">Row</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Overflow Cell</td>
+                        <td>Overflow Cell</td>
+                    </tr>
+                    <tr>
+                        <th role="rowheader">Row</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Overflow Cell</td>
+                        <td>Overflow Cell</td>
+                    </tr>
+                    <tr>
+                        <th role="rowheader">Row</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                        <td>Overflow Cell</td>
+                        <td>Overflow Cell</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <th role="rowheader">Total</th>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Total</td>
+                        <td>Overflow Total</td>
+                        <td>Overflow Total</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+        <section id="popovers">
+            <h2>Dialogs and Popovers</h2>
+            <dialog closedby="any" ref={dialogAutoRef}>
+                <article >
+                    <h2>Dialog Example</h2>
+                    <p>This is a <code>dialog</code> example.</p>
+                    <button className="btn-primary" onClick={() => dialogAutoRef.current?.close()}>Close</button>
+                </article>
+            </dialog>
+            <dialog ref={dialogManualRef}>
+                <form method="dialog">
+                    <h2>Dialog Example</h2>
+                    <p>This is a <code>dialog</code> example.</p>
+                    <label htmlFor="dialog-input">Example input</label>
+                    <input type="text" id="dialog-input" placeholder="Example input"/>
+                    <button className="btn-primary" type="submit">Close</button>
+                </form>
+            </dialog>
+            <div id="popover-auto" popover="auto">
+                <article>
+                    <h2>Auto Popovers</h2>
+                    This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
+                    You can click anywhere outside this popover to close it, or click the button.
+                </article>
+                <button className="btn-primary" popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
+            </div>
+            <div id="popover-manual" popover="manual">
+                <article>
+                    <h2>Manual Popover</h2>
+                    This is a <code>&lt;div popover="manual"&gt;popover&lt;/div&gt;</code> example.
+                </article>
+                <button value="no" popoverTarget="popover-manual" popoverTargetAction="hide">No</button>
+                <button value="yes" popoverTarget="popover-manual" popoverTargetAction="hide">Yes</button>
+            </div>
+            <div className="button-grid">
+                <button type="button" className="btn-primary" onClick={() => dialogAutoRef.current?.showModal()}>Open Auto Dialog</button>
+                <button type="button" className="btn-primary" onClick={() => dialogManualRef.current?.showModal()}>Open Manual Dialog</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-auto">Open Auto Popover</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-manual">Open Manual Popover</button>
+            </div>
+        </section>
+        <section id="cards">
+            <h2>Cards</h2>
+            <div className="card">
+                <h2>Lorem ipsum</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
+                    diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
+                    consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
+                    at turpis.
+                </p>
+            </div>
+            <div className="card">
+                <h2>Orci varius</h2>
+                <p>
+                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel
+                    pulvinar orci, ac auctor urna. Nulla aliquam enim rutrum, auctor urna at, facilisis metus. Vivamus
+                    euismod arcu ut leo tincidunt auctor. Vestibulum auctor neque leo, vitae dignissim tellus lobortis
+                    vitae. Fusce vestibulum eleifend tortor et convallis. Aliquam congue nec ipsum id accumsan. Ut et
+                    sagittis velit. Vestibulum lacinia, diam vitae sodales euismod, nulla diam molestie velit, vitae
+                    iaculis neque nisl sit amet metus. Cras vehicula auctor fermentum.
+                </p>
+            </div>
+            <div className="card">
+                <h2>Mauris felis</h2>
+                <p>
+                    Mauris felis lorem, condimentum vel lobortis et, condimentum eu libero. Fusce eget iaculis metus.
+                    Pellentesque quis ligula eget sem bibendum ultrices. Maecenas et ante id ex ultrices sagittis.
+                    Suspendisse malesuada eleifend arcu congue tempus. Pellentesque sed dictum ex. Pellentesque orci mi,
+                    vestibulum quis enim at, posuere iaculis neque.
+                </p>
+            </div>
+        </section>
+        <h2>Toggles</h2>
+        <div>
+        <p>Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.</p>
+        <label className="toggle">
+            <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false}/>
+            Turn it up to eleven
+        </label>
+        </div>
+        <h2>Accordions</h2>
+        <div>
+            <p>If a group of <code>&lt;details&gt;</code> elements all have the same <code>name</code> attribute, most browsers will only allow one of them to be open at a time. Firefox <a href="https://caniuse.com/mdn-html_elements_details_name">doesn't support this</a>, but it's supported by most other browsers, and degrades relatively gracefully.</p>
+            <details name="accordion-demo">
+                <summary>
+                    This is an accordion summary
+                </summary>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta, diam
+                    sem porta sapien, ut dignissim velit erat quis sapien.
+                    Nullam vulputate enim placerat tortor consequat, vulputate blandit nunc tempor.
+                    Integer purus augue, fringilla eu molestie in, consequat at turpis.
+                </p>
+            </details>
+            <details name="accordion-demo">
+                <summary>
+                    This is another accordion summary
+                </summary>
+                <ul>
+                    <li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
+                    <li>Phasellus vel pulvinar orci, ac auctor urna.</li>
+                    <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
+                </ul>
+            </details>
         </div>
         <h2>Forms</h2>
         <form>
@@ -248,232 +472,5 @@ export function StyleTest() {
                 </p>
             </fieldset>
         </form>
-        <h2>Tables</h2>
-        <div className="table-wrapper">
-            <table>
-                <thead>
-                <tr>
-                    <th role="columnheader" style={{minWidth: "100px"}}></th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
-                    <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th role="rowheader">Row</th>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Overflow Cell</td>
-                    <td>Overflow Cell</td>
-                </tr>
-                <tr>
-                    <th role="rowheader">Row</th>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Overflow Cell</td>
-                    <td>Overflow Cell</td>
-                </tr>
-                <tr>
-                    <th role="rowheader">Row</th>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Cell</td>
-                    <td>Overflow Cell</td>
-                    <td>Overflow Cell</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th role="rowheader">Total</th>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Total</td>
-                    <td>Overflow Total</td>
-                    <td>Overflow Total</td>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
-        <h2>Dialogs and Popovers</h2>
-        <div>
-            <dialog closedby="any" ref={dialogAutoRef}>
-                <article >
-                    <h2>Dialog Example</h2>
-                    <p>This is a <code>dialog</code> example.</p>
-                    <button className="btn-primary" onClick={() => dialogAutoRef.current?.close()}>Close</button>
-                </article>
-            </dialog>
-            <dialog ref={dialogManualRef}>
-                <form method="dialog">
-                    <h2>Dialog Example</h2>
-                    <p>This is a <code>dialog</code> example.</p>
-                    <label htmlFor="dialog-input">Example input</label>
-                    <input type="text" id="dialog-input" placeholder="Example input"/>
-                    <button className="btn-primary" type="submit">Close</button>
-                </form>
-            </dialog>
-            <div id="popover-auto" popover="auto">
-                <article>
-                    <h2>Auto Popovers</h2>
-                    This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
-                    You can click anywhere outside this popover to close it, or click the button.
-                </article>
-                <button className="btn-primary" popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
-            </div>
-            <div id="popover-manual" popover="manual">
-                <article>
-                    <h2>Manual Popover</h2>
-                    This is a <code>&lt;div popover="manual"&gt;popover&lt;/div&gt;</code> example.
-                </article>
-                <button value="no" popoverTarget="popover-manual" popoverTargetAction="hide">No</button>
-                <button value="yes" popoverTarget="popover-manual" popoverTargetAction="hide">Yes</button>
-            </div>
-            <div className="button-grid">
-                <button type="button" className="btn-primary" onClick={() => dialogAutoRef.current?.showModal()}>Open Auto Dialog</button>
-                <button type="button" className="btn-primary" onClick={() => dialogManualRef.current?.showModal()}>Open Manual Dialog</button>
-                <button type="button" className="btn-primary" popoverTarget="popover-auto">Open Auto Popover</button>
-                <button type="button" className="btn-primary" popoverTarget="popover-manual">Open Modal Popover</button>
-            </div>
-        </div>
-        <h2>Cards</h2>
-        <div>
-            <div className="card">
-                <h2>Lorem ipsum</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta,
-                    diam sem porta sapien, ut dignissim velit erat quis sapien. Nullam vulputate enim placerat tortor
-                    consequat, vulputate blandit nunc tempor. Integer purus augue, fringilla eu molestie in, consequat
-                    at turpis.
-                </p>
-            </div>
-            <div className="card">
-                <h2>Orci varius</h2>
-                <p>
-                    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vel
-                    pulvinar orci, ac auctor urna. Nulla aliquam enim rutrum, auctor urna at, facilisis metus. Vivamus
-                    euismod arcu ut leo tincidunt auctor. Vestibulum auctor neque leo, vitae dignissim tellus lobortis
-                    vitae. Fusce vestibulum eleifend tortor et convallis. Aliquam congue nec ipsum id accumsan. Ut et
-                    sagittis velit. Vestibulum lacinia, diam vitae sodales euismod, nulla diam molestie velit, vitae
-                    iaculis neque nisl sit amet metus. Cras vehicula auctor fermentum.
-                </p>
-            </div>
-            <div className="card">
-                <h2>Mauris felis</h2>
-                <p>
-                    Mauris felis lorem, condimentum vel lobortis et, condimentum eu libero. Fusce eget iaculis metus.
-                    Pellentesque quis ligula eget sem bibendum ultrices. Maecenas et ante id ex ultrices sagittis.
-                    Suspendisse malesuada eleifend arcu congue tempus. Pellentesque sed dictum ex. Pellentesque orci mi,
-                    vestibulum quis enim at, posuere iaculis neque.
-                </p>
-            </div>
-        </div>
-        <h2>Toggles</h2>
-        <div>
-        <p>Toggles should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.</p>
-        <label className="toggle">
-            <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false}/>
-            Turn it up to eleven
-        </label>
-        </div>
-        <h2>Accordions</h2>
-        <div>
-            <p>If a group of <code>&lt;details&gt;</code> elements all have the same <code>name</code> attribute, most browsers will only allow one of them to be open at a time. Firefox <a href="https://caniuse.com/mdn-html_elements_details_name">doesn't support this</a>, but it's supported by most other browsers, and degrades relatively gracefully.</p>
-            <details name="accordion-demo">
-                <summary>
-                    This is an accordion summary
-                </summary>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat, enim id efficitur porta, diam
-                    sem porta sapien, ut dignissim velit erat quis sapien.
-                    Nullam vulputate enim placerat tortor consequat, vulputate blandit nunc tempor.
-                    Integer purus augue, fringilla eu molestie in, consequat at turpis.
-                </p>
-            </details>
-            <details name="accordion-demo">
-                <summary>
-                    This is another accordion summary
-                </summary>
-                <ul>
-                    <li>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-                    <li>Phasellus vel pulvinar orci, ac auctor urna.</li>
-                    <li>Nulla aliquam enim rutrum, auctor urna at, facilisis metus.</li>
-                </ul>
-            </details>
-        </div>
     </>;
 }

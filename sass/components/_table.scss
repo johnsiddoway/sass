@@ -13,8 +13,8 @@
 
         th,
         td {
-            border-bottom: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
-            padding: var(--theme-padding);
+            border-bottom: var(--component-border);
+            padding: var(--component-padding);
         }
     }
 }

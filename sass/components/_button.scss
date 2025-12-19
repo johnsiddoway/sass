@@ -7,25 +7,24 @@
     @include buttons-base;
     @include buttons-large;
     @include buttons-small;
-    // @include buttons-themed;
 }
 
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_buttons.scss
 @mixin buttons-base($selectors: 'button, a[role=button]:any-link, [type=button], [type=submit], [type=reset]') {
     #{$selectors} {
-        --theme-background: transparent;
-        --theme-on-background: currentColor;
-        --theme-font-size: #{variables.$font-size-base};
+        --component-background: transparent;
+        --component-color: currentColor;
+        --font-size: #{variables.$font-size-base};
 
-        background-color: var(--theme-background);
-        color: var(--theme-on-background);
-        border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
-        padding: var(--theme-padding);
+        background-color: var(--component-background);
+        color: var(--component-color);
+        border: var(--component-border-width) var(--component-border-style) var(--component-border-color);
+        padding: var(--component-padding);
         // outline-color: var(--theme-primary);
         // outline-offset: 0.25em;
         
         // box-shadow: var(--theme-surface-box-shadow);
-        font-size: var(--theme-font-size);
+        font-size: var(--font-size);
         cursor: pointer;
         text-decoration: none;
     }
@@ -33,15 +32,15 @@
 
 @mixin buttons-large($selector: '.btn-lg') {
     #{$selector} {
-        --theme-font-size: #{variables.$font-size-lg};
-        --theme-padding: #{variables.$padding-lg};
+        --font-size: #{variables.$font-size-lg};
+        --component-padding: #{variables.$padding-lg};
     }
 }
 
 @mixin buttons-small($selector: '.btn-sm') {
     #{$selector} {
-        --theme-font-size: #{variables.$font-size-sm};
-        --theme-padding: #{variables.$padding-sm};
+        --font-size: #{variables.$font-size-sm};
+        --component-padding: #{variables.$padding-sm};
     }
 }
 
@@ -64,10 +63,10 @@
 }
 
 @mixin button-themed($theme-color) {
-    --theme-background: #{$theme-color};
+    --component-background: #{$theme-color};
 }
 
 @mixin button-themed-inverted($theme-color) {
-    --theme-on-background: #{$theme-color};
-    --theme-border-color: #{$theme-color};
+    --component-color: #{$theme-color};
+    --component-border-color: #{$theme-color};
 }
