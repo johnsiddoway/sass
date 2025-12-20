@@ -5,7 +5,7 @@
 @forward 'code';
 @forward 'definition-list';
 @forward 'details';
-// @forward 'form';
+@forward 'form';
 // @forward 'input-base';
 // @forward 'input-checkbox';
 // @forward 'input-file';
@@ -28,6 +28,7 @@
 @use 'code';
 @use 'definition-list';
 @use 'details';
+@use 'form';
 @use 'popovers';
 @use 'switch';
 @use 'table';
@@ -43,6 +44,7 @@
     @include code.code;
     @include definition-list.dl;
     @include details.details;
+    @include form.forms;
     @include popovers.popovers;
     @include switch.switch;
     @include table.table;
