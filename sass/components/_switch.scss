@@ -3,9 +3,11 @@
 @mixin switch($selector: '.switch') {
     #{$selector} {
         display: flex;
+        max-width: fit-content;
         flex-direction: row;
         align-items: center;
         gap: .75em;
+        cursor: pointer;
     
         & input[type=checkbox] {
             --component-height: 1.5em;

@@ -36,8 +36,7 @@
 @use 'title';
 
 @mixin components() {
-    @include abbr.abbr;
-    @include abbr.data-abbr;
+    @include abbr.abbreviations;
     @include anchor.anchor;
     @include button.buttons;
     @include card.card;

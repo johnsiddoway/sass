@@ -8,16 +8,13 @@
     }
 
     #{$pre-selector} {
-        padding: var(--component-padding-lg);
+        padding: var(--component-padding-large);
         overflow: auto;
-        // & > #{$code-selector} {
-        //     padding: 0;
-        //     vertical-align: inherit;
-        // }
     }
 
     :not(pre) > #{code} {
-        padding: var(--component-padding-sm);
-        vertical-align: text-bottom;
+        display: inline-block;
+        height: 100%;
+        padding-inline: var(--component-padding-inline);
     }
 }

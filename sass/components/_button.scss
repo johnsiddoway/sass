@@ -13,18 +13,11 @@
 @mixin buttons-base($selectors: 'button, a[role=button]:any-link, [type=button], [type=submit], [type=reset]') {
     #{$selectors} {
         --component-background: transparent;
-        --component-color: currentColor;
-        --font-size: #{variables.$font-size-base};
-
+        border: var(--component-border);
+        padding: var(--component-padding);
+        font-size: var(--font-size-normal);
         background-color: var(--component-background);
         color: var(--component-color);
-        border: var(--component-border-width) var(--component-border-style) var(--component-border-color);
-        padding: var(--component-padding);
-        // outline-color: var(--theme-primary);
-        // outline-offset: 0.25em;
-        
-        // box-shadow: var(--theme-surface-box-shadow);
-        font-size: var(--font-size);
         cursor: pointer;
         text-decoration: none;
     }
@@ -32,15 +25,15 @@
 
 @mixin buttons-large($selector: '.btn-lg') {
     #{$selector} {
-        --font-size: #{variables.$font-size-lg};
-        --component-padding: #{variables.$padding-lg};
+        font-size: var(--font-size-large);
+        padding: var(--component-padding-large);
     }
 }
 
 @mixin buttons-small($selector: '.btn-sm') {
     #{$selector} {
-        --font-size: #{variables.$font-size-sm};
-        --component-padding: #{variables.$padding-sm};
+        font-size: var(--font-size-small);
+        padding: var(--component-padding-small);
     }
 }
 

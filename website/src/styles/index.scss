@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use '../../../sass';
 
-@layer reset, components, theme;
+@layer reset, layout, components, theme;
 
 @font-face {
     font-family: 'Open Sans';
@@ -15,21 +15,28 @@
     @include sass.reset;
 }
 
+@layer layout {
+    .root {
+        @include sass.layout-root;
+    }
+}
+
 @layer components {
     @include sass.components;
 }
 
 @layer theme {
     :root {
+        color-scheme: light dark;
         @include sass.theme-variables-root;
     }
     .root {
-        @include sass.theme-layout-root;
-        &.dark {
-            @include sass.theme-variables-dark;
-        }
+        @include sass.layout-root-themed;
         &.light {
             @include sass.theme-variables-light;
+        }
+        &.dark {
+            @include sass.theme-variables-dark;
         }
     }
     @include sass.buttons-themed;

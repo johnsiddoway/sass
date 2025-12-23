@@ -4,39 +4,29 @@
 
 // TODO: MOVE EVERYTHING TO VARIABLES
 @mixin theme-variables-root {
-    
-    --default-color: currentColor;
-    --default-border-width: 1px;
-    --default-border-style: solid;
-    --default-border-color: currentColor;
-    --default-padding-x: 0.375em;
-    --default-padding-y: 0.75em;
-    --default-padding: var(--default-padding-x) var(--default-padding-y);
-
-    --font-size: #{$font-size-base};
-    --font-size-lg: #{$font-size-lg};
-    --font-weight-normal: #{$font-weight-base};
+    --font-size-normal: #{$font-size-normal};
+    --font-size-large: #{$font-size-large};
+    --font-size-small: #{$font-size-small};
+    --font-weight-normal: #{$font-weight-normal};
     --font-weight-bold: #{$font-weight-bold};
 
-    --surface-color: var(--default-color);
-    --surface-border-width: calc(2 * var(--default-border-width));
-    --surface-border-style: var(--default-border-style);
-    --surface-border-color: var(--default-border-color);
-    --surface-border: var(--surface-border-width) var(--surface-border-style) var(--surface-border-color);
-    --surface-padding: 1em;
+    --surface-border: #{$surface-border-width} #{$surface-border-style} #{$surface-border-color};
+    --surface-padding: #{$surface-padding};
 
-    --component-color: var(--default-color);
-    --component-border-width: var(--default-border-width);
-    --component-border-style: var(--default-border-style);
-    --component-border-color: var(--default-border-color);
-    --component-border: var(--component-border-width) var(--component-border-style) var(--component-border-color);
-    --component-padding: var(--default-padding);
-    --component-padding-lg: #{$padding-lg};
-    --component-padding-sm: #{$padding-sm};
+    --component-color: #{$component-color};
+    --component-border: #{$component-border-width} #{$component-border-style} #{$component-border-color};
+    --component-padding-inline: #{$component-padding-inline};
+    --component-padding-block: #{$component-padding-block};
+    --component-padding: #{$component-padding-inline} #{$component-padding-block};
+    --component-padding-large: #{$component-padding-large};
+    --component-padding-small: #{$component-padding-small};
 
     --theme-primary: #{$orange-60};
     --theme-secondary: #{$gray-80};
     --theme-white: #{$white};
+    --theme-black: #{$black};
+
+    accent-color: var(--theme-primary);
 }
 
 @mixin theme-variables-light {
@@ -50,6 +40,8 @@
 
     --component-background: #{$gray-80};
     --component-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
+
+    --input-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
 
     --theme-link: #{$blue-40};
     --theme-link-visited: #{$violet-40};
@@ -65,24 +57,61 @@
     --surface-background: #{$gray-30};
     --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-50};
 
-    --component-background: #{gray-30};
+    --component-background: #{$gray-30};
+    --component-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
+
+    --input-box-shadow: 0 0 0.05rem 0.05rem #{$gray-10}, 0 0 0.25rem 0.25rem var(--theme-primary);
 
     --theme-link: #{$blue-60};
     --theme-link-visited: #{$violet-80};
     --theme-link-active: #{$red-60};
 }
 
-@mixin theme-layout-root {
+@mixin layout-root {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    border-radius: 0;
+    text-align: $text-align-base;
+    line-height: $line-height-base;
+
+    > header {
+        margin-block-end: $layout-margin-block-end;
+
+        nav {
+            padding: $layout-padding;
+            @include layout-utilities.flex-between;
+
+            div {
+                @include layout-utilities.flex-between;
+            }
+        }
+    }
+
+    > main {
+        margin-block-end: $layout-margin-block-end;
+        padding-inline: $layout-padding-inline;
+    }
+
+    > footer {
+        margin-top: auto;
+        padding: $layout-padding;
+        text-align: center;
+    }
+
+    > header nav,
+    main {
+        @include layout-utilities.container;
+    }
+}
+
+@mixin layout-root-themed {
     background-color: var(--page-background);
     color: var(--page-color);
     font-family: $font-family-sans-serif;
-    font-size: var(--font-size);
-    font-weight: $font-weight-base;
-    line-height: $line-height-base;
-    text-align: $text-align-base;
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-normal);
+    
 
     > header,
     footer {
@@ -96,36 +125,13 @@
     }
 
     > header {
-        margin-block-end: $layout-margin-block-end;
-
-        nav {
-            padding: $layout-padding;
-            @include layout-utilities.flex-between;
-            @include layout-utilities.container;
-
-            div {
-                @include layout-utilities.flex-between;
-            }
-        }
-
         a.brand {
+            /** TODO: The top three shouldn't be included for every page **/
             background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
             background-clip: text;
             color: transparent;
-            font-weight: $font-weight-bold;
-            font-size: $font-size-lg;
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-large);
         }
-    }
-
-    > main {
-        margin-block-end: $layout-margin-block-end;
-        padding-inline: $layout-padding-inline;
-        @include layout-utilities.container;
-    }
-
-    > footer {
-        margin-top: auto;
-        padding: $layout-padding;
-        text-align: center;
     }
 }

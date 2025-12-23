@@ -1,11 +1,10 @@
 @use '../variables';
 
-@mixin card-style($padding: variables.$padding-default, $margin-bottom: variables.$margin-bottom-default) {
-    margin-bottom: $margin-bottom;
+@mixin card-style($padding: variables.$surface-padding, $margin-block-end: variables.$surface-margin-block-end) {
+    margin-block-end: $margin-block-end;
     border: var(--surface-border);
     padding: var(--surface-padding);
     background-color: var(--surface-background);
-    color: var(--surface-color);
     box-shadow: var(--surface-box-shadow);
 }
 

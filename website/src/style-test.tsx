@@ -12,20 +12,20 @@ export function StyleTest() {
         </p>
         <section id="typography">
             <h2>Typography</h2>
-            <section>
+            <section id="basic-text">
                 <h3>Basic Text</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </section>
-            <section>
+            <section id="abbr">
                 <h3>Abbreviations</h3>
                 <p><div className="test"></div>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can also use a <code>[data-abbr]</code> attribute by itself or on the <code>&lt;abbr/&gt;</code> element to use some custom styling.</p>
                 <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
                 <p>The <abbr data-abbr="Hypertext Markup Language">HTML</abbr> abbreviation element, using <code>data-abbr</code> instead of <code>title</code></p>
             </section>
-            <section>
+            <section id="title">
                 <h3>Titles</h3>
                 <p>By adding a <code>[data-title]</code> attribute to an element, you can add a more stylish version of the default <code>[title]</code> attribute.
                    The popup uses the same style as the <code>[data-abbr]</code> popup. The difference is that the <code>[data-title]</code> doesn't add styles to the anchoring element.
@@ -33,14 +33,14 @@ export function StyleTest() {
                 <p><span data-title="Here is some additional info">Hover over me to see a tooltip.</span></p>
                 <p><span data-title="Here is some additional info. This one is very long. Just to show what it looks like.">Hover over me to see a tooltip with a ton of text.</span></p>
             </section>
-            <section>
+            <section id="a">
                 <h3>Links</h3>
                 <p><a href="#">Test a:link</a></p>
                 <p><a href="#" className="visited">Test a:visited</a></p>
                 <p><a href="#" className="hover">Test a:hover</a></p>
                 <p><a href="#" className="active">Test a:active</a></p>
             </section>
-            <section>
+            <section id="text-truncate">
                 <h3>Truncated Text</h3>
                 <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.
                    You can pair this with a <code>[title]</code> to let users actually read all of the text.</p>
@@ -397,127 +397,173 @@ export function StyleTest() {
                 </ul>
             </details>
         </section>
-        <h2>Forms</h2>
-        <form>
-            <fieldset>
-                <legend>Example legend</legend>
+        <section id="forms">
+            <h2>Forms</h2>
+            <form>
                 <fieldset>
-                    <label htmlFor="input">Example input</label>
-                    <input type="text" id="input" placeholder="Example input"/>
+                    <legend>Example legend</legend>
+                    <fieldset>
+                        <label htmlFor="input-after-label">Example text</label>
+                        <input type="text" id="input-after-label" placeholder="Example input"/>
+                    </fieldset>
+                    <p>
+                        <label>
+                            Example text
+                            <input type="text" id="input-inside-label-after-text" placeholder="Example input"/>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="text" id="input-inside-label-before-text" placeholder="Example input"/>
+                            Example text
+                        </label>
+                    </p>
+                    <p>
+                        <input type="text" id="input-before-label" placeholder="Example input"/>
+                        <label htmlFor="input-before-label">Example text</label>
+                    </p>
+                    <p>
+                        <label htmlFor="email">Example email</label>
+                        <input type="email" id="email" placeholder="test@example.com"/>
+                    </p>
+                    <p>
+                        <label htmlFor="tel">Example telephone</label>
+                        <input type="tel" id="tel"/>
+                    </p>
+                    <p>
+                        <label htmlFor="url">Example url</label>
+                        <input type="url" id="url"/>
+                    </p>
+                    <p>
+                        <label htmlFor="number">Example number</label>
+                        <input type="number" id="number"/>
+                    </p>
+                    <p>
+                        <label htmlFor="search">Example search</label>
+                        <input type="search" id="search"/>
+                    </p>
+                    <p>
+                        <label htmlFor="range">Example range</label>
+                        <input type="range" id="range" min="0" max="10"/>
+                    </p>
+                    <p>
+                        <label htmlFor="file">Example file input</label>
+                        <input type="file" id="file"/>
+                    </p>
+                    <p>
+                        <label htmlFor="select">Example select</label>
+                        <select id="select">
+                            <option value="">Choose...</option>
+                            <optgroup label="Option group 1">
+                                <option value="">Option 1</option>
+                                <option value="">Option 2</option>
+                                <option value="">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Option group 2">
+                                <option value="">Option 4</option>
+                                <option value="">Option 5</option>
+                                <option value="">Option 6</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox" name="example-checkbox" value="1"/>
+                            Check this checkbox
+                        </label>
+                        <label>
+                            <input type="checkbox" name="example-checkbox" value="2" defaultChecked={true} />
+                            This one is checked by default
+                        </label>
+                        <label>
+                            <input type="checkbox" name="example-checkbox" value="3" disabled={true} />
+                            This one is disabled
+                        </label>
+                        <label>
+                            <input type="checkbox" name="example-checkbox" value="4" disabled={true} defaultChecked={true} />
+                            This one is disabled and checked by default
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked={true}/>
+                            Option one is this and that
+                        </label>
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"/>
+                            Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
+                        </label>
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled/>
+                            Option three is disabled
+                        </label>
+                    </p>
+                    <p>
+                        <label htmlFor="textarea">Example textarea</label>
+                        <textarea id="textarea" rows={3}></textarea>
+                    </p>
+                    <p>
+                        <label htmlFor="date">Example date</label>
+                        <input type="date" id="date"/>
+                    </p>
+                    <p>
+                        <label htmlFor="time">Example time</label>
+                        <input type="time" id="time"/>
+                    </p>
+                    <p>
+                        <label htmlFor="password">Example password</label>
+                        <input type="password" id="password"/>
+                    </p>
+                    <p>
+                    <label htmlFor="datetime-local">Example datetime-local</label>
+                    <input type="datetime-local" id="datetime-local"/>
+                    </p>
+                    <p>
+                    <label htmlFor="week">Example week</label>
+                    <input type="week" id="week"/>
+                    </p>
+                    <p>
+                    <label htmlFor="month">Example month</label>
+                    <input type="month" id="month"/>
+                    </p>
+                    <p>
+                    <label htmlFor="color">Example color</label>
+                    <input type="color" id="color"/>
+                    </p>
+                    <p>
+                    <label htmlFor="output">Example output</label>
+                    <output name="result" id="output">100</output>
+                    </p>
+                    <h3>Submit Buttons</h3>
+                    <p>All of base styling is taken care of as part of the buttons component.</p>
+                    <div className="button-grid">
+                        <button type="reset">Reset Button</button>
+                        <button type="submit">Submit Button</button>
+                        <input type="reset" value="Reset Input"/>
+                        <input type="submit" value="Submit Input"/>
+                        <input type="button" value="Button Input"/>
+                        <button type="reset" className="btn-secondary">Reset Button</button>
+                        <button type="submit" className="btn-success">Submit Button</button>
+                        <input type="reset" className="btn-secondary" value="Reset Input"/>
+                        <input type="submit" className="btn-success" value="Submit Input"/>
+                        <input type="button" value="Button Input"/>
+                    </div>
+                    <p>The only additional styling as part of the forms component is the <code>disabled</code> styles to show the cursor as no actions allowed and reduce the opacity.
+                       This works whether you explicitly set the button to disabled, or if you include it in a fieldset that has been disabled.</p>
+                    <fieldset className="button-grid" disabled>
+                        <button type="reset">Reset Button</button>
+                        <button type="submit">Submit Button</button>
+                        <input type="reset" value="Reset Input"/>
+                        <input type="submit" value="Submit Input"/>
+                        <input type="button" value="Button Input"/>
+                        <button type="reset" className="btn-secondary">Reset Button</button>
+                        <button type="submit" className="btn-success">Submit Button</button>
+                        <input type="reset" className="btn-secondary" value="Reset Input"/>
+                        <input type="submit" className="btn-success" value="Submit Input"/>
+                        <input type="button" value="Button Input"/>
+                    </fieldset>
                 </fieldset>
-                <p>
-                    <label htmlFor="email">Example email</label>
-                    <input type="email" id="email" placeholder="test@example.com"/>
-                </p>
-                <p>
-                    <label htmlFor="tel">Example telephone</label>
-                    <input type="tel" id="tel"/>
-                </p>
-                <p>
-                    <label htmlFor="url">Example url</label>
-                    <input type="url" id="url"/>
-                </p>
-                <p>
-                    <label htmlFor="number">Example number</label>
-                    <input type="number" id="number"/>
-                </p>
-                <p>
-                    <label htmlFor="search">Example search</label>
-                    <input type="search" id="search"/>
-                </p>
-                <p>
-                    <label htmlFor="range">Example range</label>
-                    <input type="range" id="range" min="0" max="10"/>
-                </p>
-                <p>
-                    <label htmlFor="file">Example file input</label>
-                    <input type="file" id="file"/>
-                </p>
-                <p>
-                    <label htmlFor="select">Example select</label>
-                    <select id="select">
-                        <option value="">Choose...</option>
-                        <optgroup label="Option group 1">
-                            <option value="">Option 1</option>
-                            <option value="">Option 2</option>
-                            <option value="">Option 3</option>
-                        </optgroup>
-                        <optgroup label="Option group 2">
-                            <option value="">Option 4</option>
-                            <option value="">Option 5</option>
-                            <option value="">Option 6</option>
-                        </optgroup>
-                    </select>
-                </p>
-                <p>
-                    <label>
-                        <input type="checkbox" value=""/>
-                        Check this checkbox
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked={true}/>
-                        Option one is this and that
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"/>
-                        Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
-                    </label>
-                    <label>
-                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled/>
-                        Option three is disabled
-                    </label>
-                </p>
-                <p>
-                    <label htmlFor="textarea">Example textarea</label>
-                    <textarea id="textarea" rows={3}></textarea>
-                </p>
-                <p>
-                    <label htmlFor="date">Example date</label>
-                    <input type="date" id="date"/>
-                </p>
-                <p>
-                    <label htmlFor="time">Example time</label>
-                    <input type="time" id="time"/>
-                </p>
-                <p>
-                    <label htmlFor="password">Example password</label>
-                    <input type="password" id="password"/>
-                </p>
-                <p>
-                <label htmlFor="datetime-local">Example datetime-local</label>
-                <input type="datetime-local" id="datetime-local"/>
-                </p>
-                <p>
-                <label htmlFor="week">Example week</label>
-                <input type="week" id="week"/>
-                </p>
-                <p>
-                <label htmlFor="month">Example month</label>
-                <input type="month" id="month"/>
-                </p>
-                <p>
-                <label htmlFor="color">Example color</label>
-                <input type="color" id="color"/>
-                </p>
-                <p>
-                <label htmlFor="output">Example output</label>
-                <output name="result" id="output">100</output>
-                </p>
-                <p>
-                <button type="submit">Button submit</button>
-                <input type="submit" value="Input submit button"/>
-                <input type="reset" value="Input reset button"/>
-                <input type="button" value="Input button"/>
-                </p>
-                <p>
-                <button type="submit" disabled>Button submit</button>
-                <input type="submit" value="Input submit button" disabled/>
-                <input type="reset" value="Input reset button" disabled/>
-                <input type="button" value="Input button" disabled/>
-                </p>
-            </fieldset>
-        </form>
+            </form>
+        </section>
     </>;
 }

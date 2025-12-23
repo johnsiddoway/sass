@@ -15,31 +15,90 @@
             font-size: var(--font-size-lg);
         }
 
-        // > label {
-        //     display: block;
-        //     margin-bottom: 0.25em;
-        //     cursor: pointer;
-        // }
+        label {
+            &:has(+ input, + select, + textarea, + output) {
+                margin-inline-end: 1em;
+            }
+            &:has(> input) {
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+            }
+        }
 
-        // button[type='reset'],
-        // button[type='submit'],
-        // input[type='button'],
-        // input[type='reset'],
-        // input[type='submit'] {
-        //     padding: 0.375em 0.75em;
-        //     color: inherit;
-        //     border: var(--border-width) var(--border-style) var(--border-color);
-        //     cursor: pointer;
+        input,
+        select,
+        textarea {
+            &:has(+ label) {
+                margin-inline-end: 1em;
+            }
+        }
 
-        //     &:disabled {
-        //         opacity: 0.8;
-        //         cursor: not-allowed;
-        //     }
-        // }
+        input[type=checkbox],
+        input[type=radio] {
+            appearance: none;
+            outline: none;
 
-        // input:not([type='color'], [type='checkbox'], [type='radio'], [type='range']) {
-        //     height: 2.375em;
-        //     padding: 0.375em 0.75em;
-        // }
+            &::before {
+                display: inline-block;
+                content: '';
+                height: .75em;
+                width: .75em;
+                border: var(--component-border);
+                background-color: var(--theme-white);
+                cursor: pointer;
+            }
+            &:checked::before {
+                background-color: var(--theme-primary);
+            }
+            &:disabled::before {
+                background-color: var(--theme-secondary);
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+            &:focus::before,
+            &:focus-within::before {
+                box-shadow: var(--input-box-shadow);
+            }
+        }
+
+        input[type=radio] {
+            &::before {
+                border-radius: 50%;
+            }
+        }
+
+        input[type=file] {
+            &::file-selector-button {
+                margin-inline-end: 1em;
+                border-width: 0 var(--component-border-width) 0 0;
+                padding: var(--component-padding);
+                cursor: pointer;
+                background-color: var(--theme-secondary);
+            }
+        }
+
+        input:not([type=checkbox],[type=radio]),
+        select,
+        textarea {
+            outline: none;
+            border: var(--component-border);
+
+            &:focus,
+            &:focus-within {
+                box-shadow: var(--input-box-shadow);
+            }
+        }
+
+        button[type='reset'],
+        button[type='submit'],
+        input[type='button'],
+        input[type='reset'],
+        input[type='submit'] {
+            &:disabled {
+                opacity: 0.8;
+                cursor: not-allowed;
+            }
+        }
     }
 }

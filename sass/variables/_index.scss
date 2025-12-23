@@ -236,18 +236,18 @@ $layout-margin-block-end: 1.5rem !default;
 $layout-padding-block: .5rem !default;
 $layout-padding-inline: .75rem !default;
 $layout-padding: $layout-padding-block $layout-padding-inline !default;
-$layout-padding-block-sm: .25rem !default;
-$layout-padding-inline-sm: .5rem !default;
-$layout-padding-sm: $layout-padding-inline-sm $layout-padding-block-sm !default;
+$layout-padding-block-small: .25rem !default;
+$layout-padding-inline-small: .5rem !default;
+$layout-padding-small: $layout-padding-inline-small $layout-padding-block-small !default;
 // layout default variables end
 
 // typography variables start
 $font-family-sans-serif: 'Open Sans', 'Segoe UI', 'Roboto', 'Fira Sans', 'Helvetica Neue', sans-serif !default;
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-sm: $font-size-base * 0.875 !default;
-$font-size-lg: $font-size-base * 1.25 !default;
-$font-size-xl: $font-size-base * 2 !default;
-$font-weight-base: 400 !default;
+$font-size-normal: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-small: $font-size-normal * 0.875 !default;
+$font-size-large: $font-size-normal * 1.25 !default;
+$font-size-xl: $font-size-normal * 2 !default;
+$font-weight-normal: 400 !default;
 $font-weight-bold: 700 !default;
 $line-height-base: 1.5 !default;
 $text-align-base: start !default;
@@ -275,14 +275,29 @@ $container-max-widths: (
 ) !default;
 // containers end
 
-$margin-bottom-default: 1em !default;
-// $border-default: 1px solid currentColor !default;
-$padding-default: 0.375em 0.75em !default;
-$padding-sm: 0.25em 0.5em !default;
-$padding-lg: 0.5em 1em !default;
+// $padding-default: 0.375em 0.75em !default;
+// $padding-small: 0.25em 0.5em !default;
+// $padding-large: 0.5em 1em !default;
 
-$container-border-width: 1px !default;
-$surface-border-width: 2px !default;
+$default-border-width: 1px !default;
+$default-border-style: solid !default;
+$default-border-color: currentColor !default;
+
+$component-border-width: 1 * $default-border-width !default;
+$component-border-style: $default-border-style !default;
+$component-border-color: $default-border-color !default;
+$component-padding-inline: 0.375em !default;
+$component-padding-block: 0.75em !default;
+$component-padding-small: 0.25em 0.5em !default;
+$component-padding-large: 0.5em 1em !default;
+$component-color: currentColor !default;
+
+$surface-margin-block-end: 1em !default;
+$surface-border-width: 2 * $default-border-width !default;
+$surface-border-style: $default-border-style !default;
+$surface-border-color: $default-border-color !default;
+$surface-padding: 1em !default;
+
 
 // $button-background-scale: 0% !default;
 // $button-background-scale-hover: -15% !default;
