@@ -283,6 +283,8 @@ $default-border-width: 1px !default;
 $default-border-style: solid !default;
 $default-border-color: currentColor !default;
 
+$default-margin-block-end: 1em !default;
+
 $component-border-width: 1 * $default-border-width !default;
 $component-border-style: $default-border-style !default;
 $component-border-color: $default-border-color !default;
@@ -292,12 +294,11 @@ $component-padding-small: 0.25em 0.5em !default;
 $component-padding-large: 0.5em 1em !default;
 $component-color: currentColor !default;
 
-$surface-margin-block-end: 1em !default;
+$surface-margin-block-end: $default-margin-block-end !default;
 $surface-border-width: 2 * $default-border-width !default;
 $surface-border-style: $default-border-style !default;
 $surface-border-color: $default-border-color !default;
 $surface-padding: 1em !default;
-
 
 // $button-background-scale: 0% !default;
 // $button-background-scale-hover: -15% !default;

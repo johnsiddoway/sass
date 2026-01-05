@@ -21,7 +21,7 @@ export function StyleTest() {
             </section>
             <section id="abbr">
                 <h3>Abbreviations</h3>
-                <p><div className="test"></div>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can also use a <code>[data-abbr]</code> attribute by itself or on the <code>&lt;abbr/&gt;</code> element to use some custom styling.</p>
+                <p>The <code>&lt;abbr/&gt;</code> element receives basic styling to make it stand out amongst paragraph text. You can also use a <code>[data-abbr]</code> attribute by itself or on the <code>&lt;abbr/&gt;</code> element to use some custom styling.</p>
                 <p>The <abbr title="Hypertext Markup Language">HTML</abbr> abbreviation element.</p>
                 <p>The <abbr data-abbr="Hypertext Markup Language">HTML</abbr> abbreviation element, using <code>data-abbr</code> instead of <code>title</code></p>
             </section>
@@ -402,55 +402,51 @@ export function StyleTest() {
             <form>
                 <fieldset>
                     <legend>Example legend</legend>
-                    <fieldset>
+                    <fieldset className="form-row">
                         <label htmlFor="input-after-label">Example text</label>
                         <input type="text" id="input-after-label" placeholder="Example input"/>
                     </fieldset>
-                    <p>
-                        <label>
-                            Example text
-                            <input type="text" id="input-inside-label-after-text" placeholder="Example input"/>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input type="text" id="input-inside-label-before-text" placeholder="Example input"/>
-                            Example text
-                        </label>
-                    </p>
-                    <p>
+                    <label>
+                        Example text
+                        <input type="text" id="input-inside-label-after-text" placeholder="Example input"/>
+                    </label>
+                    <label>
+                        <input type="text" id="input-inside-label-before-text" placeholder="Example input"/>
+                        Example text
+                    </label>
+                    <div className="form-row">
                         <input type="text" id="input-before-label" placeholder="Example input"/>
                         <label htmlFor="input-before-label">Example text</label>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="email">Example email</label>
                         <input type="email" id="email" placeholder="test@example.com"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="tel">Example telephone</label>
                         <input type="tel" id="tel"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="url">Example url</label>
                         <input type="url" id="url"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="number">Example number</label>
                         <input type="number" id="number"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="search">Example search</label>
                         <input type="search" id="search"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="range">Example range</label>
-                        <input type="range" id="range" min="0" max="10"/>
-                    </p>
-                    <p>
+                        <input type="range" id="range" min="0" max="10" step="0.5"/>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="file">Example file input</label>
                         <input type="file" id="file"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="select">Example select</label>
                         <select id="select">
                             <option value="">Choose...</option>
@@ -465,7 +461,7 @@ export function StyleTest() {
                                 <option value="">Option 6</option>
                             </optgroup>
                         </select>
-                    </p>
+                    </div>
                     <p>
                         <label>
                             <input type="checkbox" name="example-checkbox" value="1"/>
@@ -498,42 +494,42 @@ export function StyleTest() {
                             Option three is disabled
                         </label>
                     </p>
-                    <p>
+                    <div className="form-row">
                         <label htmlFor="textarea">Example textarea</label>
                         <textarea id="textarea" rows={3}></textarea>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="date">Example date</label>
                         <input type="date" id="date"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="time">Example time</label>
                         <input type="time" id="time"/>
-                    </p>
-                    <p>
+                    </div>
+                    <div className="form-row">
                         <label htmlFor="password">Example password</label>
                         <input type="password" id="password"/>
-                    </p>
-                    <p>
-                    <label htmlFor="datetime-local">Example datetime-local</label>
-                    <input type="datetime-local" id="datetime-local"/>
-                    </p>
-                    <p>
-                    <label htmlFor="week">Example week</label>
-                    <input type="week" id="week"/>
-                    </p>
-                    <p>
-                    <label htmlFor="month">Example month</label>
-                    <input type="month" id="month"/>
-                    </p>
-                    <p>
-                    <label htmlFor="color">Example color</label>
-                    <input type="color" id="color"/>
-                    </p>
-                    <p>
-                    <label htmlFor="output">Example output</label>
-                    <output name="result" id="output">100</output>
-                    </p>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="datetime-local">Example datetime-local</label>
+                        <input type="datetime-local" id="datetime-local"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="week">Example week</label>
+                        <input type="week" id="week"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="month">Example month</label>
+                        <input type="month" id="month"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="color">Example color</label>
+                        <input type="color" id="color"/>
+                    </div>
+                    <div className="form-row">
+                        <label htmlFor="output">Example output</label>
+                        <output name="result" id="output">100</output>
+                    </div>
                     <h3>Submit Buttons</h3>
                     <p>All of base styling is taken care of as part of the buttons component.</p>
                     <div className="button-grid">

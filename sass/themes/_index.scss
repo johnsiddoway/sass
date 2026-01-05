@@ -14,10 +14,11 @@
     --surface-padding: #{$surface-padding};
 
     --component-color: #{$component-color};
-    --component-border: #{$component-border-width} #{$component-border-style} #{$component-border-color};
+    --component-border-width: #{$component-border-width};
+    --component-border: var(--component-border-width) #{$component-border-style} #{$component-border-color};
     --component-padding-inline: #{$component-padding-inline};
     --component-padding-block: #{$component-padding-block};
-    --component-padding: #{$component-padding-inline} #{$component-padding-block};
+    --component-padding: var(--component-padding-inline) var(--component-padding-block);
     --component-padding-large: #{$component-padding-large};
     --component-padding-small: #{$component-padding-small};
 
@@ -39,9 +40,7 @@
     --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
 
     --component-background: #{$gray-80};
-    --component-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
-
-    --input-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
+    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
 
     --theme-link: #{$blue-40};
     --theme-link-visited: #{$violet-40};
@@ -55,12 +54,10 @@
     --page-color-inverse: #{$white};
 
     --surface-background: #{$gray-30};
-    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-50};
+    --surface-box-shadow: 0.25em 0.25em 0.25em 0rem #{$gray-50};
 
     --component-background: #{$gray-30};
-    --component-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
-
-    --input-box-shadow: 0 0 0.05rem 0.05rem #{$gray-10}, 0 0 0.25rem 0.25rem var(--theme-primary);
+    --component-box-shadow: 0 0 0.05em 0.05em var(--theme-white), 0 0 0.25em 0.25em var(--theme-primary);
 
     --theme-link: #{$blue-60};
     --theme-link-visited: #{$violet-80};

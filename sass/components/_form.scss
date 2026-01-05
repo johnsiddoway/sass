@@ -1,4 +1,30 @@
-@mixin forms($selector: 'form') {
+@use '../variables' as variables;
+
+@mixin form-row() {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: first baseline;
+    gap: 1em;
+    margin-block-end: variables.$default-margin-block-end;
+
+    input[type=range] {
+        align-self: stretch;
+    }
+}
+
+@mixin range-thumb() {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-top: calc((var(--track-height) - var(--thumb-height)) * .5);
+    border: var(--component-border);
+    border-radius: 0;
+    height: calc(var(--thumb-height) - var(--component-border-width));
+    width: var(--thumb-width);
+    cursor: pointer;
+    background: var(--theme-primary);
+}
+
+@mixin forms($selector: 'form', $row-selector: '.form-row') {
     #{$selector} {
         margin: 0;
         border: 0;
@@ -15,22 +41,14 @@
             font-size: var(--font-size-lg);
         }
 
-        label {
-            &:has(+ input, + select, + textarea, + output) {
-                margin-inline-end: 1em;
-            }
-            &:has(> input) {
-                display: flex;
-                flex-direction: row;
-                gap: 1em;
-            }
+        #{$row-selector},
+        label:has(> input) {
+            @include form-row();
         }
 
-        input,
-        select,
-        textarea {
-            &:has(+ label) {
-                margin-inline-end: 1em;
+        input[type=radio] {
+            &::before {
+                border-radius: 50%;
             }
         }
 
@@ -58,13 +76,44 @@
             }
             &:focus::before,
             &:focus-within::before {
-                box-shadow: var(--input-box-shadow);
+                box-shadow: var(--component-box-shadow);
             }
         }
 
-        input[type=radio] {
-            &::before {
-                border-radius: 50%;
+        input[type=range] {
+            --thumb-height: 1.5em;
+            --thumb-width: .5em;
+            --track-height: .25em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            outline: none;
+
+            &::-webkit-slider-runnable-track {
+                height: var(--track-height);
+                border: var(--component-border);
+                background: var(--theme-secondary);
+            }
+            &::-moz-range-track {
+                height: var(--track-height);
+                border: var(--component-border);
+                background: var(--theme-secondary);
+            }
+            &::-webkit-slider-thumb {
+                @include range-thumb();
+            }
+            &::-moz-range-thumb {
+                @include range-thumb();
+            }
+            &:focus,
+            &:focus-within {
+                &::-webkit-slider-thumb {
+                    box-shadow: var(--component-box-shadow);
+                }
+                &::-moz-range-thumb {
+                    box-shadow: var(--component-box-shadow);
+                }
             }
         }
 
@@ -78,7 +127,7 @@
             }
         }
 
-        input:not([type=checkbox],[type=radio]),
+        input:not([type=checkbox],[type=radio],[type=range]),
         select,
         textarea {
             outline: none;
@@ -86,7 +135,7 @@
 
             &:focus,
             &:focus-within {
-                box-shadow: var(--input-box-shadow);
+                box-shadow: var(--component-box-shadow);
             }
         }
 

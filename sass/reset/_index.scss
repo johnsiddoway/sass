@@ -1,3 +1,5 @@
+@use '../variables' as variables;
+
 // Mostly following the styles from this blog post,
 // as I also want to keep this as un-opinionated as possible.
 // https://keithjgrant.com/posts/2024/01/my-css-resets/
@@ -45,15 +47,15 @@
     ol,
     ul,
     dl {
-        margin-top: 0;
-        margin-bottom: 1rem;
+        margin-block-start: 0;
+        margin-block-end: variables.$default-margin-block-end;
     }
 
     ol ol,
     ul ul,
     ol ul,
     ul ol {
-        margin-bottom: 0;
+        margin-block-end: 0;
     }
 
     [type=button], [type=reset], [type=submit], button {
