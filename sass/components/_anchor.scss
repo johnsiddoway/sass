@@ -1,15 +1,15 @@
 @mixin anchor($selector: 'a') {
     #{$selector} {
         &:link {
-            color: var(--theme-link);
+            color: var(--link);
         }
         &.visited,
         &:visited {
-            color: var(--theme-link-visited);
+            color: var(--link-visited);
         }
         &.active,
         &:active {
-            color: var(--theme-link-active);
+            color: var(--link-active);
         }
     }
 }

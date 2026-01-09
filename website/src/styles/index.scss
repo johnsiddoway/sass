@@ -17,7 +17,7 @@
 
 @layer layout {
     .root {
-        @include sass.layout-root;
+        @include sass.root-layout;
     }
 }
 
@@ -27,16 +27,15 @@
 
 @layer theme {
     :root {
-        color-scheme: light dark;
-        @include sass.theme-variables-root;
+        @include sass.root-variables;
     }
     .root {
-        @include sass.layout-root-themed;
+        @include sass.root-layout-themed;
         &.light {
-            @include sass.theme-variables-light;
+            @include sass.root-variables-light;
         }
         &.dark {
-            @include sass.theme-variables-dark;
+            @include sass.root-variables-dark;
         }
     }
     @include sass.buttons-themed;

@@ -2,8 +2,7 @@
 @use '../components';
 @use '../layout-utilities';
 
-// TODO: MOVE EVERYTHING TO VARIABLES
-@mixin theme-variables-root {
+@mixin root-variables {
     --font-size-normal: #{$font-size-normal};
     --font-size-large: #{$font-size-large};
     --font-size-small: #{$font-size-small};
@@ -22,49 +21,57 @@
     --component-padding-large: #{$component-padding-large};
     --component-padding-small: #{$component-padding-small};
 
-    --theme-primary: #{$orange-60};
-    --theme-secondary: #{$gray-80};
-    --theme-white: #{$white};
-    --theme-black: #{$black};
+    // START THEME COLORS
+    --component-background: light-dark(#{$gray-80}, #{$gray-30});
+    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
+    --link: light-dark(#{$blue-40}, #{$blue-60});
+    --link-visited: light-dark(#{$violet-40}, #{$violet-80});
+    --link-active: light-dark(#{$red-40}, #{$red-60});
+    --page-background: light-dark(var(--theme-white), #{$gray-20});
+    --page-color: light-dark(var(--theme-black), var(--theme-white));
+    --page-background-inverse: light-dark(var(--theme-black), var(--theme-black));
+    --page-color-inverse: light-dark(var(--theme-white), var(--theme-white));
+    --surface-background: light-dark(#{$gray-90}, #{$gray-30});
+    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem light-dark(#{$gray-70}, #{$gray-50});
+    --theme-primary: light-dark(#{$orange-60}, #{$orange-60});
+    --theme-secondary: light-dark(#{$gray-80}, #{$gray-80});
+    --theme-white: light-dark(#{$white}, #{$white});
+    --theme-black: light-dark(#{$black}, #{$white});
+    // END THEME COLORS
 
     accent-color: var(--theme-primary);
+    color-scheme: light dark;
 }
 
-@mixin theme-variables-light {
+@mixin root-variables-light {
+    --component-background: #{$gray-80};
+    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
+    --link: #{$blue-40};
+    --link-visited: #{$violet-40};
+    --link-active: #{$red-40};
     --page-background: #{$white};
     --page-color: #{$black};
     --page-background-inverse: #{$black};
     --page-color-inverse: #{$white};
-
     --surface-background: #{$gray-90};
     --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
-
-    --component-background: #{$gray-80};
-    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
-
-    --theme-link: #{$blue-40};
-    --theme-link-visited: #{$violet-40};
-    --theme-link-active: #{$red-40};
 }
 
-@mixin theme-variables-dark {
+@mixin root-variables-dark {
+    --component-background: #{$gray-30};
+    --component-box-shadow: 0 0 0.05em 0.05em var(--theme-white), 0 0 0.25em 0.25em var(--theme-primary);
     --page-background: #{$gray-20};
     --page-color: #{$white};
     --page-background-inverse: #{$black};
     --page-color-inverse: #{$white};
-
+    --link: #{$blue-60};
+    --link-visited: #{$violet-80};
+    --link-active: #{$red-60};
     --surface-background: #{$gray-30};
     --surface-box-shadow: 0.25em 0.25em 0.25em 0rem #{$gray-50};
-
-    --component-background: #{$gray-30};
-    --component-box-shadow: 0 0 0.05em 0.05em var(--theme-white), 0 0 0.25em 0.25em var(--theme-primary);
-
-    --theme-link: #{$blue-60};
-    --theme-link-visited: #{$violet-80};
-    --theme-link-active: #{$red-60};
 }
 
-@mixin layout-root {
+@mixin root-layout {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -102,13 +109,12 @@
     }
 }
 
-@mixin layout-root-themed {
+@mixin root-layout-themed {
     background-color: var(--page-background);
     color: var(--page-color);
     font-family: $font-family-sans-serif;
     font-size: var(--font-size-normal);
     font-weight: var(--font-weight-normal);
-    
 
     > header,
     footer {
