@@ -13,7 +13,7 @@
 // @forward 'input-range';
 // @forward 'label';
 @forward 'popovers';
-// @forward 'rating';
+@forward 'rating';
 // @forward 'select';
 @forward 'switch';
 @forward 'table';
@@ -30,6 +30,7 @@
 @use 'details';
 @use 'form';
 @use 'popovers';
+@use 'rating';
 @use 'switch';
 @use 'table';
 @use 'text-truncate';
@@ -45,6 +46,7 @@
     @include details.details;
     @include form.forms;
     @include popovers.popovers;
+    @include rating.rating;
     @include switch.switch;
     @include table.table;
     @include text-truncate.text-truncate;

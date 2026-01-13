@@ -10,6 +10,21 @@ export function StyleTest() {
             A hesitant shout-out to a recent article I read, <a href="https://www.infoq.com/articles/no-need-css-framework/">You Don't Need a CSS Framework</a>.
             I don't agree with several points made in the article, but the author's reference site, <a href="https://www.starterapp.style/">starterapp.style</a>, is really well laid out for showcasing how a stylesheet will render.
         </p>
+        <section id="rating">
+            <h2>Ratings</h2>
+            <div className="rating">
+                <input id="rating-5" type="radio" name="rating" value="5"/>
+                <label htmlFor="rating-5">{'\u2605'}</label>
+                <input id="rating-4" type="radio" name="rating" value="4"/>
+                <label htmlFor="rating-4">{'\u2605'}</label>
+                <input id="rating-3" type="radio" name="rating" value="3" defaultChecked />
+                <label htmlFor="rating-3">{'\u2605'}</label>
+                <input id="rating-2" type="radio" name="rating" value="2"/>
+                <label htmlFor="rating-2">{'\u2605'}</label>
+                <input id="rating-1" type="radio" name="rating" value="1"/>
+                <label htmlFor="rating-1">{'\u2605'}</label>
+            </div>
+        </section>
         <section id="typography">
             <h2>Typography</h2>
             <section id="basic-text">

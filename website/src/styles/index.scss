@@ -54,13 +54,10 @@
     align-items: center;
 }
 
-// .rating {
-//     // Add some custom style specific to Storybutton
-//     font-size: $font-size-xl;
-//     min-width: 10em;
-
-//     @extend %rating;
-// }
+.rating {
+    font-size: 3rem;
+    max-width: 5em;
+}
 
 // .text-truncate {
 //     @include text-truncate;

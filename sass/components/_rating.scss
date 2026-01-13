@@ -1,35 +1,34 @@
-@use '../variables';
-
 // Custom styling to help generate a 5-star rating block.
 // Uses display: flex and flex-flow: row-reverse
 //  so it's rendered in reverse order compared to
 //  how its child elements are declared.
 //  Uses the following variables:
-//      var(--primary): Fill color for :hover and :checked
-//      var(--secondary): Default fill color
-//      var(--border-color): SVG Path Stroke Color
-//      var(--border-width): SVG Path Stroke Width
-@mixin make-rating() {
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row-reverse nowrap;
-    color: var(--secondary);
-    input {
-        display: none;
-    }
-    // _label.scss is possibly too broad, and is affecting these
-    // label {
-    //     margin: 0 !important;
-    // }
-    label:hover,
-    label:hover ~ label,
-    input:checked + label,
-    input:checked + label ~ label {
-        color: var(--primary);
-        cursor: pointer;
-    }
-    path {
-        stroke: var(--border-color);
-        stroke-width: var(--border-width);
+//      var(--theme-primary): Fill color for :hover and :checked
+//      var(--theme-secondary): Default fill color
+//      var(--component-border-color): SVG Path Stroke Color
+//      var(--component-border-width): SVG Path Stroke Width
+@mixin rating($selector: '.rating') {
+    #{$selector} {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row-reverse nowrap;
+        color: var(--theme-secondary);
+
+        input {
+            display: none;
+        }
+
+        label:hover,
+        label:hover ~ label,
+        input:checked + label,
+        input:checked + label ~ label {
+            color: var(--theme-primary);
+            cursor: pointer;
+        }
+
+        path {
+            stroke: var(--component-border-color);
+            stroke-width: var(--component-border-width);
+        }
     }
 }
