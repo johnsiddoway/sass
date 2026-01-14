@@ -6,7 +6,7 @@ export function StyleTest() {
     const [manualDialogOutput, setManualDialogOutput] = useState<string>('');
     const [manualPopoverOutput, setManualPopoverOutput] = useState<string>('');
 
-    const handleClose = (e: Event) => {
+    const handleClose = (e: React.SyntheticEvent<HTMLDialogElement>) => {
         const formData = new FormData((e.currentTarget as HTMLElement).querySelector('form')!);
         setManualDialogOutput(JSON.stringify(Object.fromEntries(formData)));
     };
