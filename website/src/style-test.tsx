@@ -1,8 +1,30 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export function StyleTest() {
     const dialogAutoRef = useRef<HTMLDialogElement>(null);
     const dialogManualRef = useRef<HTMLDialogElement>(null);
+    const [manualDialogOutput, setManualDialogOutput] = useState<string>('');
+    const [manualPopoverOutput, setManualPopoverOutput] = useState<string>('');
+
+    const handleClose = (e) => {
+        const formData = new FormData(e.currentTarget.querySelector('form'));
+        setManualDialogOutput(JSON.stringify(Object.fromEntries(formData)));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        e.currentTarget.closest('[popover]').hidePopover();
+    };
+
+    const handleToggle = (e) => {
+        if (e.newState === 'open') {
+            // I think React switched this from e.source to e.target
+            e.target.querySelector('input').focus();
+        } else if (e.newState === 'closed') {
+            const formData = new FormData(e.target.querySelector('form'));
+            setManualPopoverOutput(JSON.stringify(Object.fromEntries(formData)));
+        }
+    }
 
     return <>
         <p>This post is meant to be a test-bed for my personal SASS library that I plan on sharing across my personal sites. I plan on posting information on how it's supposed to work in a separate post (or maybe series of posts).</p>
@@ -13,15 +35,15 @@ export function StyleTest() {
         <section id="rating">
             <h2>Ratings</h2>
             <div className="rating">
-                <input id="rating-5" type="radio" name="rating" value="5"/>
+                <input id="rating-5" type="radio" name="rating" value="5" />
                 <label htmlFor="rating-5">{'\u2605'}</label>
-                <input id="rating-4" type="radio" name="rating" value="4"/>
+                <input id="rating-4" type="radio" name="rating" value="4" />
                 <label htmlFor="rating-4">{'\u2605'}</label>
                 <input id="rating-3" type="radio" name="rating" value="3" defaultChecked />
                 <label htmlFor="rating-3">{'\u2605'}</label>
-                <input id="rating-2" type="radio" name="rating" value="2"/>
+                <input id="rating-2" type="radio" name="rating" value="2" />
                 <label htmlFor="rating-2">{'\u2605'}</label>
-                <input id="rating-1" type="radio" name="rating" value="1"/>
+                <input id="rating-1" type="radio" name="rating" value="1" />
                 <label htmlFor="rating-1">{'\u2605'}</label>
             </div>
         </section>
@@ -43,8 +65,8 @@ export function StyleTest() {
             <section id="title">
                 <h3>Titles</h3>
                 <p>By adding a <code>[data-title]</code> attribute to an element, you can add a more stylish version of the default <code>[title]</code> attribute.
-                   The popup uses the same style as the <code>[data-abbr]</code> popup. The difference is that the <code>[data-title]</code> doesn't add styles to the anchoring element.
-                   Currently, these do not respect new line characters. I'd like to fix that.</p>
+                    The popup uses the same style as the <code>[data-abbr]</code> popup. The difference is that the <code>[data-title]</code> doesn't add styles to the anchoring element.
+                    Currently, these do not respect new line characters. I'd like to fix that.</p>
                 <p><span data-title="Here is some additional info">Hover over me to see a tooltip.</span></p>
                 <p><span data-title="Here is some additional info. This one is very long. Just to show what it looks like.">Hover over me to see a tooltip with a ton of text.</span></p>
             </section>
@@ -58,8 +80,8 @@ export function StyleTest() {
             <section id="text-truncate">
                 <h3>Truncated Text</h3>
                 <p>Have a long block of text that you don't want to mess with the layout of some containers? No problem! Just use <code>.text-truncate</code>.
-                   You can pair this with a <code>[title]</code> to let users actually read all of the text.</p>
-                <div className="text-truncate" style={{width: "200px", border: "1px solid currentColor", padding: "var(--component-padding)"}} title="[title] Example of a long block of text that goes on forever.">
+                    You can pair this with a <code>[title]</code> to let users actually read all of the text.</p>
+                <div className="text-truncate" style={{ width: "200px", border: "1px solid currentColor", padding: "var(--component-padding)" }} title="[title] Example of a long block of text that goes on forever.">
                     [title] Example of a long block of text that goes on forever.
                 </div>
             </section>
@@ -144,9 +166,9 @@ export function StyleTest() {
             <div className="button-grid">
                 <a href="#" role="button">Link</a>
                 <button type="submit">Button</button>
-                <input type="button" value="Input"/>
-                <input type="submit" value="Submit"/>
-                <input type="reset" value="Reset"/>
+                <input type="button" value="Input" />
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
             </div>
             <h3>Themed Buttons</h3>
             <div className="button-grid">
@@ -188,120 +210,120 @@ export function StyleTest() {
             <div className="table-wrapper">
                 <table>
                     <thead>
-                    <tr>
-                        <th role="columnheader" style={{minWidth: "100px"}}></th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Heading</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
-                        <th role="columnheader" style={{minWidth: "100px"}}>Overflow?</th>
-                    </tr>
+                        <tr>
+                            <th role="columnheader" style={{ minWidth: "100px" }}></th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Heading</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Overflow?</th>
+                            <th role="columnheader" style={{ minWidth: "100px" }}>Overflow?</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th role="rowheader">Row</th>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Overflow Cell</td>
-                        <td>Overflow Cell</td>
-                    </tr>
-                    <tr>
-                        <th role="rowheader">Row</th>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Overflow Cell</td>
-                        <td>Overflow Cell</td>
-                    </tr>
-                    <tr>
-                        <th role="rowheader">Row</th>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Cell</td>
-                        <td>Overflow Cell</td>
-                        <td>Overflow Cell</td>
-                    </tr>
+                        <tr>
+                            <th role="rowheader">Row</th>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Overflow Cell</td>
+                            <td>Overflow Cell</td>
+                        </tr>
+                        <tr>
+                            <th role="rowheader">Row</th>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Overflow Cell</td>
+                            <td>Overflow Cell</td>
+                        </tr>
+                        <tr>
+                            <th role="rowheader">Row</th>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Cell</td>
+                            <td>Overflow Cell</td>
+                            <td>Overflow Cell</td>
+                        </tr>
                     </tbody>
                     <tfoot>
-                    <tr>
-                        <th role="rowheader">Total</th>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Total</td>
-                        <td>Overflow Total</td>
-                        <td>Overflow Total</td>
-                    </tr>
+                        <tr>
+                            <th role="rowheader">Total</th>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Total</td>
+                            <td>Overflow Total</td>
+                            <td>Overflow Total</td>
+                        </tr>
                     </tfoot>
                 </table>
             </div>
@@ -309,43 +331,123 @@ export function StyleTest() {
         <section id="popovers">
             <h2>Dialogs and Popovers</h2>
             <dialog closedby="any" ref={dialogAutoRef}>
-                <article >
+                <article>
                     <h2>Dialog Example</h2>
-                    <p>This is a <code>dialog</code> example.</p>
+                    <p>This is a <code>dialog</code> example. To close it, you can click anywhere outside of the dialog, click the button, or press <kbd>Esc</kbd>.</p>
                     <button className="btn-primary" onClick={() => dialogAutoRef.current?.close()}>Close</button>
                 </article>
             </dialog>
-            <dialog ref={dialogManualRef}>
+            <dialog ref={dialogManualRef} onClose={handleClose}>
                 <form method="dialog">
                     <h2>Dialog Example</h2>
                     <p>This is a <code>dialog</code> example.</p>
-                    <label htmlFor="dialog-input">Example input</label>
-                    <input type="text" id="dialog-input" placeholder="Example input"/>
-                    <button className="btn-primary" type="submit">Close</button>
+                    <p>I have wired up this form to have all of its inputs reset if you do not submit it. That is not the default behavior.</p>
+                    <label className="form-row">
+                        Example Text Input
+                        <input type="text" name="text" placeholder="Example input" required />
+                    </label>
+                    <label className="form-row">
+                        Example Select
+                        <select name="select" required >
+                            <option value="">Choose...</option>
+                            <optgroup label="Option group 1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Option group 2">
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                    <div className="form-row">
+                        <button className="btn-primary" type="submit" value="submit">Close</button>
+                        <button className="btn-secondary" formNoValidate>Cancel</button>
+                    </div>
                 </form>
             </dialog>
-            <div id="popover-auto" popover="auto">
+            <div id="popover-auto-1" popover="auto">
                 <article>
                     <h2>Auto Popovers</h2>
-                    This is a <code>&lt;div popover="auto"&gt;popover&lt;/div&gt;</code> example.
-                    You can click anywhere outside this popover to close it, or click the button.
+                    <p>This is a <code>popover</code> example. To close it, you can click anywhere outside of the popover, click the button, or press <kbd>Esc</kbd>.</p>
+                    <p>If you click the "Show #2" button below, it will open another popover <em>inside</em> this popover.</p>
+                    <p>If you click the "Show #2" button on the main page, that will technically close this popover first, and then open the other popover.</p>
+                    <div className="button-grid">
+                        <button className="btn-primary" popoverTarget="popover-auto-1" popoverTargetAction="hide">Close Auto #1</button>
+                        <button className="btn-primary" popoverTarget="popover-auto-2">Open Auto #2</button>
+                    </div>
                 </article>
-                <button className="btn-primary" popoverTarget="popover-auto" popoverTargetAction="hide">Close</button>
             </div>
-            <div id="popover-manual" popover="manual">
+            <div id="popover-auto-2" popover="auto">
                 <article>
-                    <h2>Manual Popover</h2>
-                    This is a <code>&lt;div popover="manual"&gt;popover&lt;/div&gt;</code> example.
+                    <h2>Auto #2</h2>
+                    <p>I am a small auto popover!</p>
+                    <button className="btn-primary" popoverTarget="popover-auto-2" popoverTargetAction="hide">Close</button>
                 </article>
-                <button value="no" popoverTarget="popover-manual" popoverTargetAction="hide">No</button>
-                <button value="yes" popoverTarget="popover-manual" popoverTargetAction="hide">Yes</button>
+            </div>
+            <div id="popover-hint-1" popover="hint">
+                <article>
+                    <h2>Hint Popovers</h2>
+                    <p>This is a <code>popover</code> example. To close it, you can click anywhere outside of the popover, click the button, or press <kbd>Esc</kbd>.</p>
+                    <p>If you click the "Show #2" button below, it will open another popover <em>inside</em> this popover.</p>
+                    <p>If you click the "Show #2" button on the main page, that will technically close this popover first, and then open the other popover.</p>
+                    <div className="button-grid">
+                        <button className="btn-primary" popoverTarget="popover-hint-1" popoverTargetAction="hide">Close</button>
+                        <button className="btn-primary" popoverTarget="popover-hint-2">Show #2</button>
+                    </div>
+                </article>
+            </div>
+            <div id="popover-hint-2" popover="hint">
+                <article>
+                    <h2>Hint #2</h2>
+                    <p>I am very small!</p>
+                    <button className="btn-primary" popoverTarget="popover-hint-2" popoverTargetAction="hide">Close</button>
+                </article>
+            </div>
+            <div id="popover-manual" popover="manual" onToggle={handleToggle}>
+                <form onSubmit={handleSubmit}>
+                    <h2>Manual Popover Example</h2>
+                    <p>This is a <code>popover</code> example.</p>
+                    <p>I have overridden the default form action to simply close the popover.</p>
+                    <label className="form-row">
+                        Example Text Input
+                        <input type="text" name="text" placeholder="Example input" required autoFocus />
+                    </label>
+                    <label className="form-row">
+                        Example Select
+                        <select name="select" required >
+                            <option value="">Choose...</option>
+                            <optgroup label="Option group 1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </optgroup>
+                            <optgroup label="Option group 2">
+                                <option value="4">Option 4</option>
+                                <option value="5">Option 5</option>
+                                <option value="6">Option 6</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                    <div className="form-row">
+                        <button className="btn-primary" type="submit" value="submit">Submit</button>
+                        <button className="btn-secondary" type="button" popoverTarget="popover-manual" popoverTargetAction="hide">Cancel</button>
+                    </div>
+                </form>
             </div>
             <div className="button-grid">
                 <button type="button" className="btn-primary" onClick={() => dialogAutoRef.current?.showModal()}>Open Auto Dialog</button>
                 <button type="button" className="btn-primary" onClick={() => dialogManualRef.current?.showModal()}>Open Manual Dialog</button>
-                <button type="button" className="btn-primary" popoverTarget="popover-auto">Open Auto Popover</button>
-                <button type="button" className="btn-primary" popoverTarget="popover-manual">Open Manual Popover</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-auto-1">Toggle Auto Popover #1</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-auto-2">Toggle Auto Popover #2</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-hint-1">Toggle Hint Popover #1</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-hint-2">Toggle Hint Popover #2</button>
+                <button type="button" className="btn-primary" popoverTarget="popover-manual">Toggle Manual Popover</button>
             </div>
+            <div>Output of the Manual Dialog: <span>{manualDialogOutput}</span></div>
+            <div>Output of the Manual Popover: <span>{manualPopoverOutput}</span></div>
         </section>
         <section id="cards">
             <h2>Cards</h2>
@@ -383,7 +485,7 @@ export function StyleTest() {
             <h2>Switches</h2>
             <p>Switches should be used for actions that take effect on click, as opposed to checkboxes, which should be used for actions that take effect when a form is submitted.</p>
             <label className="switch">
-                <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false}/>
+                <input type="checkbox" name="turn-it-up-to-eleven" defaultChecked={false} />
                 <span>Turn it up to eleven</span>
             </label>
         </section>
@@ -419,47 +521,47 @@ export function StyleTest() {
                     <legend>Example legend</legend>
                     <fieldset className="form-row">
                         <label htmlFor="input-after-label">Example text</label>
-                        <input type="text" id="input-after-label" placeholder="Example input"/>
+                        <input type="text" id="input-after-label" placeholder="Example input" />
                     </fieldset>
                     <label>
                         Example text
-                        <input type="text" id="input-inside-label-after-text" placeholder="Example input"/>
+                        <input type="text" id="input-inside-label-after-text" placeholder="Example input" />
                     </label>
                     <label>
-                        <input type="text" id="input-inside-label-before-text" placeholder="Example input"/>
+                        <input type="text" id="input-inside-label-before-text" placeholder="Example input" />
                         Example text
                     </label>
                     <div className="form-row">
-                        <input type="text" id="input-before-label" placeholder="Example input"/>
+                        <input type="text" id="input-before-label" placeholder="Example input" />
                         <label htmlFor="input-before-label">Example text</label>
                     </div>
                     <div className="form-row">
                         <label htmlFor="email">Example email</label>
-                        <input type="email" id="email" placeholder="test@example.com"/>
+                        <input type="email" id="email" placeholder="test@example.com" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="tel">Example telephone</label>
-                        <input type="tel" id="tel"/>
+                        <input type="tel" id="tel" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="url">Example url</label>
-                        <input type="url" id="url"/>
+                        <input type="url" id="url" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="number">Example number</label>
-                        <input type="number" id="number"/>
+                        <input type="number" id="number" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="search">Example search</label>
-                        <input type="search" id="search"/>
+                        <input type="search" id="search" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="range">Example range</label>
-                        <input type="range" id="range" min="0" max="10" step="0.5"/>
+                        <input type="range" id="range" min="0" max="10" step="0.5" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="file">Example file input</label>
-                        <input type="file" id="file"/>
+                        <input type="file" id="file" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="select">Example select</label>
@@ -479,7 +581,7 @@ export function StyleTest() {
                     </div>
                     <p>
                         <label>
-                            <input type="checkbox" name="example-checkbox" value="1"/>
+                            <input type="checkbox" name="example-checkbox" value="1" />
                             Check this checkbox
                         </label>
                         <label>
@@ -497,15 +599,15 @@ export function StyleTest() {
                     </p>
                     <p>
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked={true}/>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" defaultChecked={true} />
                             Option one is this and that
                         </label>
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"/>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" />
                             Option two is something else that's also super long to demonstrate the wrapping of these fancy form controls.
                         </label>
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled/>
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" disabled />
                             Option three is disabled
                         </label>
                     </p>
@@ -515,31 +617,31 @@ export function StyleTest() {
                     </div>
                     <div className="form-row">
                         <label htmlFor="date">Example date</label>
-                        <input type="date" id="date"/>
+                        <input type="date" id="date" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="time">Example time</label>
-                        <input type="time" id="time"/>
+                        <input type="time" id="time" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="password">Example password</label>
-                        <input type="password" id="password"/>
+                        <input type="password" id="password" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="datetime-local">Example datetime-local</label>
-                        <input type="datetime-local" id="datetime-local"/>
+                        <input type="datetime-local" id="datetime-local" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="week">Example week</label>
-                        <input type="week" id="week"/>
+                        <input type="week" id="week" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="month">Example month</label>
-                        <input type="month" id="month"/>
+                        <input type="month" id="month" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="color">Example color</label>
-                        <input type="color" id="color"/>
+                        <input type="color" id="color" />
                     </div>
                     <div className="form-row">
                         <label htmlFor="output">Example output</label>
@@ -550,28 +652,28 @@ export function StyleTest() {
                     <div className="button-grid">
                         <button type="reset">Reset Button</button>
                         <button type="submit">Submit Button</button>
-                        <input type="reset" value="Reset Input"/>
-                        <input type="submit" value="Submit Input"/>
-                        <input type="button" value="Button Input"/>
+                        <input type="reset" value="Reset Input" />
+                        <input type="submit" value="Submit Input" />
+                        <input type="button" value="Button Input" />
                         <button type="reset" className="btn-secondary">Reset Button</button>
                         <button type="submit" className="btn-success">Submit Button</button>
-                        <input type="reset" className="btn-secondary" value="Reset Input"/>
-                        <input type="submit" className="btn-success" value="Submit Input"/>
-                        <input type="button" value="Button Input"/>
+                        <input type="reset" className="btn-secondary" value="Reset Input" />
+                        <input type="submit" className="btn-success" value="Submit Input" />
+                        <input type="button" value="Button Input" />
                     </div>
                     <p>The only additional styling as part of the forms component is the <code>disabled</code> styles to show the cursor as no actions allowed and reduce the opacity.
-                       This works whether you explicitly set the button to disabled, or if you include it in a fieldset that has been disabled.</p>
+                        This works whether you explicitly set the button to disabled, or if you include it in a fieldset that has been disabled.</p>
                     <fieldset className="button-grid" disabled>
                         <button type="reset">Reset Button</button>
                         <button type="submit">Submit Button</button>
-                        <input type="reset" value="Reset Input"/>
-                        <input type="submit" value="Submit Input"/>
-                        <input type="button" value="Button Input"/>
+                        <input type="reset" value="Reset Input" />
+                        <input type="submit" value="Submit Input" />
+                        <input type="button" value="Button Input" />
                         <button type="reset" className="btn-secondary">Reset Button</button>
                         <button type="submit" className="btn-success">Submit Button</button>
-                        <input type="reset" className="btn-secondary" value="Reset Input"/>
-                        <input type="submit" className="btn-success" value="Submit Input"/>
-                        <input type="button" value="Button Input"/>
+                        <input type="reset" className="btn-secondary" value="Reset Input" />
+                        <input type="submit" className="btn-success" value="Submit Input" />
+                        <input type="button" value="Button Input" />
                     </fieldset>
                 </fieldset>
             </form>

@@ -10,16 +10,17 @@
     &:before {
         display: none; // hide by default
         content: attr(#{$attribute-selector}); // here's the magic. It doesn't preserve new lines though
-        position: absolute;
-        z-index: 10;
         // Position the tooltip below the original element
         // TODO: Replace with Anchor positioning once it's widely available
         // https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning/Using
+        position: absolute;
+        z-index: 10;
         top: 125%;
         left: 100%;
         // basic styles
         width: max-content;
         max-width: calc(100dvw - 3rem);
+        background: var(--page-background); // Will be transparent if not set
         border: var(--component-border);
         padding: var(--component-padding);
         box-shadow: var(--surface-box-shadow);
