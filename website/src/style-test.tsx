@@ -6,17 +6,17 @@ export function StyleTest() {
     const [manualDialogOutput, setManualDialogOutput] = useState<string>('');
     const [manualPopoverOutput, setManualPopoverOutput] = useState<string>('');
 
-    const handleClose = (e) => {
-        const formData = new FormData(e.currentTarget.querySelector('form'));
+    const handleClose = (e: Event) => {
+        const formData = new FormData((e.currentTarget as HTMLElement).querySelector('form')!);
         setManualDialogOutput(JSON.stringify(Object.fromEntries(formData)));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        e.currentTarget.closest('[popover]').hidePopover();
+        ((e.currentTarget as HTMLElement).closest('[popover]') as any)?.hidePopover();
     };
 
-    const handleToggle = (e) => {
+    const handleToggle = (e: any) => {
         if (e.newState === 'open') {
             // I think React switched this from e.source to e.target
             e.target.querySelector('input').focus();
