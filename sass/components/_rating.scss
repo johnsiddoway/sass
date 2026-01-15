@@ -7,28 +7,32 @@
 //      var(--theme-secondary): Default fill color
 //      var(--component-border-color): SVG Path Stroke Color
 //      var(--component-border-width): SVG Path Stroke Width
+@mixin rating-style {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse nowrap;
+    color: var(--theme-secondary);
+
+    input {
+        display: none;
+    }
+
+    label:hover,
+    label:hover ~ label,
+    input:checked + label,
+    input:checked + label ~ label {
+        color: var(--theme-primary);
+        cursor: pointer;
+    }
+
+    path {
+        stroke: var(--component-border-color);
+        stroke-width: var(--component-border-width);
+    }
+}
+
 @mixin rating($selector: '.rating') {
     #{$selector} {
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row-reverse nowrap;
-        color: var(--theme-secondary);
-
-        input {
-            display: none;
-        }
-
-        label:hover,
-        label:hover ~ label,
-        input:checked + label,
-        input:checked + label ~ label {
-            color: var(--theme-primary);
-            cursor: pointer;
-        }
-
-        path {
-            stroke: var(--component-border-color);
-            stroke-width: var(--component-border-width);
-        }
+        @include rating-style;
     }
 }

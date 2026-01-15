@@ -24,7 +24,7 @@
     background: var(--theme-primary);
 }
 
-@mixin forms($selector: 'form', $row-selector: '.form-row') {
+@mixin form($selector: 'form', $row-selector: '.form-row') {
     #{$selector} {
         margin: 0;
         border: 0;
