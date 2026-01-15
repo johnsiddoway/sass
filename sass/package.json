@@ -4,7 +4,6 @@
     "description": "Custom Sass files for use in my personal projects.",
     "main": "index.scss",
     "scripts": {
-        "build": "sass .:./dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
