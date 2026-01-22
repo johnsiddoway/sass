@@ -1,12 +1,10 @@
 @use 'sass:map';
-// @use 'sass:meta';
-// @use '../functions';
 @use '../variables';
 
 @mixin buttons() {
     @include buttons-base;
-    @include buttons-large;
-    @include buttons-small;
+    @include buttons-lg;
+    @include buttons-sm;
 }
 
 // Based heavily on Bootstrap: https://github.com/twbs/bootstrap/blob/v5.2.3/scss/_buttons.scss
@@ -15,7 +13,7 @@
         --component-background: transparent;
         border: var(--component-border);
         padding: var(--component-padding);
-        font-size: var(--font-size-normal);
+        font-size: var(--font-size);
         background-color: var(--component-background);
         color: var(--component-color);
         cursor: pointer;
@@ -23,17 +21,17 @@
     }
 }
 
-@mixin buttons-large($selector: '.btn-lg') {
+@mixin buttons-lg($selector: '.btn-lg') {
     #{$selector} {
-        font-size: var(--font-size-large);
-        padding: var(--component-padding-large);
+        font-size: var(--font-size-lg);
+        padding: var(--component-padding-lg);
     }
 }
 
-@mixin buttons-small($selector: '.btn-sm') {
+@mixin buttons-sm($selector: '.btn-sm') {
     #{$selector} {
-        font-size: var(--font-size-small);
-        padding: var(--component-padding-small);
+        font-size: var(--font-size-sm);
+        padding: var(--component-padding-sm);
     }
 }
 

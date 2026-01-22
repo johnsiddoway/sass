@@ -3,13 +3,13 @@
 @use '../layout-utilities';
 
 @mixin root-variables {
-    --font-size-normal: #{$font-size-normal};
-    --font-size-large: #{$font-size-large};
-    --font-size-small: #{$font-size-small};
+    --font-size: #{$font-size};
+    --font-size-lg: #{$font-size-lg};
+    --font-size-sm: #{$font-size-sm};
     --font-size-xl: #{$font-size-xl};
-    --font-weight-normal: #{$font-weight-normal};
+    --font-weight: #{$font-weight};
     --font-weight-bold: #{$font-weight-bold};
-
+    --margin: #{$margin};
     --surface-border: #{$surface-border-width} #{$surface-border-style} #{$surface-border-color};
     --surface-padding: #{$surface-padding};
 
@@ -18,26 +18,35 @@
     --component-border: var(--component-border-width) #{$component-border-style} #{$component-border-color};
     --component-padding-inline: #{$component-padding-inline};
     --component-padding-block: #{$component-padding-block};
-    --component-padding: var(--component-padding-inline) var(--component-padding-block);
-    --component-padding-large: #{$component-padding-large};
-    --component-padding-small: #{$component-padding-small};
+    --component-padding: var(--component-padding-block) var(--component-padding-inline);
+    --component-padding-lg: #{$component-padding-lg};
+    --component-padding-sm: #{$component-padding-sm};
 
     // START THEME COLORS
-    --component-background: light-dark(#{$gray-80}, #{$gray-30});
-    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
+    --black: #{$black};
+    --gray-10: #{$gray-10};
+    --gray-20: #{$gray-20};
+    --gray-30: #{$gray-30};
+    --gray-40: #{$gray-40};
+    --gray-50: #{$gray-50};
+    --gray-60: #{$gray-60};
+    --gray-70: #{$gray-70};
+    --gray-80: #{$gray-80};
+    --gray-90: #{$gray-90};
+    --white: #{$white};
+    --component-background: light-dark(var(--gray-80), var(--gray-30));
+    --component-box-shadow: 0 0 0.05rem 0.05rem var(--white), 0 0 0.25rem 0.25rem var(--theme-primary);
     --link: light-dark(#{$blue-40}, #{$blue-60});
     --link-visited: light-dark(#{$violet-40}, #{$violet-80});
     --link-active: light-dark(#{$red-40}, #{$red-60});
-    --page-background: light-dark(var(--theme-white), #{$gray-20});
-    --page-color: light-dark(var(--theme-black), var(--theme-white));
-    --page-background-inverse: light-dark(var(--theme-black), var(--theme-black));
-    --page-color-inverse: light-dark(var(--theme-white), var(--theme-white));
-    --surface-background: light-dark(#{$gray-90}, #{$gray-30});
-    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem light-dark(#{$gray-70}, #{$gray-50});
+    --page-background: light-dark(var(--white), var(--gray-20));
+    --page-color: light-dark(var(--black), var(--white));
+    --page-background-inverse: light-dark(var(--black), var(--black));
+    --page-color-inverse: light-dark(var(--white), var(--white));
+    --surface-background: light-dark(var(--gray-90), var(--gray-30));
+    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem light-dark(var(--gray-70), var(--gray-50));
     --theme-primary: light-dark(#{$orange-60}, #{$orange-60});
-    --theme-secondary: light-dark(#{$gray-80}, #{$gray-80});
-    --theme-white: light-dark(#{$white}, #{$white});
-    --theme-black: light-dark(#{$black}, #{$white});
+    --theme-secondary: light-dark(var(--gray-80), var(--gray-80));
     // END THEME COLORS
 
     accent-color: var(--theme-primary);
@@ -45,31 +54,31 @@
 }
 
 @mixin root-variables-light {
-    --component-background: #{$gray-80};
-    --component-box-shadow: 0 0 0.05rem 0.05rem var(--theme-white), 0 0 0.25rem 0.25rem var(--theme-primary);
+    --component-background: var(--gray-80);
+    --component-box-shadow: 0 0 0.05rem 0.05rem var(--white), 0 0 0.25rem 0.25rem var(--theme-primary);
     --link: #{$blue-40};
     --link-visited: #{$violet-40};
     --link-active: #{$red-40};
-    --page-background: #{$white};
-    --page-color: #{$black};
-    --page-background-inverse: #{$black};
-    --page-color-inverse: #{$white};
-    --surface-background: #{$gray-90};
-    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem #{$gray-70};
+    --page-background: var(--white);
+    --page-color: var(--black);
+    --page-background-inverse: var(--black);
+    --page-color-inverse: var(--white);
+    --surface-background: var(--gray-90);
+    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem var(--gray-70);
 }
 
 @mixin root-variables-dark {
-    --component-background: #{$gray-30};
-    --component-box-shadow: 0 0 0.05em 0.05em var(--theme-white), 0 0 0.25em 0.25em var(--theme-primary);
-    --page-background: #{$gray-20};
-    --page-color: #{$white};
-    --page-background-inverse: #{$black};
-    --page-color-inverse: #{$white};
+    --component-background: var(--gray-30);
+    --component-box-shadow: 0 0 0.05em 0.05em var(--white), 0 0 0.25em 0.25em var(--theme-primary);
+    --page-background: var(--gray-20);
+    --page-color: var(--white);
+    --page-background-inverse: var(--black);
+    --page-color-inverse: var(--white);
     --link: #{$blue-60};
     --link-visited: #{$violet-80};
     --link-active: #{$red-60};
-    --surface-background: #{$gray-30};
-    --surface-box-shadow: 0.25em 0.25em 0.25em 0rem #{$gray-50};
+    --surface-background: var(--gray-30);
+    --surface-box-shadow: 0.25em 0.25em 0.25em 0rem var(--gray-50);
 }
 
 @mixin root-layout {
@@ -81,7 +90,7 @@
     line-height: $line-height-base;
 
     > header {
-        margin-block-end: $layout-margin-block-end;
+        margin-block-end: var(--margin);
 
         nav {
             padding: $layout-padding;
@@ -94,7 +103,7 @@
     }
 
     > main {
-        margin-block-end: $layout-margin-block-end;
+        margin-block-end: var(--margin);
         padding-inline: $layout-padding-inline;
     }
 
@@ -114,8 +123,8 @@
     background: var(--page-background);
     color: var(--page-color);
     font-family: $font-family-sans-serif;
-    font-size: var(--font-size-normal);
-    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
 
     > header,
     footer {
@@ -135,7 +144,7 @@
             background-clip: text;
             color: transparent;
             font-weight: var(--font-weight-bold);
-            font-size: var(--font-size-large);
+            font-size: var(--font-size-lg);
         }
     }
 }

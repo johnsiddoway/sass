@@ -231,26 +231,26 @@ $theme-color-map: (
 // // layout variables start
 // $layout-root-selector: body !default;
 
-$layout-margin-block-end: 1.5rem !default;
+$layout-margin-block-end: 1.5em !default;
 
 $layout-padding-block: .5rem !default;
 $layout-padding-inline: .75rem !default;
 $layout-padding: $layout-padding-block $layout-padding-inline !default;
-$layout-padding-block-small: .25rem !default;
-$layout-padding-inline-small: .5rem !default;
-$layout-padding-small: $layout-padding-inline-small $layout-padding-block-small !default;
+$layout-padding-block-sm: .25rem !default;
+$layout-padding-inline-sm: .5rem !default;
+$layout-padding-sm: $layout-padding-block-sm $layout-padding-inline-sm !default;
 // layout default variables end
 
 // typography variables start
 $font-family-sans-serif: 'Open Sans', 'Segoe UI', 'Roboto', 'Fira Sans', 'Helvetica Neue', sans-serif !default;
-$font-size-normal: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-small: $font-size-normal * 0.875 !default;
-$font-size-large: $font-size-normal * 1.25 !default;
-$font-size-xl: $font-size-normal * 2 !default;
-$font-weight-normal: 400 !default;
+$font-size: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size * 0.875 !default;
+$font-size-lg: $font-size * 1.25 !default;
+$font-size-xl: $font-size * 2 !default;
+$font-weight: 400 !default;
 $font-weight-bold: 700 !default;
-$line-height-base: 1.5 !default;
-$text-align-base: start !default;
+$line-height: 1.5 !default;
+$text-align: start !default;
 // typography variables end
 
 // containers start
@@ -275,10 +275,6 @@ $container-max-widths: (
 ) !default;
 // containers end
 
-// $padding-default: 0.375em 0.75em !default;
-// $padding-small: 0.25em 0.5em !default;
-// $padding-large: 0.5em 1em !default;
-
 $default-border-width: 1px !default;
 $default-border-style: solid !default;
 $default-border-color: currentColor !default;
@@ -290,8 +286,9 @@ $component-border-style: $default-border-style !default;
 $component-border-color: $default-border-color !default;
 $component-padding-inline: 0.375em !default;
 $component-padding-block: 0.75em !default;
-$component-padding-small: 0.25em 0.5em !default;
-$component-padding-large: 0.5em 1em !default;
+$component-padding: $component-padding-block $component-padding-inline !default;
+$component-padding-sm: 0.25em 0.5em !default;
+$component-padding-lg: 0.5em 1em !default;
 $component-color: currentColor !default;
 
 $surface-margin-block-end: $default-margin-block-end !default;
@@ -299,43 +296,3 @@ $surface-border-width: 2 * $default-border-width !default;
 $surface-border-style: $default-border-style !default;
 $surface-border-color: $default-border-color !default;
 $surface-padding: 1em !default;
-
-// $button-background-scale: 0% !default;
-// $button-background-scale-hover: -15% !default;
-// $button-background-scale-active: -50% !default;
-// $button-background-scale-disabled: -30% !default;
-// $button-background-color: transparent;
-// $button-background-color-active: $button-background-color;
-// $button-background-color-hover: $button-background-color;
-// $button-border-color: currentColor;
-// $button-border-width: 1px;
-// $button-box-shadow-color: currentColor;
-// $button-color: currentColor;
-// $button-font-size: $font-size-base !default;
-// $button-padding: 0.375em 0.75em !default;
-
-// $input-range-thumb-width: 0.5rem !default;
-// $input-range-thumb-height: 1.5rem !default;
-// $input-range-thumb-border-color: shade-color($primary, 25%) !default;
-// $input-range-thumb-border-radius: 0 !default;
-// $input-range-thumb-cursor: pointer !default;
-// $input-range-thumb-disabled-bg: tint-color($primary, 10%) !default;
-
-// $input-range-track-height: 0.25rem !default;
-// $input-range-track-border-radius: 0 !default;
-// $input-range-track-cursor: none !default;
-
-// $layout-root-selector: body !default;
-// $dark-mode-selector: 'body.dark' !default;
-// $light-mode-selector: $layout-root-selector !default;
-
-// $surface: $white !default;
-// $on-surface: $black !default;
-// $surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem $gray-30 !default;
-
-// $background: $white !default;
-// $on-background: $black !default;
-
-// $input-box-shadow:
-//     0 0 0.05rem 0.05rem $light,
-//     0 0 0.25rem 0.25rem var(--primary) !default;
