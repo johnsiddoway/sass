@@ -1,5 +1,3 @@
-@use '../variables';
-
 @mixin popovers() {
     @include popover-auto('[popover]');
     @include popover-manual('[popover="manual"]');
@@ -10,6 +8,8 @@
 @mixin popover-style {
     border: var(--surface-border);
     padding: var(--surface-padding);
+    background-color: var(--surface-background);
+    box-shadow: var(--surface-box-shadow);
     form {
         margin-bottom: 0;
     }

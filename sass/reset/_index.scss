@@ -19,7 +19,7 @@
     ul,
     dl,
     pre {
-        margin-block: 0 variables.$default-margin-block-end;
+        margin-block: 0 variables.$default-margin;
     }
 
     h1,
@@ -28,8 +28,8 @@
     h4,
     h5,
     h6 {
-        margin-block: 0 variables.$default-margin-block-end;
-        line-height: variables.$line-height-base;
+        margin-block: 0 variables.$default-margin;
+        line-height: variables.$line-height;
     }
 
     ol ol,

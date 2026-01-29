@@ -16,12 +16,51 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     margin-top: calc((var(--track-height) - var(--thumb-height)) * .5);
-    border: var(--component-border);
+    border: var(--thumb-border);
     border-radius: 0;
     height: calc(var(--thumb-height) - var(--component-border-width));
     width: var(--thumb-width);
     cursor: pointer;
     background: var(--theme-primary);
+}
+
+@mixin input-range() {
+    --thumb-border: var(--component-border-width) var(--border-style) var(--border-color);
+    --thumb-height: 1.5em;
+    --thumb-width: .5em;
+    --track-border: var(--component-border-width) var(--border-style) var(--border-color);
+    --track-height: .25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+
+    &::-webkit-slider-runnable-track {
+        height: var(--track-height);
+        border: var(--track-border);
+        background: var(--theme-secondary);
+    }
+    &::-moz-range-track {
+        height: var(--track-height);
+        border: var(--track-border);
+        background: var(--theme-secondary);
+    }
+    &::-webkit-slider-thumb {
+        @include range-thumb();
+    }
+    &::-moz-range-thumb {
+        @include range-thumb();
+    }
+    &:focus,
+    &:focus-within {
+        &::-webkit-slider-thumb {
+            box-shadow: var(--component-box-shadow);
+        }
+        &::-moz-range-thumb {
+            box-shadow: var(--component-box-shadow);
+        }
+    }
 }
 
 @mixin form($selector: 'form', $row-selector: '.form-row') {
@@ -81,40 +120,7 @@
         }
 
         input[type=range] {
-            --thumb-height: 1.5em;
-            --thumb-width: .5em;
-            --track-height: .25em;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            background: transparent;
-            outline: none;
-
-            &::-webkit-slider-runnable-track {
-                height: var(--track-height);
-                border: var(--component-border);
-                background: var(--theme-secondary);
-            }
-            &::-moz-range-track {
-                height: var(--track-height);
-                border: var(--component-border);
-                background: var(--theme-secondary);
-            }
-            &::-webkit-slider-thumb {
-                @include range-thumb();
-            }
-            &::-moz-range-thumb {
-                @include range-thumb();
-            }
-            &:focus,
-            &:focus-within {
-                &::-webkit-slider-thumb {
-                    box-shadow: var(--component-box-shadow);
-                }
-                &::-moz-range-thumb {
-                    box-shadow: var(--component-box-shadow);
-                }
-            }
+            @include input-range();
         }
 
         input[type=file] {
@@ -123,7 +129,7 @@
                 border-width: 0 var(--component-border-width) 0 0;
                 padding: var(--component-padding);
                 cursor: pointer;
-                background-color: var(--theme-secondary);
+                background-color: var(--component-background);
             }
         }
 

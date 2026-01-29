@@ -9,18 +9,25 @@
     --font-size-xl: #{$font-size-xl};
     --font-weight: #{$font-weight};
     --font-weight-bold: #{$font-weight-bold};
-    --margin: #{$margin};
-    --surface-border: #{$surface-border-width} #{$surface-border-style} #{$surface-border-color};
-    --surface-padding: #{$surface-padding};
+
+    --border-color: #{$default-border-color};
+    --border-style: #{$default-border-style};
+    --margin: #{$default-margin};
 
     --component-color: #{$component-color};
     --component-border-width: #{$component-border-width};
-    --component-border: var(--component-border-width) #{$component-border-style} #{$component-border-color};
+    --component-border: var(--component-border-width) var(--border-style) var(--border-color);
     --component-padding-inline: #{$component-padding-inline};
     --component-padding-block: #{$component-padding-block};
     --component-padding: var(--component-padding-block) var(--component-padding-inline);
     --component-padding-lg: #{$component-padding-lg};
     --component-padding-sm: #{$component-padding-sm};
+    --component-padding-wide: #{$component-padding-wide};
+
+    --surface-margin: var(--margin);
+    --surface-border-width: #{$surface-border-width};
+    --surface-border: var(--surface-border-width) var(--border-style) var(--border-color);
+    --surface-padding: #{$surface-padding};
 
     // START THEME COLORS
     --black: #{$black};
@@ -39,14 +46,14 @@
     --link: light-dark(#{$blue-40}, #{$blue-60});
     --link-visited: light-dark(#{$violet-40}, #{$violet-80});
     --link-active: light-dark(#{$red-40}, #{$red-60});
-    --page-background: light-dark(var(--white), var(--gray-20));
-    --page-color: light-dark(var(--black), var(--white));
-    --page-background-inverse: light-dark(var(--black), var(--black));
-    --page-color-inverse: light-dark(var(--white), var(--white));
-    --surface-background: light-dark(var(--gray-90), var(--gray-30));
-    --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem light-dark(var(--gray-70), var(--gray-50));
-    --theme-primary: light-dark(#{$orange-60}, #{$orange-60});
-    --theme-secondary: light-dark(var(--gray-80), var(--gray-80));
+    --page-background: #{$page-background};
+    --page-background-inverse: #{$page-background-inverse};
+    --page-color: #{$page-color};
+    --page-color-inverse: #{$page-color-inverse};
+    --surface-background: #{$surface-background};
+    --surface-box-shadow: #{$surface-box-shadow};
+    --theme-primary: #{$theme-primary};
+    --theme-secondary: #{$theme-secondary};
     // END THEME COLORS
 
     accent-color: var(--theme-primary);
@@ -63,7 +70,7 @@
     --page-color: var(--black);
     --page-background-inverse: var(--black);
     --page-color-inverse: var(--white);
-    --surface-background: var(--gray-90);
+    --surface-background: var(--white);
     --surface-box-shadow: 0.25rem 0.25rem 0.25rem 0rem var(--gray-70);
 }
 
@@ -86,11 +93,15 @@
     flex-direction: column;
     min-height: 100vh;
     border-radius: 0;
-    text-align: $text-align-base;
-    line-height: $line-height-base;
+    text-align: $text-align;
+    line-height: $line-height;
 
     > header {
         margin-block-end: var(--margin);
+
+        button {
+            --border-color: transparent;
+        }
 
         nav {
             padding: $layout-padding;
@@ -139,10 +150,6 @@
 
     > header {
         a.brand {
-            /** TODO: The top three shouldn't be included for every page **/
-            background: linear-gradient(#ff8000, #ffb366, #ffe6cc, #ffb366, #ff8000);
-            background-clip: text;
-            color: transparent;
             font-weight: var(--font-weight-bold);
             font-size: var(--font-size-lg);
         }

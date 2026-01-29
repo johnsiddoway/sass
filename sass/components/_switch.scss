@@ -27,7 +27,7 @@
                 height: var(--indicator-size);
                 width: var(--indicator-size);
                 border: var(--component-border);
-                background-color: var(--theme-white);
+                background-color: var(--white);
                 transition: .1s linear transform;
             }
             &:checked {

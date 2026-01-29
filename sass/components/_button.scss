@@ -11,7 +11,8 @@
 @mixin buttons-base($selectors: 'button, a[role=button]:any-link, [type=button], [type=submit], [type=reset]') {
     #{$selectors} {
         --component-background: transparent;
-        border: var(--component-border);
+        --component-border-color: var(--border-color);
+        border: var(--component-border-width) var(--border-style) var(--component-border-color);
         padding: var(--component-padding);
         font-size: var(--font-size);
         background-color: var(--component-background);
